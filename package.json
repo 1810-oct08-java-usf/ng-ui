@@ -28,6 +28,7 @@
     "@angular/router": "~7.0.0",
     "@angular/service-worker": "~7.0.0",
     "@auth0/angular-jwt": "^2.0.0",
+    "angular": "^1.7.5",
     "angular-image-slider": "0.0.8",
     "core-js": "^2.6.0",
     "hammerjs": "^2.0.8",

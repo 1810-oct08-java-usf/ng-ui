@@ -18,6 +18,11 @@ const httpOptions = {
 export class UserService {
   jwtauthtoken: string;
   user: User;
+  /**
+   * This is the user specific url, this allows for easy changing of the URI when needed.
+   * @author Sean Doyle (1810-Oct22-Java-USF)
+   */
+  _url: string = environment.url + '/auth/users/';
 
   constructor(private http: HttpClient) { }
 
@@ -87,14 +92,14 @@ ${error.error}`
    * @author Michael Grammens (1810-Oct22-Java-USF)
    */
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(environment.url + '/auth/users/', httpOptions)
+    return this.http.get<User[]>(this._url, httpOptions)
       .pipe(catchError(this.handleError));
   }
   /*
   * Updates the user profile
   */
   updateProfile(user: User): Observable<User> {
-    return this.http.put<User>(environment.url + '/auth/users/', user, httpOptions)
+    return this.http.put<User>(this._url, user, httpOptions)
       .pipe(catchError(this.handleError));
   }
 
@@ -102,7 +107,7 @@ ${error.error}`
     Resource true if avail, false else
   */
   checkIfEmailIsInUse(email): Observable<string> {
-    return this.http.get<string>(environment.url + '/auth/users/emailInUse/' + email)
+    return this.http.get<string>(this._url + 'emailInUse/' + email)
       .pipe(catchError(this.handleError));
   }
 
@@ -110,7 +115,7 @@ ${error.error}`
     Resource true if avail, false else
   */
   checkIfUsernameIsAvailable(username): Observable<string> {
-    return this.http.get<string>(environment.url + '/auth/users/usernameAvailable/' + username)
+    return this.http.get<string>(this._url + 'usernameAvailable/' + username)
       .pipe(catchError(this.handleError));
   }
 
