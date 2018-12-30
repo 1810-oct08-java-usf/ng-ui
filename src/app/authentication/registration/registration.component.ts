@@ -132,34 +132,39 @@ export class RegistrationComponent implements OnInit {
   }
 
   /*Function to be called as user types on email input form
+  Checks first to see if there is a value for the email, then
+  makes the request over the "internodes" to see if the email
+  is available given that '@revature.com' is within the email
   */
   checkIfEmailIsInUseKey() {
     var ref = this.user.email;
     setTimeout(() => {
-    if(ref.endsWith("@revature.com")) {
-      this.emailToCheck = this.user.email;
-      this.emailIsAvailable = false;
-      this.emailIsNotAvailable = false;
-      this.checkingIfEmailIsInUse = true;
+      if(ref){
+        if(ref.endsWith("@revature.com")) {
+          this.emailToCheck = this.user.email;
+          this.emailIsAvailable = false;
+          this.emailIsNotAvailable = false;
+          this.checkingIfEmailIsInUse = true;
 
-      this.userService.checkIfEmailIsInUse(this.user.email).subscribe(
-        result => {
-          if(result['emailIsInUse'] == false) {
-            this.checkingIfEmailIsInUse = false;
-            this.emailIsAvailable = true;
-          } else {
-            this.checkingIfEmailIsInUse = false;
-            this.emailIsNotAvailable = true;
-          }
+          this.userService.checkIfEmailIsInUse(this.user.email).subscribe(
+            result => {
+              if(result['emailIsInUse'] == false) {
+                this.checkingIfEmailIsInUse = false;
+                this.emailIsAvailable = true;
+              } else {
+                this.checkingIfEmailIsInUse = false;
+                this.emailIsNotAvailable = true;
+              }
 
-        }, err => {
-          this.checkingIfEmailIsInUse = false;
-          this.emailIsAvailable = true;
+            }, err => {
+              this.checkingIfEmailIsInUse = false;
+              this.emailIsAvailable = true;
 
+
+            }
+          )
 
         }
-      )
-
     }
   }, 1000)
   }

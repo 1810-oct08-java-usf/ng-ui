@@ -11,4 +11,5 @@ export interface Project {
     description?: string;
     approvingProject?: boolean;
     projectApproved?: boolean;
+    projectDeclined?: boolean;
  }
