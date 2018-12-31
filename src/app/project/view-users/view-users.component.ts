@@ -19,17 +19,23 @@ export class ViewUsersComponent implements OnInit {
   @ViewChild(MatSort) sortUsers: MatSort;
   @ViewChild(MatPaginator) userPaginator: MatPaginator;
   userSubscription: Subscription;
+  currentUser: User;
+
   constructor(private router: Router, private viewProjectsService: ProjectService, private userService: UserService) { }
 
   ngOnInit() {
-    this.userSubscription = this.userService.getAllUsers().subscribe(
-      data => {
-        console.log(data);
-        this.allUsersArray = data;
-        this.dataSourceUsers = new MatTableDataSource(this.allUsersArray);
-        this.dataSourceUsers.sort = this.sortUsers;
-        this.dataSourceUsers.paginator = this.userPaginator;
-    });
+    this.currentUser = this.userService.getUser();
+    // console.log(this.currentUser.role);
+    if (this.currentUser.role === 'ROLE_ADMIN') {
+      this.userSubscription = this.userService.getAllUsers().subscribe(
+        data => {
+          // console.log(data);
+          this.allUsersArray = data;
+          this.dataSourceUsers = new MatTableDataSource(this.allUsersArray);
+          this.dataSourceUsers.sort = this.sortUsers;
+          this.dataSourceUsers.paginator = this.userPaginator;
+      });
+    }
   }
 
   applyUserFilter(filterValue: string) {
