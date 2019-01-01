@@ -97,6 +97,17 @@ ${error.error}`
     return this.http.put<User>(environment.url + '/auth/users/', user, httpOptions)
       .pipe(catchError(this.handleError));
   }
+  /**
+   * @author Clement Dikoko
+   * @author Vanessa Fountain 
+   * Updates the user role to admin only if current the user is admin
+   * the ' special' is parsed and bypasses the password needed in auth service 
+   * */
+  updateUserToAdmin(user: User): Observable<User> {
+    user.role = 'ROLE_ADMIN' + ' special';
+    return this.http.put<User>(environment.url + '/auth/users/', user, httpOptions)
+      .pipe(catchError(this.handleError));
+  }
 
   /* Requests if email is in use
     Resource true if avail, false else
