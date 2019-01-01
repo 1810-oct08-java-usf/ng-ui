@@ -1,0 +1,32 @@
+<app-app-logo></app-app-logo>
+<div class="my-theme" id="login-container">
+  <mat-jumbotron color="accent" id="jumbotron">
+    <mat-jumbotron-content id="content">
+      <form #formcontrol="ngForm" > 
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <br />
+            <mat-form-field appearance="outline">
+              <input matInput type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="user.username"
+                required (keydown.enter)="loginE()" (keydown)="checkE($event)">
+            </mat-form-field>
+            <div id='field' *ngIf="usernameO">Username must be filled out</div>
+            <br />
+            <mat-form-field appearance="outline">
+              <input matInput type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password"
+                required (keydown.enter)="loginE()" (keydown)="checkEP($event)">
+            </mat-form-field>
+            <div id='field' *ngIf="passwordO">Password must be filled out</div>
+            <br />
+            <mat-error *ngIf="!formcontrol.form.valid">Please enter all fields</mat-error>
+            <button color="accent" mat-flat-button type="button" [disabled]="!formcontrol.form.valid" (click)="login()">Login</button>
+            <a mat-button routerLink="/auth/register">Register</a>
+          </mat-card-content>
+        </mat-card>
+      </form>
+    </mat-jumbotron-content>
+  </mat-jumbotron>
+</div>

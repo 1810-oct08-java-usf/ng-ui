@@ -1,0 +1,1883 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ViewProjectsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/project/view-projects/view-projects.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-view-projects</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./view-projects.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./view-projects.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allProjects">allProjects</a>
+                            </li>
+                            <li>
+                                <a href="#currentUser">currentUser</a>
+                            </li>
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#expandedProject">expandedProject</a>
+                            </li>
+                            <li>
+                                <a href="#imagePage">imagePage</a>
+                            </li>
+                            <li>
+                                <a href="#sort">sort</a>
+                            </li>
+                            <li>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                            <li>
+                                <a href="#trainerCanEdit">trainerCanEdit</a>
+                            </li>
+                            <li>
+                                <a href="#userProjects">userProjects</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applyFilter">applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#canEdit">canEdit</a>
+                            </li>
+                            <li>
+                                <a href="#codebase">codebase</a>
+                            </li>
+                            <li>
+                                <a href="#edit">edit</a>
+                            </li>
+                            <li>
+                                <a href="#nextImage">nextImage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#previousImage">previousImage</a>
+                            </li>
+                            <li>
+                                <a href="#projects">projects</a>
+                            </li>
+                            <li>
+                                <a href="#submitProject">submitProject</a>
+                            </li>
+                            <li>
+                                <a href="#viewProjects">viewProjects</a>
+                            </li>
+                            <li>
+                                <a href="#yourProjects">yourProjects</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, viewProjectsService: <a href="../injectables/ProjectService.html">ProjectService</a>, userService: <a href="../injectables/UserService.html">UserService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>viewProjectsService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ProjectService.html" target="_self" >ProjectService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="applyFilter"></a>
+                        <span class="name">
+                            <b>
+                            applyFilter
+                            </b>
+                            <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>applyFilter(filterValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:108</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This function is used to filter the table based on the inputted string.
+It is binded as an event listener.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>filterValue</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>: a string value that is used to filter the dataSource for the MatTable</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="canEdit"></a>
+                        <span class="name">
+                            <b>
+                            canEdit
+                            </b>
+                            <a href="#canEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>canEdit(project)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This method determines if a trainer can edit a project; a trainer can only edit a project if the project was submitted by the trainer.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>project</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="codebase"></a>
+                        <span class="name">
+                            <b>
+                            codebase
+                            </b>
+                            <a href="#codebase"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>codebase(project)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:135</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>project</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edit"></a>
+                        <span class="name">
+                            <b>
+                            edit
+                            </b>
+                            <a href="#edit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>edit(project)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:140</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>project</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nextImage"></a>
+                        <span class="name">
+                            <b>
+                            nextImage
+                            </b>
+                            <a href="#nextImage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>nextImage(totalAmountOfScreenShots: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:118</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This function is used to increment the page index of the project&#39;s screenshot.
+Incrementing the page index will render the next project&#39;s screenshot.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>totalAmountOfScreenShots</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>: a number value that contains the total number of screenshots for a particular project</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:96</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>this is a lifecycle method called once by Angular before the component is destroyed;
+it is usually used to close resources such as unsubscribing from the observable&#39;s data stream;
+resources should be released to avoid memory leaks</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>this is a lifecycle method called once by Angular after ngOnChanges(); it should be used to perform intialization logic;
+the content of the method includes a call to a service to consume information from an endpoint concerning projects; an observable
+is subscribed to and the returned projects are placed in an array to be displayed in a grid view.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="previousImage"></a>
+                        <span class="name">
+                            <b>
+                            previousImage
+                            </b>
+                            <a href="#previousImage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>previousImage(totalAmountOfScreenShots: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:128</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This function is used to decrement the page index of the project&#39;s screenshot.
+Decrementing the page index will render the next project&#39;s screenshot.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>totalAmountOfScreenShots</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>: a number value that contains the total number of screenshots for a particular project</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="projects"></a>
+                        <span class="name">
+                            <b>
+                            projects
+                            </b>
+                            <a href="#projects"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>projects()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:152</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitProject"></a>
+                        <span class="name">
+                            <b>
+                            submitProject
+                            </b>
+                            <a href="#submitProject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>submitProject()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:144</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="viewProjects"></a>
+                        <span class="name">
+                            <b>
+                            viewProjects
+                            </b>
+                            <a href="#viewProjects"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>viewProjects(allProjects: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:156</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>allProjects</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="yourProjects"></a>
+                        <span class="name">
+                            <b>
+                            yourProjects
+                            </b>
+                            <a href="#yourProjects"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>yourProjects()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="148" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:148</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allProjects"></a>
+                        <span class="name">
+                            <b>
+                            allProjects
+                            </b>
+                            <a href="#allProjects"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>allProjects:     <code><a href="../interfaces/Project.html" target="_self" >Project[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Project.html" target="_self" >Project[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentUser"></a>
+                        <span class="name">
+                            <b>
+                            currentUser
+                            </b>
+                            <a href="#currentUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>currentUser:     <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource
+                            </b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>dataSource:     <code><a href="../interfaces/Project.html" target="_self" >MatTableDataSource&lt;Project&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Project.html" target="_self" >MatTableDataSource&lt;Project&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns
+                            </b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>displayedColumns:     <code>string[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;name&#x27;, &#x27;batch&#x27;, &#x27;trainer&#x27;, &#x27;techStack&#x27;, &#x27;status&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expandedProject"></a>
+                        <span class="name">
+                            <b>
+                            expandedProject
+                            </b>
+                            <a href="#expandedProject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>expandedProject:     <code><a href="../interfaces/Project.html" target="_self" >Project | null</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Project.html" target="_self" >Project | null</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imagePage"></a>
+                        <span class="name">
+                            <b>
+                            imagePage
+                            </b>
+                            <a href="#imagePage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>imagePage:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sort"></a>
+                        <span class="name">
+                            <b>
+                            sort
+                            </b>
+                            <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>sort:     <code>MatSort</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSort</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatSort)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                            subscription
+                            </b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>subscription:     <code>Subscription</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="trainerCanEdit"></a>
+                        <span class="name">
+                            <b>
+                            trainerCanEdit
+                            </b>
+                            <a href="#trainerCanEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>trainerCanEdit:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userProjects"></a>
+                        <span class="name">
+                            <b>
+                            userProjects
+                            </b>
+                            <a href="#userProjects"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>userProjects:     <code><a href="../interfaces/Project.html" target="_self" >Project[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Project.html" target="_self" >Project[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/project/view-projects/view-projects.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, state, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+import { Component, OnDestroy, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatSort, MatTableDataSource } from &#x27;@angular/material&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+
+import { Project } from &#x27;src/app/core/models/Project&#x27;;
+import { ProjectService } from &#x27;src/app/core/services/project.service&#x27;;
+import { UserService } from &#x27;src/app/core/services/user.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { User } from &#x27;src/app/core/models/User&#x27;;
+
+@Component({
+  selector: &#x27;app-view-projects&#x27;,
+  templateUrl: &#x27;./view-projects.component.html&#x27;,
+  styleUrls: [&#x27;./view-projects.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;detailExpand&#x27;, [
+      state(&#x27;collapsed&#x27;, style({ height: &#x27;0px&#x27;, minHeight: &#x27;0&#x27;, display: &#x27;none&#x27; })),
+      state(&#x27;expanded&#x27;, style({ height: &#x27;*&#x27; })),
+      transition(&#x27;expanded &lt;&#x3D;&gt; collapsed&#x27;, animate(&#x27;225ms cubic-bezier(0.4, 0.0, 0.2, 1)&#x27;)),
+    ]),
+  ],
+})
+
+export class ViewProjectsComponent implements OnInit, OnDestroy {
+  trainerCanEdit &#x3D; false;
+  currentUser: User;
+  displayedColumns: string[] &#x3D; [&#x27;name&#x27;, &#x27;batch&#x27;, &#x27;trainer&#x27;, &#x27;techStack&#x27;, &#x27;status&#x27;]; 
+  dataSource: MatTableDataSource&lt;Project&gt;;
+  @ViewChild(MatSort) sort: MatSort;
+  expandedProject: Project | null;
+
+  imagePage &#x3D; 0;
+
+  allProjects: Project[];
+  userProjects: Project[];
+  subscription: Subscription;
+  constructor(private router: Router, private viewProjectsService: ProjectService, private userService: UserService) { }
+
+  /**
+   * this is a lifecycle method called once by Angular after ngOnChanges(); it should be used to perform intialization logic;
+   * the content of the method includes a call to a service to consume information from an endpoint concerning projects; an observable
+   * is subscribed to and the returned projects are placed in an array to be displayed in a grid view.
+   * @author Shawn Bickel (1810-Oct08-Java-USF)
+   */
+  ngOnInit() {
+    this.currentUser &#x3D; this.userService.getUser();
+    if (this.currentUser &#x3D;&#x3D;&#x3D; null) {
+      this.router.navigate([&#x27;/auth/login&#x27;]);
+    }else{
+    const trainerFullName &#x3D; this.currentUser.firstName.trim() + &#x27; &#x27; + this.currentUser.lastName.trim();
+    console.log(this.currentUser);
+    this.subscription &#x3D; this.viewProjectsService.getAllProjects()
+    .subscribe((projectResponse) &#x3D;&gt; {
+      this.allProjects &#x3D; projectResponse;
+      // Assign the data to the data source for the table to render
+      this.dataSource &#x3D; new MatTableDataSource(this.allProjects);
+      /* place all the current user&#x27;s project&#x27;s in an array to easily switch between tabs to see all projects and a particular user&#x27;s projects
+          without having to make multiple calls to the server  */
+      this.userProjects &#x3D; [];
+      for (let i &#x3D; 0; i &lt; projectResponse.length; i++) {
+        if (projectResponse[i].trainer &#x3D;&#x3D; trainerFullName) {
+          console.log(projectResponse[i]);
+          this.userProjects.push(projectResponse[i]);
+        }
+      }
+      this.dataSource &#x3D; new MatTableDataSource(this.allProjects);
+      this.dataSource.sort &#x3D; this.sort;
+    });
+    }
+  }
+
+  /**
+   * This method determines if a trainer can edit a project; a trainer can only edit a project if the project was submitted by the trainer.
+   * @param rowClick : the event when a row is clicked and expanded
+   * @author Shawn Bickel (1810-Oct08-Java-USF)
+   */
+  canEdit(project) {
+      const trainerFullName &#x3D; this.currentUser.firstName.trim() + &#x27; &#x27; + this.currentUser.lastName.trim();
+     if(this.currentUser.role &#x3D;&#x3D; &quot;ROLE_ADMIN&quot;){
+       this.trainerCanEdit &#x3D; true;
+     }
+     else if (trainerFullName &#x3D;&#x3D;&#x3D; project.trainer) {
+        this.trainerCanEdit &#x3D; true;
+     } else {
+       this.trainerCanEdit &#x3D; false;
+     }
+  }
+
+  /**
+  * this is a lifecycle method called once by Angular before the component is destroyed;
+  * it is usually used to close resources such as unsubscribing from the observable&#x27;s data stream;
+  * resources should be released to avoid memory leaks
+  * @author Shawn Bickel (1810-Oct08-Java-USF)
+  */
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
+  /**
+   * This function is used to filter the table based on the inputted string.
+   * It is binded as an event listener.
+   * @param filterValue : a string value that is used to filter the dataSource for the MatTable
+   * @author Yuki Mano (1810-Oct08-Java-USF)
+   */
+  applyFilter(filterValue: string) {
+    this.dataSource.filter &#x3D; filterValue.trim().toLowerCase();
+  }
+
+  /**
+   * This function is used to increment the page index of the project&#x27;s screenshot.
+   * Incrementing the page index will render the next project&#x27;s screenshot.
+   * @param totalAmountOfScreenShots : a number value that contains the total number of screenshots for a particular project
+   * @author Yuki Mano (1810-Oct08-Java-USF)
+   */
+  nextImage(totalAmountOfScreenShots: number) {
+    this.imagePage &#x3D; (this.imagePage + 1) % totalAmountOfScreenShots;
+  }
+
+  /**
+   * This function is used to decrement the page index of the project&#x27;s screenshot.
+   * Decrementing the page index will render the next project&#x27;s screenshot.
+   * @param totalAmountOfScreenShots : a number value that contains the total number of screenshots for a particular project
+   * @author Yuki Mano (1810-Oct08-Java-USF)
+   */
+  previousImage(totalAmountOfScreenShots: number) {
+    this.imagePage--;
+    if (this.imagePage &lt; 0) {
+      this.imagePage &#x3D; totalAmountOfScreenShots;
+    }
+  }
+
+  codebase(project) {
+    this.viewProjectsService.CurrentProject &#x3D; project;
+    this.router.navigate([&#x27;/codebase&#x27;]);
+  }
+
+  edit(project) {
+    this.router.navigate([project.id + &#x27;/edit&#x27;]);
+  }
+
+  submitProject() {
+    this.router.navigate([&#x27;/project_submission&#x27;]);
+  }
+
+  yourProjects() {
+    this.viewProjects(false);
+  }
+
+  projects() {
+    this.viewProjects(true);
+  }
+
+  viewProjects(allProjects: boolean) {
+    if (allProjects) {
+      this.dataSource &#x3D; new MatTableDataSource(this.allProjects);
+    } else {
+      this.dataSource &#x3D; new MatTableDataSource(this.userProjects);
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;my-theme&quot; id&#x3D;&quot;userActions&quot;&gt;
+  &lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+    &lt;mat-toolbar-row&gt;
+
+      &lt;button id&#x3D;&quot;icon&quot; mat-icon-button mat-stroked-button mat-button matTooltip&#x3D;&quot;Add New Project&quot; matTooltipPosition&#x3D;&quot;right&quot;
+        (click)&#x3D;&quot;submitProject()&quot;&gt;
+        &lt;mat-icon&gt;add&lt;/mat-icon&gt;
+      &lt;/button&gt;
+      &lt;span class&#x3D;&quot;example-fill-remaining-space&quot;&gt;&lt;/span&gt;
+      &lt;mat-tab-group&gt;
+        &lt;mat-tab&gt;
+          &lt;ng-template mat-tab-label&gt;
+            &lt;span (click)&#x3D;&quot;yourProjects()&quot;&gt;Your Projects&lt;/span&gt;
+          &lt;/ng-template&gt;
+        &lt;/mat-tab&gt;
+
+        &lt;mat-tab&gt;
+          &lt;ng-template mat-tab-label&gt;
+            &lt;span (click)&#x3D;&quot;projects()&quot;&gt;All Projects&lt;/span&gt;
+          &lt;/ng-template&gt;
+
+        &lt;/mat-tab&gt;
+      &lt;/mat-tab-group&gt;
+    &lt;/mat-toolbar-row&gt;
+  &lt;/mat-toolbar&gt;
+&lt;/div&gt;
+&lt;div id&#x3D;&quot;view-project-layout&quot;&gt;
+  &lt;!-- a field for users to enter in a string to filter the table --&gt;
+  &lt;mat-form-field&gt;
+    &lt;input matInput (keyup)&#x3D;&quot;applyFilter($event.target.value)&quot; placeholder&#x3D;&quot;Filter&quot;&gt;
+  &lt;/mat-form-field&gt;
+
+  &lt;div class&#x3D;&quot;table-container mat-elevation-z8 my-theme&quot; color&#x3D;&quot;primary&quot;&gt;
+    &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; multiTemplateDataRows matSort&gt;
+
+      &lt;!-- Name Column --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Name &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let project&quot;&gt; {{project.name}} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;!-- Batch Column --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;batch&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Batch &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let project&quot;&gt; {{project.batch}} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;!-- Trainer Column (Assume there are only one trainer per batch) --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;trainer&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Trainer &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let project&quot;&gt; {{project.trainer}} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;!-- Tech Stack Column --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;techStack&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Stack &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let project&quot;&gt; {{project.techStack}} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;!-- Status Column --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;status&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Status &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let project&quot;&gt; {{project.status}} &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns --&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;expandedDetail&quot;&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let project&quot; [attr.colspan]&#x3D;&quot;displayedColumns.length&quot;&gt;
+          &lt;div class&#x3D;&quot;project-detail&quot; [@detailExpand]&#x3D;&quot;project &#x3D;&#x3D; expandedProject ? &#x27;expanded&#x27; : &#x27;collapsed&#x27;&quot;&gt;
+
+            &lt;div id&#x3D;&quot;expanded-row&quot; class&#x3D;&quot;container&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+              &lt;!-- display custom image slider for project&#x27;s screenshots --&gt;
+              &lt;div fxLayout.xs&#x3D;&quot;column&quot;&gt;
+                &lt;button id&#x3D;&quot;arrow-icon&quot; mat-icon-button mat-stroked-button color&#x3D;&quot;primary&quot; mat-button matTooltip&#x3D;&quot;Previous&quot;
+                  matTooltipPosition&#x3D;&quot;left&quot; (click)&#x3D;&quot;previousImage(project.screenShots.length)&quot;&gt;
+                  &lt;mat-icon&gt;skip_previous&lt;/mat-icon&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div fxLayout.xs&#x3D;&quot;column&quot;&gt;
+                &lt;img id&#x3D;&quot;project-image&quot; alt&#x3D;&quot;Image Unavailable&quot; [src]&#x3D;&quot;project.screenShots[imagePage%project.screenShots.length]&quot;
+                  onerror&#x3D;&quot;this.src&#x3D;&#x27;../../../assets/icons/RPM_Logo.png&#x27;&quot;&gt;
+              &lt;/div&gt;
+              &lt;div fxLayout.xs&#x3D;&quot;column&quot;&gt;
+                &lt;button id&#x3D;&quot;arrow-icon&quot; mat-icon-button mat-stroked-button color&#x3D;&quot;primary&quot; mat-button matTooltip&#x3D;&quot;Next&quot;
+                  matTooltipPosition&#x3D;&quot;right&quot; (click)&#x3D;&quot;nextImage(project.screenShots.length)&quot;&gt;
+                  &lt;mat-icon&gt;skip_next&lt;/mat-icon&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+
+              &lt;!-- display project&#x27;s group members and project&#x27;s description --&gt;
+              &lt;div class&#x3D;&quot;container&quot; fxLayout.xs&#x3D;&quot;column&quot;&gt;
+                &lt;div id&#x3D;&quot;group-members-label&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+                  &lt;label&gt;&lt;strong&gt; Group Members: &lt;/strong&gt;&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div id&#x3D;&quot;description-label&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+
+                  &lt;!-- this line is needed for styling purpose --&gt;
+                  &lt;label style&#x3D;&quot;color: white&quot;&gt; ____ &lt;/label&gt;
+                  
+                  &lt;label&gt;&lt;strong&gt; Description: &lt;/strong&gt;&lt;/label&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;container&quot; fxLayout.xs&#x3D;&quot;column&quot;&gt;
+                &lt;div id&#x3D;&quot;project-members&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+                  &lt;textarea rows&#x3D;&quot;3&quot; cols&#x3D;&quot;100&quot; placeholder&#x3D;&quot;No Project Description&quot; disabled&#x3D;true readonly&gt;{{project.groupMembers.join(&#x27;, &#x27;)}}
+                  &lt;/textarea&gt;
+                &lt;/div&gt;
+                &lt;div id&#x3D;&quot;project-description&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+                  &lt;textarea rows&#x3D;&quot;10&quot; cols&#x3D;&quot;100&quot; placeholder&#x3D;&quot;No Project Description&quot; disabled&#x3D;true readonly&gt;{{project.description}}
+                  &lt;/textarea&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;!-- display buttons for routing to project&#x27;s codebase as well as routing to editing a project --&gt;
+              &lt;div fxLayout.xs&#x3D;&quot;column&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+                  &lt;a id&#x3D;&quot;codebase-button&quot; target&#x3D;&quot;_blank&quot;&gt;
+                    &lt;button (click)&#x3D;&quot;codebase(project)&quot; mat-icon-button mat-stroked-button color&#x3D;&quot;primary&quot; mat-button
+                      matTooltip&#x3D;&quot;Codebase&quot; matTooltipPosition&#x3D;&quot;left&quot;&gt;
+                      &lt;mat-icon&gt;folder_special&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                  &lt;/a&gt;
+                  &lt;a id&#x3D;&quot;edit-button&quot;&gt;
+                    &lt;button *ngIf&#x3D;&quot;trainerCanEdit&quot; (click)&#x3D;&quot;edit(project)&quot; id&#x3D;&quot;icon&quot; mat-icon-button
+                      mat-stroked-button color&#x3D;&quot;primary&quot; matTooltip&#x3D;&quot;Edit&quot; matTooltipPosition&#x3D;&quot;right&quot;&gt;
+                      &lt;mat-icon id&#x3D;&quot;profile-icon&quot;&gt;edit&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                  &lt;/a&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns; sticky: true&quot;&gt;&lt;/tr&gt;
+      &lt;tr mat-row *matRowDef&#x3D;&quot;let project; columns: displayedColumns;&quot; class&#x3D;&quot;project-row&quot; [class.expanded-row]&#x3D;&quot;expandedProject &#x3D;&#x3D;&#x3D; project&quot;
+        (click)&#x3D;&quot;expandedProject &#x3D; expandedProject &#x3D;&#x3D;&#x3D; project ? null : project; canEdit(project)&quot;&gt;
+      &lt;/tr&gt;
+      &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: [&#x27;expandedDetail&#x27;]&quot; class&#x3D;&quot;detail-row&quot;&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./view-projects.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+#userActions{
+  width: 100%;
+}
+
+.labelColor{
+  color: white;
+}
+
+#view-project-layout {
+  padding: 1%;
+}
+
+.full-width{
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+  cursor: default;
+}
+
+.table-container {
+  height: 70vh;
+  overflow: auto;
+}
+
+tr.detail-row {
+  height: 0;
+}
+
+tr.project-row:not(.expanded-row):hover {
+  background: #f5f5f5;
+}
+
+tr.project-row:not(.expanded-row):active {
+  background: #efefef;
+}
+
+.project-row td {
+  border-bottom-width: 0;
+}
+
+.project-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+#expanded-row {
+flex-direction: row;
+}
+
+#project-image {
+  max-width: 40vh; 
+  max-height: 40vh;
+  min-width: 40vh; 
+  min-height: 40vh;
+  border: 2px solid black;
+  padding: 16px;
+  margin: 8px 0;
+}
+
+#group-members-label{
+  padding-top: 8vh;
+  padding-left: 2vh;
+  padding-right: 1vh;
+}
+
+#description-label{
+  padding-top: 12vh;
+  padding-left: 2vh;
+  padding-right: 1vh;
+}
+
+#project-members {
+  padding-top: 8vh;
+  text-align: left;
+}
+
+#project-description {
+  padding-top: 8vh;
+  text-align: left;
+}
+
+#arrow-icon {
+  margin-top: 20vh;
+}
+
+#codebase-button {
+  padding-top: 8vh; 
+  padding-left: 5vh;
+}
+
+#edit-button {
+  padding-top: 8vh;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="my-theme" id="userActions">  <mat-toolbar color="primary">    <mat-toolbar-row>      <button id="icon" mat-icon-button mat-stroked-button mat-button matTooltip="Add New Project" matTooltipPosition="right"        (click)="submitProject()">        <mat-icon>add</mat-icon>      </button>      <span class="example-fill-remaining-space"></span>      <mat-tab-group>        <mat-tab>          <ng-template mat-tab-label>            <span (click)="yourProjects()">Your Projects</span>          </ng-template>        </mat-tab>        <mat-tab>          <ng-template mat-tab-label>            <span (click)="projects()">All Projects</span>          </ng-template>        </mat-tab>      </mat-tab-group>    </mat-toolbar-row>  </mat-toolbar></div><div id="view-project-layout">  <!-- a field for users to enter in a string to filter the table -->  <mat-form-field>    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">  </mat-form-field>  <div class="table-container mat-elevation-z8 my-theme" color="primary">    <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>      <!-- Name Column -->      <ng-container matColumnDef="name">        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>        <td mat-cell *matCellDef="let project"> {{project.name}} </td>      </ng-container>      <!-- Batch Column -->      <ng-container matColumnDef="batch">        <th mat-header-cell *matHeaderCellDef mat-sort-header> Batch </th>        <td mat-cell *matCellDef="let project"> {{project.batch}} </td>      </ng-container>      <!-- Trainer Column (Assume there are only one trainer per batch) -->      <ng-container matColumnDef="trainer">        <th mat-header-cell *matHeaderCellDef mat-sort-header> Trainer </th>        <td mat-cell *matCellDef="let project"> {{project.trainer}} </td>      </ng-container>      <!-- Tech Stack Column -->      <ng-container matColumnDef="techStack">        <th mat-header-cell *matHeaderCellDef mat-sort-header> Stack </th>        <td mat-cell *matCellDef="let project"> {{project.techStack}} </td>      </ng-container>      <!-- Status Column -->      <ng-container matColumnDef="status">        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>        <td mat-cell *matCellDef="let project"> {{project.status}} </td>      </ng-container>      <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->      <ng-container matColumnDef="expandedDetail">        <td mat-cell *matCellDef="let project" [attr.colspan]="displayedColumns.length">          <div class="project-detail" [@detailExpand]="project == expandedProject ? \'expanded\' : \'collapsed\'">            <div id="expanded-row" class="container" fxLayout="row">              <!-- display custom image slider for project\'s screenshots -->              <div fxLayout.xs="column">                <button id="arrow-icon" mat-icon-button mat-stroked-button color="primary" mat-button matTooltip="Previous"                  matTooltipPosition="left" (click)="previousImage(project.screenShots.length)">                  <mat-icon>skip_previous</mat-icon>                </button>              </div>              <div fxLayout.xs="column">                <img id="project-image" alt="Image Unavailable" [src]="project.screenShots[imagePage%project.screenShots.length]"                  onerror="this.src=\'../../../assets/icons/RPM_Logo.png\'">              </div>              <div fxLayout.xs="column">                <button id="arrow-icon" mat-icon-button mat-stroked-button color="primary" mat-button matTooltip="Next"                  matTooltipPosition="right" (click)="nextImage(project.screenShots.length)">                  <mat-icon>skip_next</mat-icon>                </button>              </div>              <!-- display project\'s group members and project\'s description -->              <div class="container" fxLayout.xs="column">                <div id="group-members-label" fxLayout="row">                  <label><strong> Group Members: </strong></label>                </div>                <div id="description-label" fxLayout="row">                  <!-- this line is needed for styling purpose -->                  <label style="color: white"> ____ </label>                                    <label><strong> Description: </strong></label>                </div>              </div>              <div class="container" fxLayout.xs="column">                <div id="project-members" fxLayout="row">                  <textarea rows="3" cols="100" placeholder="No Project Description" disabled=true readonly>{{project.groupMembers.join(\', \')}}                  </textarea>                </div>                <div id="project-description" fxLayout="row">                  <textarea rows="10" cols="100" placeholder="No Project Description" disabled=true readonly>{{project.description}}                  </textarea>                </div>              </div>              <!-- display buttons for routing to project\'s codebase as well as routing to editing a project -->              <div fxLayout.xs="column">                <div class="container" fxLayout="row">                  <a id="codebase-button" target="_blank">                    <button (click)="codebase(project)" mat-icon-button mat-stroked-button color="primary" mat-button                      matTooltip="Codebase" matTooltipPosition="left">                      <mat-icon>folder_special</mat-icon>                    </button>                  </a>                  <a id="edit-button">                    <button *ngIf="trainerCanEdit" (click)="edit(project)" id="icon" mat-icon-button                      mat-stroked-button color="primary" matTooltip="Edit" matTooltipPosition="right">                      <mat-icon id="profile-icon">edit</mat-icon>                    </button>                  </a>                </div>              </div>            </div>          </div>        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>      <tr mat-row *matRowDef="let project; columns: displayedColumns;" class="project-row" [class.expanded-row]="expandedProject === project"        (click)="expandedProject = expandedProject === project ? null : project; canEdit(project)">      </tr>      <tr mat-row *matRowDef="let row; columns: [\'expandedDetail\']" class="detail-row"></tr>    </table>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppLogoComponent', 'selector': 'app-app-logo'},{'name': 'EditProjectComponent', 'selector': 'app-edit-project'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'InputDialogComponent', 'selector': 'app-input-dialog'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProjectCardComponent', 'selector': 'app-project-card'},{'name': 'ProjectSubmissionComponent', 'selector': 'app-project-submission'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'UserActionsComponent', 'selector': 'app-user-actions'},{'name': 'ViewProjectsComponent', 'selector': 'app-view-projects'},{'name': 'ZipComponent', 'selector': 'app-zip-component'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ViewProjectsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ViewProjectsComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

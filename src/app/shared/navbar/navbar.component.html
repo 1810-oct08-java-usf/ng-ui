@@ -1,0 +1,31 @@
+<div id="toolbar">
+    <mat-toolbar class="my-theme" color= "white">
+        <mat-toolbar-row>
+            <button id="icon" mat-icon-button mat-stroked-button mat-button matTooltip="Home" matTooltipPosition="right"
+                (click)="homepageShortcut()">
+                <img id="home-icon" src="../../../assets/icons/RPM_Logo.png">
+            </button>
+            <!-- This fills the remaining space of the current row -->
+            <span class="example-fill-remaining-space"></span>
+            <!-- <img id="rpm-logo" src="../../../assets/img/RPM_LogoTEXTONLY.png"> -->
+            <img id="rpm-logo" src="../../../assets/img/rpmLogo.png">
+            <h1 id="title">Revature Project Manager</h1>
+            <!-- This fills the remaining space of the current row -->
+            <span class="example-fill-remaining-space"></span>
+            <span>
+                <button id="icon" mat-icon-button mat-stroked-button [matMenuTriggerFor]="accountMenu">
+                    <mat-icon id="profile-icon">account_circle</mat-icon>
+                </button>
+                <mat-menu #accountMenu="matMenu">
+                    <button (click)="userAccount()" mat-menu-item>
+                        <span>Profile</span>
+                    </button>
+                    <button (click)="logout()" mat-menu-item>
+                        <span>Logout</span>
+                    </button>
+                </mat-menu>
+            </span>
+        </mat-toolbar-row>
+        <mat-divider></mat-divider>
+    </mat-toolbar>
+</div>

@@ -1,0 +1,113 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+  
+  #title{
+    text-align: center;
+  }
+  
+  #userActions{
+    width: 100%;
+  }
+  
+  .labelColor{
+    color: white;
+  }
+  
+  #view-project-layout {
+    padding: 1%;
+  }
+  
+  .full-width{
+    flex: 1 1 auto;
+  }
+  
+  table {
+    width: 100%;
+    cursor: default;
+  }
+  
+  .table-container {
+    height: 70vh;
+    overflow: auto;
+  }
+  
+  tr.detail-row {
+    height: 0;
+  }
+  
+  tr.project-row:not(.expanded-row):hover {
+    background: #f5f5f5;
+  }
+  
+  tr.project-row:not(.expanded-row):active {
+    background: #efefef;
+  }
+  
+  .project-row td {
+    border-bottom-width: 0;
+  }
+  
+  .project-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  #expanded-row {
+  flex-direction: row;
+  }
+  
+  #project-image {
+    max-width: 40vh; 
+    max-height: 40vh;
+    min-width: 40vh; 
+    min-height: 40vh;
+    border: 2px solid black;
+    padding: 16px;
+    margin: 8px 0;
+  }
+  
+  #group-members-label{
+    padding-top: 8vh;
+    padding-left: 2vh;
+    padding-right: 1vh;
+  }
+  
+  #description-label{
+    padding-top: 12vh;
+    padding-left: 2vh;
+    padding-right: 1vh;
+  }
+  
+  #project-members {
+    padding-top: 8vh;
+    text-align: left;
+  }
+  
+  #project-description {
+    padding-top: 8vh;
+    text-align: left;
+  }
+  
+  #arrow-icon {
+    margin-top: 20vh;
+  }
+  
+  #codebase-button {
+    padding-top: 8vh; 
+    padding-left: 5vh;
+  }
+  
+  #edit-button {
+    padding-top: 8vh;
+  }
+  
+  //added in first Trevin's batch commit, styles the pages text next to filter
+  .pages{
+    display:inline;
+    margin-right:1.5rem;
+    cursor: pointer;
+    font-size:24px;
+  }

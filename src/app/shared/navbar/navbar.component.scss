@@ -1,0 +1,52 @@
+@import '~@angular/material/theming';
+
+.example-fill-remaining-space {
+    /* The css flex property determines how flexible items will appear in relation to each other;
+        It is used to specify flex-grow, flex-shrink, and flex-basis properties
+            - flex-grow: determines how a specified element will increase in size in relation to other flexible elements
+            - flex-shrink: determines how an element will decrease in size relative to other flexible elements 
+            - flex-basis: determines the initial length of a flexible item 
+                - auto: the length will be equal to the length of the item; if the item has no length, the length will be determined by the content 
+                - initial: sets the length to the default value, which is auto */
+    flex: 1 1 auto;
+  }
+
+ #navbarTitle{
+    border: none;
+    font-size: 16px;
+}
+
+#toolbar{
+   width: 100%;
+}
+
+#home-icon{
+    max-width: 64px;
+    max-height: 64px;
+}
+
+#icon {
+    width: 64px;
+    height: 64px;
+}
+
+#rpm-logo {
+    max-width: auto;
+    max-height: 100%;
+    margin-top: 30px;
+}
+
+#title {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 42px;
+    color: #ffa226,
+}
+
+// #title {
+//     text-shadow:
+// 		-1px -1px 0 #ff7500,
+// 		1px -1px 0 #ff7500,
+// 		-1px 1px 0 #ff7500,
+// 		1px 1px 0 #ff7500;
+// }

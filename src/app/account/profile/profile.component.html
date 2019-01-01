@@ -1,0 +1,139 @@
+<app-navbar></app-navbar>
+
+<mat-grid-list class="my-theme" cols="8" height="100%" width="100%">
+  <mat-grid-tile colspan=1 rowspan=1></mat-grid-tile>
+
+  <mat-grid-tile colspan=6 rowspan=3.5>
+    <div class="container" fxLayout.xs="column" fxLayoutAlign="center">
+      <mat-jumbotron>
+        <mat-jumbotron-content>
+          <div class="container" fxLayout="row" fxLayoutGap="75%" fxLayoutGap.xs="0">
+            <div fxLayout.xs="column">
+              <button mat-icon-button mat-stroked-button color="primary" mat-button routerLink="/projects/home"
+                matTooltip="Home" matTooltipPosition="right">
+                <mat-icon>home</mat-icon>
+              </button>
+              <h1 id="profile-header"><strong>Profile</strong></h1>
+            </div>
+          </div>
+
+          <div class="container" fxLayout="row" fxLayout.xs="column">
+            <p id="profile-text">Edit your profile information, and then press the 'Save' button to update your
+              information.</p>
+          </div>
+
+          <!-- display the form that contains user's profile information -->
+          <form [formGroup]="form">
+            <hr>
+            <div class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
+              <div fxLayout.xs="column"></div>
+              <div fxLayout.xs="column">
+                <mat-form-field>
+                  <input matInput readonly={{setReadOnly}} id="inputFirstName" placeholder="First Name" formControlName="firstName"
+                    (blur)=formFilled() (mouseleave)=formFilled() minlength="1" required>
+                  <mat-error *ngIf="form.get('firstName').hasError('minlength') && !form.get('firstName').hasError('required')">
+                    Must be at least <strong>2 characters</strong> long
+                  </mat-error>
+                  <mat-error *ngIf="form.get('firstName').hasError('required')">
+                    First name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout.xs="column">
+                <mat-form-field>
+                  <input matInput readonly={{setReadOnly}} id="inputLastName" placeholder="Last Name" formControlName="lastName"
+                    (blur)=formFilled() (mouseleave)=formFilled() minlength="1" required>
+                  <mat-error *ngIf="form.get('lastName').hasError('minlength') && !form.get('lastName').hasError('required')">
+                    Must be at least <strong>2 characters</strong> long
+                  </mat-error>
+                  <mat-error *ngIf="form.get('lastName').hasError('required')">
+                    Last name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
+              <div fxLayout.xs="column"></div>
+              <div fxLayout.xs="column">
+                <mat-form-field>
+                  <input matInput readonly={{setReadOnly}} id="inputEmail" placeholder="Email" formControlName="email"
+                    (blur)=formFilled() (mouseleave)=formFilled() [pattern]="emailPattern" required>
+                  <mat-error *ngIf="form.controls.email.errors?.RevatureEmail">
+                    Must end with <strong>@revature.com</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout.xs="column">
+                <mat-form-field>
+                  <input matInput readonly={{setReadOnly}} id="inputUsername" placeholder="Username" formControlName="username"
+                    (blur)=formFilled() (mouseleave)=formFilled() minlength="8" required>
+                  <mat-error *ngIf="form.get('username').hasError('minlength') && !form.get('username').hasError('required')">
+                    Must be at least <strong>8 characters</strong> long
+                  </mat-error>
+                  <mat-error *ngIf="form.get('username').hasError('required')">
+                    Username is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
+              <div fxLayout.xs="column"></div>
+              <div fxLayout.xs="column">
+                <mat-form-field *ngIf="!setReadOnly">
+                  <input matInput readonly={{setReadOnly}} type="password" id="currInputPassword" placeholder="Current Password" 
+                  formControlName="currPassword" (blue)=formFilled() (mouseleave)=formFilled() minlength="8" required>
+                  <mat-error *ngIf="form.get('currPassword').hasError('minlength') && !form.get('currPassword').hasError('required')">
+                    Must be at least <strong>8 characters</strong>
+                  </mat-error>
+                  <mat-error *ngIf="form.get('currPassword').hasError('required')">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
+              <div fxLayout.xs="column"></div>
+              <div fxLayout.xs="column">
+                <mat-form-field *ngIf="!setReadOnly">
+                  <input matInput readonly={{setReadOnly}} type="password" id="inputPassword" placeholder="Password"
+                    formControlName="password" (blur)=retypeConfirmPassword() minlength="8" required>
+                  <mat-error *ngIf="form.get('password').hasError('minlength') && !form.get('password').hasError('required')">
+                    Must be at least <strong>8 characters</strong>
+                  </mat-error>
+                  <mat-error *ngIf="form.get('password').hasError('required')">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout.xs="column">
+                <mat-form-field *ngIf="!setReadOnly">
+                  <input matInput type="password" id="inputConfirmPassword" placeholder="Confirm Password"
+                    formControlName="confirmPassword" (blur)=formFilled() (mouseleave)=formFilled() required>
+                  <mat-error *ngIf="form.controls.confirmPassword.errors?.MatchPassword">
+                    Password must <strong>match</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
+              <div fxLayout.xs="column"></div>
+              <div fxLayout.xs="column">
+                <button *ngIf="setReadOnly" type="button" mat-stroked-button color="primary" (click)="setReadOnly=false">Edit</button>
+                <button *ngIf="!setReadOnly" type="button" mat-stroked-button color="primary" [disabled]="disableButton"
+                  (click)="setReadOnly=true; updateProfile()">Save</button>
+                <button *ngIf="!setReadOnly" type="button" mat-stroked-button color="primary" (click)="setReadOnly=true; cancelEditProfile()">Cancel</button>
+              </div>
+            </div>
+          </form>
+
+        </mat-jumbotron-content>
+      </mat-jumbotron>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan=1 rowspan=1></mat-grid-tile>
+</mat-grid-list>

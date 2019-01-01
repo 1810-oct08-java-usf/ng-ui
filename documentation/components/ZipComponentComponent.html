@@ -1,0 +1,1014 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ZipComponentComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/zip-file-explorer/zip-component/zip-component.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-zip-component</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./zip-component.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./zip-component.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#RenderFile">RenderFile</a>
+                            </li>
+                            <li>
+                                <a href="#SelectedFile">SelectedFile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openData">openData</a>
+                            </li>
+                            <li>
+                                <a href="#parseFiles">parseFiles</a>
+                            </li>
+                            <li>
+                                <a href="#sendRequest">sendRequest</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/zip-file-explorer/zip-component/zip-component.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/zip-file-explorer/zip-component/zip-component.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openData"></a>
+                        <span class="name">
+                            <b>
+                            openData
+                            </b>
+                            <a href="#openData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openData(data)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/zip-file-explorer/zip-component/zip-component.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="parseFiles"></a>
+                        <span class="name">
+                            <b>
+                            parseFiles
+                            </b>
+                            <a href="#parseFiles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>parseFiles(file)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/zip-file-explorer/zip-component/zip-component.component.ts:93</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>file</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sendRequest"></a>
+                        <span class="name">
+                            <b>
+                            sendRequest
+                            </b>
+                            <a href="#sendRequest"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>sendRequest()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/zip-file-explorer/zip-component/zip-component.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="RenderFile"></a>
+                        <span class="name">
+                            <b>
+                            RenderFile
+                            </b>
+                            <a href="#RenderFile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>RenderFile:     <code><a href="../classes/File.html" target="_self" >File[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/File.html" target="_self" >File[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/zip-file-explorer/zip-component/zip-component.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SelectedFile"></a>
+                        <span class="name">
+                            <b>
+                            SelectedFile
+                            </b>
+                            <a href="#SelectedFile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>SelectedFile:     <code><a href="../classes/File.html" target="_self" >File</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/File.html" target="_self" >File</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/zip-file-explorer/zip-component/zip-component.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import * as JSZip from &#x27;jszip&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+import { Observable, Subject } from &#x27;rxjs&#x27;;
+@Component({
+  selector: &#x27;app-zip-component&#x27;,
+  templateUrl: &#x27;./zip-component.component.html&#x27;,
+  styleUrls: [&#x27;./zip-component.component.scss&#x27;]
+})
+/*
+* ZipComponentComponent is Reponsible for Unzipping and Rendering a file.zip
+*
+* If stream is unresovable error when ng serve and attempt to render
+* then in tsconfig.json (no .app.json or event tsoncif.spec.json. the top level tsconfig.json)
+* Do not manually go and change in node modules JSzip to readable-stream from stream....
+* Git push ignores app modules but not tsconfig.json
+*
+* &quot;paths&quot;: {
+      &quot;jszip&quot;: [
+        &quot;node_modules/jszip/dist/jszip.min.js&quot;
+      ]
+    },
+* @author Andrew Mitchem (1810-Oct08-Java-USF)
+*/
+export class ZipComponentComponent implements OnInit {
+  RenderFile: File[] &#x3D; [];
+  SelectedFile: File;
+  /*Constructur: Injects Http Client into the component for use of resource request
+  *@param HttpClient standard angular dependency to fire http request.
+  *
+  */
+  constructor(private http: HttpClient) { }
+  ngOnInit() {
+    let testfile &#x3D; new File();
+    testfile.fileName &#x3D; &quot;HELP&quot;;
+    testfile.fileContent &#x3D; &quot;HELLO&quot;;
+    this.SelectedFile &#x3D; testfile;
+  }
+  /*
+  * ZipComponentComponent.sendRequest()
+  * Fire off an http request for given request. 
+  * @author Andrew Mitchem (1810-Oct08-Java-USF)
+  * 
+  */
+  sendRequest(){
+    //reponse type is arraybuffer so the get request knows this is a oclet-array-stream request
+    this.http.get(&#x27;http://localhost:8080/spring-mvc/files&#x27;, {responseType: &#x27;arraybuffer&#x27;})
+    .pipe(
+      map(arrayBuffer &#x3D;&gt; new Uint8Array(arrayBuffer))
+    )
+    .subscribe(ui8Array &#x3D;&gt; {
+      //after the array is retrieve. open the data with JSZip
+      console.log(&quot;got (ui8Arra)&quot;)
+      this.openData(ui8Array);
+    });
+  }
+  /*
+  * ZipComponentComponent.sendRequest()
+  * unpacks a zip blob(ui8array) and opens with JSZip (zip is the reference variable)
+  * @param data. ui8array blob object that &quot;is&quot; a valid zip file. 
+  * @author Andrew Mitchem (1810-Oct08-Java-USF)
+  */
+  openData(data){
+     let zip &#x3D; new JSZip(); 
+     //new instance of JSZip. note this object lifecycle needs to be undone after rendering
+     //as such it not a class member but function member only for the scope of this function closure
+     zip.loadAsync(data)
+        .then(contents&#x3D;&gt;{
+          //console.log(this.RenderStrings)
+          //move to the sub folder inside the zip file: replace with pass paramater variables
+          let dirFolder &#x3D;  zip.folder(&#x27;reflections-mafia-server-master/src/main/java&#x27;)
+          let fileArray &#x3D; dirFolder.file(/^.*/) //get the array of all files in this subdirectory 
+          for(let i &#x3D; 0; i &lt; fileArray.length; i++){
+            let file &#x3D; fileArray[i]
+            this.parseFiles(file);
+          }
+      })
+      // .then(()&#x3D;&gt;{
+      //   console.log(&quot;um help&quot;);
+      //   this.RenderStrings.next(this.tempString);
+      //   console.log(this.tempString)
+      //   this.tempString &#x3D; []
+      //   console.log(this.RenderStrings)
+      // })
+  }
+   /*
+  * ZipComponentComponent.parseFiles(file)
+  * opens and individual zip file. This method ignores files that are directories (ie. not files with contnet)
+  * @param file. ZipObject (class of JSzip) to be unpacked into a normal blob object
+  * @author Andrew Mitchem (1810-Oct08-Java-USF)
+  */
+  parseFiles(file){
+    // console.log(&quot;iterating over&quot;, file.name);
+    // console.log(file)
+    //check if file is a directory
+    if(!file.dir){
+        let fileName &#x3D; file.name; 
+        //save ZipObject file name as once unzip into a  standardfile  we loose acess to this data
+        fileName &#x3D; fileName.replace(&quot;reflections-mafia-server-master/src/main/java&quot;,&quot;&quot;) 
+        fileName &#x3D; fileName.substring(fileName.lastIndexOf(&quot;/&quot;)+1)
+        //remove leading path
+        let helpme &#x3D; file.async(&quot;uint8array&quot;).then(function (data) { //converts the ZipObject 
+          let string &#x3D; &#x27;&#x27;;
+          string &#x3D; new TextDecoder(&quot;utf-8&quot;).decode(data);
+          //if(string) --&lt; this section is to prevent error. uncomment if oddities arise
+          return string
+        });
+        helpme.then(string&#x3D;&gt;{ 
+          //promise to unrwap the string. not prvious function has no concept of component namespace due to closur
+          //console.log(string)
+          let file &#x3D; new File();
+          file.fileName &#x3D; fileName;
+          file.fileContent &#x3D; string; // &quot;file here is a string text readable format stored for rendering logic&quot;
+          this.RenderFile.push(file);
+        });
+    }
+  }
+}
+ /*
+  * Tree
+  * SubClass for storing render related structure
+  * @author Andrew Mitchem (1810-Oct08-Java-USF)
+  */
+class Tree{
+  name: string;
+  files: File[] &#x3D; [];
+  tree: Tree[] &#x3D; [];
+}
+ /*
+  * File 
+  * SubClass for storing render related structure
+  * @author Andrew Mitchem (1810-Oct08-Java-USF)
+  */
+class File{
+  fileName: String;
+  fileContent: String;
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;background&quot;&gt;
+  &lt;div class&#x3D;&quot;header&quot;&gt;&lt;span&gt;JSZip Demo&lt;/span&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+      &lt;button (click)&#x3D;&#x27;sendRequest()&#x27;&gt;🗁&lt;/button&gt;
+      &lt;h4 class&#x3D;&quot;display-text&quot;&gt;Explorer&lt;/h4&gt;
+      &lt;div&gt;
+      &lt;p *ngFor&#x3D;&quot;let help of RenderFile&quot; [class.selected_p]&#x3D;&quot;SelectedFile &#x3D;&#x3D;&#x3D; help&quot;  (click)&#x3D;&quot;SelectedFile &#x3D; help&quot;&gt;{{help.fileName}}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;div class&#x3D;&quot;container_div&quot;&gt;
+
+  &lt;!-- &lt;ul&gt;
+    &lt;li *ngFor&#x3D;&quot;let string of  RenderFileName&quot;&gt;
+        {{string}}
+    &lt;/li&gt;
+  &lt;/ul&gt; --&gt;
+    &lt;div class&#x3D;&quot;file_header&quot;&gt;
+      &lt;details *ngFor&#x3D;&quot;let help of RenderFile&quot;&gt;
+        &lt;summary (click)&#x3D;&quot;SelectedFile &#x3D; help&quot;&gt;{{help.fileName}}&lt;/summary&gt;
+        &lt;!-- &lt;textarea placeholder&#x3D;&quot;{{(help.fileContent | lineNumber)}}&quot; disabled&#x3D;true&gt;&lt;/textarea&gt; --&gt;
+      &lt;/details&gt;
+    &lt;/div&gt;
+  &lt;div class&#x3D;&quot;editor&quot; [innerHTML]&#x3D;&quot;SelectedFile.fileContent| lineNumber | lex&quot;&gt;  &lt;/div&gt;
+
+    &lt;!-- &lt;textarea [value]&#x3D;&quot;SelectedFile.fileContent | lineNumber &quot; disabled&gt;&lt;/textarea&gt; --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./zip-component.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">$Saturation100: rgb(24, 23, 23);
+$Saturation90: rgb(39, 38, 38);
+$Saturation80: rgb(54, 53, 53);
+$Saturation20: rgb(134, 134, 134);
+$Contrast: white;
+$Shadow: rgb(161, 236, 154);
+$Border: rgb(66, 66, 66);
+$TextImportant: white;
+$TextPassive: gray;
+$baseColor: rgb(29, 29, 29);
+.background{
+  background-color: $baseColor;
+   min-height:98vh;
+}
+.container{
+  min-height:100vh;
+}
+.editor-container{
+  position: static;
+}
+.editor{
+  widows: 60vw;
+  left: 17.4em;
+  height: 80vh;
+  text-align: left;
+  overflow-y: scroll;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  background-color: $Saturation100;
+  color: rgb(161, 229, 238);
+  cursor: default;
+
+}
+
+textarea{
+    height: 30em;
+    width: 50em;
+    resize: none;
+    background-color: $Saturation100;
+    color: $TextImportant;
+    border-radius: 2px;
+    padding: 1em;
+    border-style: none;
+    /* box-shadow: 0px 0px 8px rgb(206, 71, 177); */
+}
+::-webkit-scrollbar-thumb {
+  background-color: $Saturation80;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px $Saturation100;
+}
+::-webkit-scrollbar {
+  background-color: $Saturation100;
+}
+::-webkit-input-placeholder { /* Chrome */
+    color: $TextImportant;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color:  $TextImportant;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color:  $TextImportant;
+    opacity: 1;
+  }
+  :-moz-placeholder { /* Firefox 4 - 18 */
+    color:  $TextImportant;
+    opacity: 1;
+  }
+.file_header{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 2.2em;
+  width: 100%;
+  white-space: nowrap; 
+}
+.file_header:hover{
+  overflow-x: scroll;
+  height: 3em;
+}
+details{
+  display: inline-block;
+
+  height: 2em;
+  width: 200px;
+}
+details:focus{
+  border-color: $Border;
+  margin:0px;
+}
+details summary{
+  display: inline-block;
+  padding-top:.25em;
+  overflow: hidden; 
+  /* box-shadow: 0px 0px 8px rgb(231, 247, 89); */
+  /* border-radius: 5px; */
+  /* border-color: rgb(39, 39, 39);*/
+  border-style: solid;
+  border-left-color: $Border;
+  border-right-color:  $Border;
+  border-top-color:  $Border;
+  border-bottom-style: none;
+  border-width: 1px;
+  height: 2em;
+  width: 200px;
+  padding-left:1em;
+  background-color: $Saturation80;
+  color: $TextPassive;
+  font-weight: bold;
+}
+details summary::-webkit-details-marker {
+    display:none;
+  }
+  details:focus{
+    outline: none;
+  }
+details summary:focus{
+  /* box-shadow: 0px 0px 8px rgb(247, 71, 138); */
+  outline: none;
+  white-space: nowrap;
+}
+details[open] summary{
+  background-color: $Saturation100;
+  color: $TextImportant;
+  border-style: none;
+  border-bottom-style: none;
+  border-bottom-color: $Saturation100;
+  box-shadow: 0px 2px 2px $Saturation90;
+}
+button{
+  border-color: rgb(216, 121, 139);
+  border-style: none;
+  border-width: 0px;
+  box-shadow: 2px 2px 8px $Saturation100;
+  background-color:  $Saturation80;
+  // border-radius: 5px;
+  font-size: 2rem;
+  color: $TextPassive;
+  position: relative;
+  top:0
+}
+button:hover{
+  background-color: $Saturation100;
+  border-color: rgb(255, 203, 212);
+  color: rgb(31, 183, 243);
+}
+button:click{
+  background-color: $Saturation20;
+}
+.selected_p{
+  background-color:  $Saturation80;
+ 
+}
+.btn-container{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 14%;
+  display: block;
+  float: left;
+  height: 80vh;
+  background-color: $baseColor;
+  
+}
+.btn-container&gt;div{
+  padding-left:0px;
+  height:70vh;
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+.btn-container&gt;div&gt;p{
+  color: $TextImportant;
+  margin:0px;
+  padding:0px;
+  padding-left:1em;
+  cursor: default;
+}
+.btn-container&gt;div:hover{
+  overflow-y:auto;
+}
+
+.container_div{
+  margin-top: 1px;
+  margin-left: 0px;
+  padding-top: 0;
+  width: 90%;
+  max-width: 86%;
+  min-height:92vh;
+  height: 100%;
+  background-color: $Saturation90;
+  border-left-color: $Border;
+  border-left-width: 1px;
+  border-left-style: none;
+  display: block;
+  float:right;
+  
+}
+.header {
+ 
+  max-width: 100%;
+  background-color: $Saturation80;
+  /*
+  *background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)60%, rgba(255, 77, 246, 0.24));
+  */padding-left:10em;
+  padding-top: 2px;
+  height: 30px;
+  min-height: 30px;
+  margin: 0%;
+  box-shadow: $Shadow;
+}
+.header &gt; span{
+  // text-shadow: 1px 0px 1px #faea07f3, -1px 0px 1px #f70cd7f3;
+  font-size: 1.5em;
+  color: $TextImportant;
+}
+.display-text{
+  color: $TextImportant;
+  background-color: $Saturation90;
+  word-wrap: normal;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="background">  <div class="header"><span>JSZip Demo</span></div>    <div class="btn-container">      <button (click)=\'sendRequest()\'>🗁</button>      <h4 class="display-text">Explorer</h4>      <div>      <p *ngFor="let help of RenderFile" [class.selected_p]="SelectedFile === help"  (click)="SelectedFile = help">{{help.fileName}}</p>    </div>    </div>  <div class="container_div">  <!-- <ul>    <li *ngFor="let string of  RenderFileName">        {{string}}    </li>  </ul> -->    <div class="file_header">      <details *ngFor="let help of RenderFile">        <summary (click)="SelectedFile = help">{{help.fileName}}</summary>        <!-- <textarea placeholder="{{(help.fileContent | lineNumber)}}" disabled=true></textarea> -->      </details>    </div>  <div class="editor" [innerHTML]="SelectedFile.fileContent| lineNumber | lex">  </div>    <!-- <textarea [value]="SelectedFile.fileContent | lineNumber " disabled></textarea> -->  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProjectCardComponent', 'selector': 'app-project-card'},{'name': 'ProjectSubmissionComponent', 'selector': 'app-project-submission'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'UserActionsComponent', 'selector': 'app-user-actions'},{'name': 'ViewProjectsComponent', 'selector': 'app-view-projects'},{'name': 'ZipComponentComponent', 'selector': 'app-zip-component'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ZipComponentComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ZipComponentComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

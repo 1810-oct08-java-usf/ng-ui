@@ -1,0 +1,37 @@
+<div class="my-theme" id="userActions">
+  <mat-toolbar color="white">
+    <mat-toolbar-row>
+
+      <button id="icon" mat-icon-button mat-stroked-button mat-button matTooltip="Add New Project" matTooltipPosition="right"
+        (click)="submitProject()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <span class="example-fill-remaining-space"></span>
+      <!-- <button mat-rasied-button (click)="turnOnApproveFilter()">Approved</button> -->
+      <mat-tab-group>
+        <!-- Button is only shown if role is admin -->
+        <mat-tab *ngIf="currentUser.role === 'ROLE_ADMIN'" >
+          <ng-template mat-tab-label >
+            <span (click)="allUsers()">All Users</span>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span (click)="yourProjects()">Your Projects</span>
+          </ng-template>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span (click)="projects()">All Projects</span>
+          </ng-template>
+
+        </mat-tab>
+      </mat-tab-group>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<app-view-users *ngIf="usersPage"></app-view-users>
+<app-view-users-projects *ngIf="userProjectsPage"></app-view-users-projects>
+<app-view-projects-logic *ngIf="projectsPage"></app-view-projects-logic>

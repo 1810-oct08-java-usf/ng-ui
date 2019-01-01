@@ -1,0 +1,1413 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProjectSubmissionComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/project/project-submission/project-submission.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-project-submission</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./project-submission.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./project-submission.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#githubURL">githubURL</a>
+                            </li>
+                            <li>
+                                <a href="#githubURLRegex">githubURLRegex</a>
+                            </li>
+                            <li>
+                                <a href="#groupMemberString">groupMemberString</a>
+                            </li>
+                            <li>
+                                <a href="#invalidLink">invalidLink</a>
+                            </li>
+                            <li>
+                                <a href="#projectToUpload">projectToUpload</a>
+                            </li>
+                            <li>
+                                <a href="#questionType">questionType</a>
+                            </li>
+                            <li>
+                                <a href="#result">result</a>
+                            </li>
+                            <li>
+                                <a href="#title">title</a>
+                            </li>
+                            <li>
+                                <a href="#validGithubURL">validGithubURL</a>
+                            </li>
+                            <li>
+                                <a href="#validScreenshots">validScreenshots</a>
+                            </li>
+                            <li>
+                                <a href="#zipLinksString">zipLinksString</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFileSelected">onFileSelected</a>
+                            </li>
+                            <li>
+                                <a href="#openDialog">openDialog</a>
+                            </li>
+                            <li>
+                                <a href="#submitForm">submitForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, ngmeta: NgMetaService, dialog: MatDialog, projectService: <a href="../injectables/ProjectService.html">ProjectService</a>, snackBar: MatSnackBar, userService: <a href="../injectables/UserService.html">UserService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ngmeta</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgMetaService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>projectService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ProjectService.html" target="_self" >ProjectService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onFileSelected"></a>
+                        <span class="name">
+                            <b>
+                            onFileSelected
+                            </b>
+                            <a href="#onFileSelected"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onFileSelected(e)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="195" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:195</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>When the file input is triggered, the event is passed to this method
+which uses the properties of the event to retrieve the files chosen and
+place them in the array corresponding to the screenShots array of the project to be submitted</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>e</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>the event corresponding to the user choosing a screenshot to uplodad</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openDialog"></a>
+                        <span class="name">
+                            <b>
+                            openDialog
+                            </b>
+                            <a href="#openDialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openDialog(e)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:90</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>this method opens the dialog defined in the input-dialog component;
+after the dialog is closed the user&#39;s data is placed in the groupMembers array
+or the zipLinks array depending on which field was clicked</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>e</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>: the event of clicking either the group member or zip links fields, which both trigger the dialog to open</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitForm"></a>
+                        <span class="name">
+                            <b>
+                            submitForm
+                            </b>
+                            <a href="#submitForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>submitForm()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="155" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:155</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This method is bound to the event that the form is submitted;
+all the data of the form is placed as key/value pairs into a FormData object;
+this FormData object is then sent to the server as a post request to create a new project</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="githubURL"></a>
+                        <span class="name">
+                            <b>
+                            githubURL
+                            </b>
+                            <a href="#githubURL"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>githubURL:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="githubURLRegex"></a>
+                        <span class="name">
+                            <b>
+                            githubURLRegex
+                            </b>
+                            <a href="#githubURLRegex"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>githubURLRegex:     <code>RegExp</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>RegExp</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>githubURLRegex: holds the regular expression to validate that an entered link is formatted correctly</p>
+<div><pre class="line-numbers"><code class="language-none">- a valid link is of the format: https://github.com/&lt;github username&gt;/&lt;repository name&gt;
+- the regular expression used to validate this is: ^(https:\/\/github\.com\/[^/]+\/[^/]+)
+- this expression is checking that the link contains https://github.com/at least one of &lt;any character but a &#39;/&#39;&gt;/at least one of &lt;any character but a &#39;/&#39;&gt;`</code></pre></div><ul>
+<li>githubURL: a string to hold the user&#39;s input from the dialog</li>
+<li>@author Shawn Bickel (1810-Oct08-Java-USF)
+*</li>
+</ul>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="groupMemberString"></a>
+                        <span class="name">
+                            <b>
+                            groupMemberString
+                            </b>
+                            <a href="#groupMemberString"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>groupMemberString:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>groupMemberString and zipLinkString are both bound to the user&#39;s input of the group member field and the zip links field
+When a new group member or zip link is added, then that information is concatenated to the string.
+Because of two-way binding, the result is placed in either the group member field or the zip links field</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="invalidLink"></a>
+                        <span class="name">
+                            <b>
+                            invalidLink
+                            </b>
+                            <a href="#invalidLink"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>invalidLink:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="projectToUpload"></a>
+                        <span class="name">
+                            <b>
+                            projectToUpload
+                            </b>
+                            <a href="#projectToUpload"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>projectToUpload:     <code><a href="../interfaces/Project.html" target="_self" >Project</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Project.html" target="_self" >Project</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="questionType"></a>
+                        <span class="name">
+                            <b>
+                            questionType
+                            </b>
+                            <a href="#questionType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>questionType:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="result"></a>
+                        <span class="name">
+                            <b>
+                            result
+                            </b>
+                            <a href="#result"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>result:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title"></a>
+                        <span class="name">
+                            <b>
+                            title
+                            </b>
+                            <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>title:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>title, questionType, and result are all passed to a dialog when the user chooses either the group member or the links input field
+title and questionType represent the information which will displayed in an input dialog
+result will hold the user&#39;s response, either a group member or a link to be validated as a Github repository link</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validGithubURL"></a>
+                        <span class="name">
+                            <b>
+                            validGithubURL
+                            </b>
+                            <a href="#validGithubURL"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>validGithubURL:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validScreenshots"></a>
+                        <span class="name">
+                            <b>
+                            validScreenshots
+                            </b>
+                            <a href="#validScreenshots"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>validScreenshots:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="zipLinksString"></a>
+                        <span class="name">
+                            <b>
+                            zipLinksString
+                            </b>
+                            <a href="#zipLinksString"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>zipLinksString:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/project/project-submission/project-submission.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { MatDialog, MatSnackBar } from &#x27;@angular/material&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { NgMetaService } from &#x27;ngmeta&#x27;;
+
+import { InputDialogComponent } from &#x27;./input-dialog/input-dialog.component&#x27;;
+import { Project } from &#x27;src/app/core/models/Project&#x27;;
+import { ProjectService } from &#x27;src/app/core/services/project.service&#x27;;
+import { UserService } from &#x27;src/app/core/services/user.service&#x27;;
+
+// this interface represents data to be held and returned from an input dialog
+export interface DialogData {
+  title: string;
+  questionType: string;
+  result: string;
+}
+
+@Component({
+  selector: &#x27;app-project-submission&#x27;,
+  templateUrl: &#x27;./project-submission.component.html&#x27;,
+  styleUrls: [&#x27;./project-submission.component.scss&#x27;]
+})
+export class ProjectSubmissionComponent implements OnInit {
+  // projectToUpload is bound to the information that users enter in the form
+  projectToUpload: Project &#x3D; {};
+
+  // validScreenshots and validGithubURL determine if information has been entered correctly and if the form can be submitted
+  validScreenshots &#x3D; false;
+  validGithubURL &#x3D; false;
+  invalidLink &#x3D; false; // triggers an error message if set to true
+
+  /**
+   * title, questionType, and result are all passed to a dialog when the user chooses either the group member or the links input field
+   * title and questionType represent the information which will displayed in an input dialog
+   * result will hold the user&#x27;s response, either a group member or a link to be validated as a Github repository link
+   * @author Shawn Bickel (1810-Oct08-Java-USF)
+   */
+  title: string;
+  questionType: string;
+  result: string;
+
+  /**
+   * groupMemberString and zipLinkString are both bound to the user&#x27;s input of the group member field and the zip links field
+   * When a new group member or zip link is added, then that information is concatenated to the string.
+   * Because of two-way binding, the result is placed in either the group member field or the zip links field
+   * @author Shawn Bickel (1810-Oct08-Java-USF)
+   */
+  groupMemberString: string;
+  zipLinksString: string;
+
+  /**
+   * githubURLRegex: holds the regular expression to validate that an entered link is formatted correctly
+   *    - a valid link is of the format: https://github.com/&lt;github username&gt;/&lt;repository name&gt;
+   *    - the regular expression used to validate this is: ^(https:\/\/github\.com\/[^/]+\/[^/]+)
+   *    - this expression is checking that the link contains https://github.com/at least one of &lt;any character but a &#x27;/&#x27;&gt;/at least one of &lt;any character but a &#x27;/&#x27;&gt;&#x60;
+   * githubURL: a string to hold the user&#x27;s input from the dialog
+   *  @author Shawn Bickel (1810-Oct08-Java-USF)
+   */
+  githubURLRegex: RegExp;
+  githubURL: string;
+
+  constructor(private router: Router,
+              private ngmeta: NgMetaService,
+              private dialog: MatDialog,
+              private projectService: ProjectService,
+              private snackBar: MatSnackBar,
+              private userService: UserService) {}
+
+  ngOnInit() {
+    if (this.userService.getUser() &#x3D;&#x3D;&#x3D; null) {
+      this.router.navigate([&#x27;/auth/login&#x27;]);
+    } else {
+      this.ngmeta.setHead({ title: &#x27;Submit | RPM&#x27; });
+      this.projectToUpload.groupMembers &#x3D; [];
+      this.projectToUpload.screenShots &#x3D; [];
+      this.projectToUpload.zipLinks &#x3D; [];
+      this.groupMemberString &#x3D; &#x27;&#x27;;
+      this.zipLinksString &#x3D; &#x27;&#x27;;
+      this.githubURLRegex &#x3D; new RegExp(&#x27;^(https:\/\/github\.com\/[^/]+\/[^/]+)&#x27;);
+    }
+  }
+
+  /**
+   * this method opens the dialog defined in the input-dialog component;
+   * after the dialog is closed the user&#x27;s data is placed in the groupMembers array
+   * or the zipLinks array depending on which field was clicked
+   * @param e: the event of clicking either the group member or zip links fields, which both trigger the dialog to open
+   * @author Shawn Bickel (1810-Oct08-Java-USF)
+   */
+  openDialog(e): void {
+    // determine which input was clicked, the group members field or the zip links field
+    if (e.target.id &#x3D;&#x3D; &#x27;inputGroupMembers&#x27;) {
+      this.title &#x3D; &#x27;New Group Member&#x27;;
+      this.questionType &#x3D; &#x27;Enter the name of the group member&#x27;;
+    } else {
+      this.title &#x3D; &#x27;Repository Link&#x27;;
+      this.questionType &#x3D; &#x27;Enter the Github URL of your repository&#x27;;
+    }
+
+    // open the dialog contained in the InputDialogComponent passing the data to be displayed in the dialog
+    const dialogRef &#x3D; this.dialog.open(InputDialogComponent, {
+      width: &#x27;250px&#x27;,
+      data: {title: this.title, questionType: this.questionType, result: this.result}
+    });
+
+    // when the dialog is closed, the data is returned as an observable
+    dialogRef.afterClosed().subscribe(result &#x3D;&gt; {
+      // only proceed if the user entered information
+      if (result !&#x3D;&#x3D; undefined &amp;&amp; result !&#x3D;&#x3D; null) {
+
+        // if the user chose to add a group member, then place the input into the groupMembers array corresponding to the project to submit
+        if (e.target.id &#x3D;&#x3D; &#x27;inputGroupMembers&#x27;) {
+          this.projectToUpload.groupMembers.push(result);
+          this.groupMemberString &#x3D; this.projectToUpload.groupMembers.join(&#x27;, &#x27;);
+        } else {
+          this.githubURL &#x3D; result;
+
+         // find the exact match in the string corresponding to the github repository regular expression
+         const regexArr &#x3D; this.githubURL.match(this.githubURLRegex);
+
+         /**
+          * If the string contains no matches related to the regex or
+          * if the length of the input is greater than the match, then the link is not valid.
+          * If the matched portion of the URL is only a subset of the entire URL, then we know that the URL is not valid.
+          * The length of a valid URL will equal the length of the match found in the string corresponding the the regular expression.
+          * All links are unique
+          */
+          if (this.githubURLRegex.test(this.githubURL) &#x3D;&#x3D; false || this.githubURL.length !&#x3D; regexArr[0].length) {
+            this.invalidLink &#x3D; true;
+            return;
+          }
+
+          //  All links are unique
+          if (this.projectToUpload.zipLinks.includes(result)) {
+            return;
+          }
+
+          // at this point, the URL will be valid and will be placed in the array
+          // corresponding to the zip links array of the project to be submitted
+          this.validGithubURL &#x3D; true;
+          this.invalidLink &#x3D; false;
+          this.projectToUpload.zipLinks.push(result);
+          this.zipLinksString +&#x3D; result + &#x27; &#x27;;
+        }
+      }
+    });
+  }
+
+  /**
+   * This method is bound to the event that the form is submitted;
+   * all the data of the form is placed as key/value pairs into a FormData object;
+   * this FormData object is then sent to the server as a post request to create a new project
+   * @author Shawn Bickel (1810-Oct08-Java-USF)
+   */
+  submitForm() {
+    // FormData is used to hold form fields and their values as key/value pairs to easily transfer data in a form
+    const formData &#x3D; new FormData();
+
+    // append the data of the form as key/value pairs using field names on the server as keys and data in the form as values
+    formData.append(&#x27;name&#x27;, this.projectToUpload.name);
+    formData.append(&#x27;batch&#x27;, this.projectToUpload.batch);
+    formData.append(&#x27;trainer&#x27;, this.projectToUpload.trainer);
+    formData.append(&#x27;techStack&#x27;, this.projectToUpload.techStack);
+    formData.append(&#x27;description&#x27;, this.projectToUpload.description);
+    formData.append(&#x27;status&#x27;, &#x27;pending&#x27;);
+
+    console.log(this.projectToUpload);
+
+    // elements of an array are appended to the FormData object using the same key name
+    for (let i &#x3D; 0; i &lt; this.projectToUpload.groupMembers.length; i++) {
+      formData.append(&#x27;groupMembers&#x27;, this.projectToUpload.groupMembers[i]);
+    }
+
+    for (let j &#x3D; 0; j &lt; this.projectToUpload.screenShots.length; j++) {
+      formData.append(&#x27;screenShots&#x27;, this.projectToUpload.screenShots[j]);
+    }
+
+    for (let k &#x3D; 0; k &lt; this.projectToUpload.zipLinks.length; k++) {
+      formData.append(&#x27;zipLinks&#x27;, this.projectToUpload.zipLinks[k]);
+    }
+
+    // the FormData object is then sent to a service where it is submitted to the server as an http post request
+    this.projectService.createProject(formData).subscribe(project &#x3D;&gt; {});
+    window.location.reload();
+    this.router.navigate([&#x27;/home&#x27;]);
+  }
+
+  /**
+   * When the file input is triggered, the event is passed to this method
+   * which uses the properties of the event to retrieve the files chosen and
+   * place them in the array corresponding to the screenShots array of the project to be submitted
+   *
+   * @param e the event corresponding to the user choosing a screenshot to uplodad
+   */
+  onFileSelected(e) {
+    for (let i &#x3D; 0; i &lt; e.target.files.length; i++) {
+      this.projectToUpload.screenShots.push(e.target.files[i]);
+      this.validScreenshots &#x3D; true;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-navbar&gt;&lt;/app-navbar&gt;
+ &lt;div class&#x3D;&quot;my-theme&quot;&gt;
+    &lt;h1 id&#x3D;&quot;title&quot;&gt;Submit a Project&lt;/h1&gt;
+    &lt;form  #projectForm&#x3D;&quot;ngForm&quot; novalidate&gt;
+        &lt;table class&#x3D;&quot;example-full-width&quot; cellspacing&#x3D;&quot;5&quot;&gt;&lt;tr&gt;
+          &lt;td&gt;
+              &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Project Name&lt;/mat-label&gt;
+                  &lt;mat-error *ngIf&#x3D;&quot;!name.valid || name.pristine&quot;&gt;Project name is required&lt;/mat-error&gt;
+                  &lt;input id&#x3D;&quot;project_name&quot; name&#x3D;&quot;projectName&quot; type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;Project Name&quot; [(ngModel)]&#x3D;&quot;projectToUpload.name&quot; 
+                  [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; required #name&#x3D;&quot;ngModel&quot;&gt;
+                &lt;/mat-form-field&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+              &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Batch Name&lt;/mat-label&gt;
+                  &lt;mat-error *ngIf&#x3D;&quot;!batch.valid || batch.pristine&quot;&gt;Batch name is required&lt;/mat-error&gt;
+                  &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;batchName&quot; matInput placeholder&#x3D;&quot;Batch Name&quot; [(ngModel)]&#x3D;&quot;projectToUpload.batch&quot; 
+                  [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; required #batch&#x3D;&quot;ngModel&quot;&gt;
+                &lt;/mat-form-field&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;&lt;/table&gt;
+      
+    
+        &lt;table class&#x3D;&quot;example-full-width&quot; cellspacing&#x3D;&quot;5&quot;&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+                &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Trainer Name&lt;/mat-label&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;!trainerName.valid || trainerName.pristine&quot;&gt;Trainer name is required&lt;/mat-error&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;trainers&quot; matInput placeholder&#x3D;&quot;Trainer Name&quot; [(ngModel)]&#x3D;&quot;projectToUpload.trainer&quot; 
+                    [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; required #trainerName&#x3D;&quot;ngModel&quot;&gt;
+                  &lt;/mat-form-field&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Group Members&lt;/mat-label&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;!groupMembers.valid || groupMembers.pristine&quot;&gt;Group members are required&lt;/mat-error&gt;
+                  &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;inputGroupMembers&quot; matInput name&#x3D;&quot;groupMembers&quot; placeholder&#x3D;&quot;Group Members&quot; readonly [(ngModel)]&#x3D;&quot;groupMemberString&quot; 
+                    [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; (click)&#x3D;&quot;openDialog($event)&quot; required #groupMembers&#x3D;&quot;ngModel&quot;&gt;
+                  &lt;/mat-form-field&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+    
+        &lt;table class&#x3D;&quot;example-full-width&quot; cellspacing&#x3D;&quot;5&quot;&gt;&lt;tr&gt;
+            &lt;td&gt;
+                &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;  appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Description&lt;/mat-label&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;!description.valid || description.pristine&quot;&gt;Description is required&lt;/mat-error&gt;
+                    &lt;textarea matInput name&#x3D;&quot;description&quot; placeholder&#x3D;&quot;Project Description&quot; [(ngModel)]&#x3D;&quot;projectToUpload.description&quot; 
+                    [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; #description&#x3D;&quot;ngModel&quot; required&gt;&lt;/textarea&gt;
+                  &lt;/mat-form-field&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;&lt;/table&gt;
+    
+        &lt;table class&#x3D;&quot;example-full-width&quot; cellspacing&#x3D;&quot;5&quot;&gt;
+            &lt;tr&gt;
+              &lt;td&gt;
+                  &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;outline&quot;&gt;
+                        &lt;mat-label&gt;Repository Links&lt;/mat-label&gt;
+                      &lt;mat-error *ngIf&#x3D;&quot;!zipLinks.valid || zipLinks.pristine || invalidLink&quot;&gt;A Github link is required in format: https://github.com/[Github username]/[Repository Name]&lt;/mat-error&gt;
+                      &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;inputGithubLink&quot; name&#x3D;&quot;repoLinks&quot; readonly matInput placeholder&#x3D;&quot;Project Repository Links&quot; [(ngModel)]&#x3D;&quot;zipLinksString&quot; 
+                      [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; (click)&#x3D;&quot;openDialog($event)&quot; #zipLinks&#x3D;&quot;ngModel&quot; required&gt;                    &lt;/mat-form-field&gt;
+              &lt;/td&gt;
+              &lt;td&gt;&lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Technology Stack&lt;/mat-label&gt;
+                  &lt;mat-error *ngIf&#x3D;&quot;!techStack.valid || techStack.pristine&quot;&gt;Technology stack is required&lt;/mat-error&gt;
+                  &lt;input type&#x3D;text matInput name&#x3D;&quot;stack&quot; placeholder&#x3D;&quot;Project Technology Stack&quot; [(ngModel)]&#x3D;&quot;projectToUpload.techStack&quot; 
+                  [ngModelOptions]&#x3D;&quot;{standalone: true}&quot; required #techStack&#x3D;&quot;ngModel&quot;&gt;
+                &lt;/mat-form-field&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+    
+          &lt;table class&#x3D;&quot;example-full-width&quot; cellspacing&#x3D;&quot;5&quot;&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;span id&#x3D;&quot;requiredScreenShotButton&quot;&gt;* &lt;/span&gt;
+                    &lt;button id&#x3D;&quot;buttonScreenshotTrigger&quot; mat-flat-button color&#x3D;&quot;accent&quot; (click)&#x3D;&quot;uploadScreenshots.click()&quot;&gt;Choose Project Screenshots: &lt;/button&gt;
+                    &lt;span *ngFor&#x3D;&quot;let screenshot of projectToUpload.screenShots&quot;&gt; 
+                        &lt;span&gt; {{ screenshot.name }} &lt;/span&gt;
+                    &lt;/span&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;br&gt;
+           &lt;button (click)&#x3D;&quot;submitForm()&quot; [disabled]&#x3D;&quot;(!name.valid || name.pristine) || (!batch.valid || batch.pristine) || (!trainerName.valid || trainerName.pristine) || 
+           (!groupMembers.valid) || (!description.valid || description.pristine) || (!zipLinks.valid) || 
+           (!techStack.valid || techStack.pristine) || !validScreenshots || !validGithubURL&quot; type&#x3D;&quot;submit&quot; id&#x3D;&quot;submit&quot; mat-flat-button color&#x3D;&quot;accent&quot;&gt;Submit Project&lt;/button&gt;
+           &lt;input id&#x3D;&quot;screenShots&quot; name&#x3D;&quot;screenShotFiles&quot; #uploadScreenshots hidden type&#x3D;&quot;file&quot; (change)&#x3D;&quot;onFileSelected($event)&quot; accept&#x3D;&quot;image/*&quot; multiple required/&gt;
+      &lt;/form&gt;
+ &lt;/div&gt;
+ </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./project-submission.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;~@angular/material/theming&#x27;;
+$black: mat-color($mat-grey,900);
+$font: &#x27;Courier New&#x27;, sans-serif;
+$alignment: center;
+$minimal-padding: 1%;
+
+#grid{
+    height: 85%;
+    width: 100%;
+    margin: 0;
+}
+
+#title{
+    text-align: $alignment;
+    padding: $minimal-padding;
+    
+}
+
+#submit{
+    text-align: $alignment;
+    padding-left: 10%;;
+    padding-right: 10%;
+}
+
+form {
+    width: 85%;
+    text-align: $alignment;
+    height: 85%;
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  #buttonScreenshotTrigger{
+      background-color:#ff8a00;
+  }
+
+  #requiredScreenShotButton{
+    color: red; 
+    font-size: 23px;
+  }
+ 
+
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar> <div class="my-theme">    <h1 id="title">Submit a Project</h1>    <form  #projectForm="ngForm" novalidate>        <table class="example-full-width" cellspacing="5"><tr>          <td>              <mat-form-field class="example-full-width" appearance="outline">                    <mat-label>Project Name</mat-label>                  <mat-error *ngIf="!name.valid || name.pristine">Project name is required</mat-error>                  <input id="project_name" name="projectName" type="text" matInput placeholder="Project Name" [(ngModel)]="projectToUpload.name"                   [ngModelOptions]="{standalone: true}" required #name="ngModel">                </mat-form-field>          </td>          <td>              <mat-form-field class="example-full-width" appearance="outline">                    <mat-label>Batch Name</mat-label>                  <mat-error *ngIf="!batch.valid || batch.pristine">Batch name is required</mat-error>                  <input type="text" name="batchName" matInput placeholder="Batch Name" [(ngModel)]="projectToUpload.batch"                   [ngModelOptions]="{standalone: true}" required #batch="ngModel">                </mat-form-field>          </td>        </tr></table>                  <table class="example-full-width" cellspacing="5">          <tr>            <td>                <mat-form-field class="example-full-width" appearance="outline">                        <mat-label>Trainer Name</mat-label>                    <mat-error *ngIf="!trainerName.valid || trainerName.pristine">Trainer name is required</mat-error>                    <input type="text" name="trainers" matInput placeholder="Trainer Name" [(ngModel)]="projectToUpload.trainer"                     [ngModelOptions]="{standalone: true}" required #trainerName="ngModel">                  </mat-form-field>            </td>            <td>                <mat-form-field class="example-full-width" appearance="outline">                        <mat-label>Group Members</mat-label>                    <mat-error *ngIf="!groupMembers.valid || groupMembers.pristine">Group members are required</mat-error>                  <input type="text" id="inputGroupMembers" matInput name="groupMembers" placeholder="Group Members" readonly [(ngModel)]="groupMemberString"                     [ngModelOptions]="{standalone: true}" (click)="openDialog($event)" required #groupMembers="ngModel">                  </mat-form-field>            </td>          </tr>        </table>            <table class="example-full-width" cellspacing="5"><tr>            <td>                <mat-form-field class="example-full-width"  appearance="outline">                        <mat-label>Description</mat-label>                    <mat-error *ngIf="!description.valid || description.pristine">Description is required</mat-error>                    <textarea matInput name="description" placeholder="Project Description" [(ngModel)]="projectToUpload.description"                     [ngModelOptions]="{standalone: true}" #description="ngModel" required></textarea>                  </mat-form-field>            </td>        </tr></table>            <table class="example-full-width" cellspacing="5">            <tr>              <td>                  <mat-form-field class="example-full-width" appearance="outline">                        <mat-label>Repository Links</mat-label>                      <mat-error *ngIf="!zipLinks.valid || zipLinks.pristine || invalidLink">A Github link is required in format: https://github.com/[Github username]/[Repository Name]</mat-error>                      <input type="text" id="inputGithubLink" name="repoLinks" readonly matInput placeholder="Project Repository Links" [(ngModel)]="zipLinksString"                       [ngModelOptions]="{standalone: true}" (click)="openDialog($event)" #zipLinks="ngModel" required>                    </mat-form-field>              </td>              <td><mat-form-field class="example-full-width" appearance="outline">                    <mat-label>Technology Stack</mat-label>                  <mat-error *ngIf="!techStack.valid || techStack.pristine">Technology stack is required</mat-error>                  <input type=text matInput name="stack" placeholder="Project Technology Stack" [(ngModel)]="projectToUpload.techStack"                   [ngModelOptions]="{standalone: true}" required #techStack="ngModel">                </mat-form-field></td>            </tr>          </table>              <table class="example-full-width" cellspacing="5">              <tr>                <td>                    <span id="requiredScreenShotButton">* </span>                    <button id="buttonScreenshotTrigger" mat-flat-button color="accent" (click)="uploadScreenshots.click()">Choose Project Screenshots: </button>                    <span *ngFor="let screenshot of projectToUpload.screenShots">                         <span> {{ screenshot.name }} </span>                    </span>                </td>              </tr>            </table>            <br>           <button (click)="submitForm()" [disabled]="(!name.valid || name.pristine) || (!batch.valid || batch.pristine) || (!trainerName.valid || trainerName.pristine) ||            (!groupMembers.valid) || (!description.valid || description.pristine) || (!zipLinks.valid) ||            (!techStack.valid || techStack.pristine) || !validScreenshots || !validGithubURL" type="submit" id="submit" mat-flat-button color="accent">Submit Project</button>           <input id="screenShots" name="screenShotFiles" #uploadScreenshots hidden type="file" (change)="onFileSelected($event)" accept="image/*" multiple required/>      </form> </div> </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppLogoComponent', 'selector': 'app-app-logo'},{'name': 'EditProjectComponent', 'selector': 'app-edit-project'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'InputDialogComponent', 'selector': 'app-input-dialog'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProjectCardComponent', 'selector': 'app-project-card'},{'name': 'ProjectSubmissionComponent', 'selector': 'app-project-submission'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'UserActionsComponent', 'selector': 'app-user-actions'},{'name': 'ViewProjectsComponent', 'selector': 'app-view-projects'},{'name': 'ZipComponent', 'selector': 'app-zip-component'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProjectSubmissionComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProjectSubmissionComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

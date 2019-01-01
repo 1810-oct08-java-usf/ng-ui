@@ -1,0 +1,72 @@
+<app-app-logo></app-app-logo>
+<div class="my-theme" id="registration-container">
+  <mat-jumbotron id="jumbotron">
+    <mat-jumbotron-content id="content">
+      <mat-vertical-stepper [linear]="isLinear">
+        <mat-step [stepControl]="firstFormGroup">
+          <form ngNativeValidate [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="First Name" formControlName="firstName" required minlength="1" [(ngModel)]="user.firstName">
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+              <input matInput placeholder="Last Name" formControlName="lastName" required minlength="1" [(ngModel)]="user.lastName">
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+              <input matInput type="email" placeholder="Revature Email" formControlName="email" required [(ngModel)]="user.email"
+                matTooltip="Must be valid @revature.com Email." [pattern]="emailPattern" (focusout)="checkIfEmailIsInUse()" (keyup)="checkIfEmailIsInUseKey()">
+            </mat-form-field>
+            <div id="registerSpinner" *ngIf='checkingIfEmailIsInUse'><mat-spinner [diameter]="30"></mat-spinner><span>Checking email availability</span></div>
+            <div id="availableEmail" *ngIf='emailIsAvailable'>Email '{{emailToCheck}}' is available!</div>
+            <div id="emailNotAvailable" *ngIf='emailIsNotAvailable'>Email '{{emailToCheck}}' is already in use</div>
+            <div>
+              <button mat-button matStepperNext type="submit" ng-disabled=!vm.form.$valid>Next</button>
+              <a mat-button routerLink="/auth/login">Return to Login</a>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form ngNativeValidate [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Create a Username and Password</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Username" formControlName="username"  minlength="8" required 
+                [pattern]="usernamePattern"
+                matTooltip="No underscores at beginning or end of username. Must be at least 8 characters"
+                [(ngModel)]="user.username" (focusout)="checkIfUsernameIsAvailable()" (keyup)="checkIfUsernameIsAvailableKey()">
+            </mat-form-field>
+            <div id="registerSpinner" *ngIf='checkingIfUsernameIsAvailable'><mat-spinner [diameter]="30"></mat-spinner><span>Checking Username</span></div>
+            <div id="availableEmail" *ngIf='usernameIsAvailable'>Username '{{usernameToCheck}}' is available!</div>
+            <div id="emailNotAvailable" *ngIf='usernameIsNotAvailable'>Username '{{usernameToCheck}}' is already in use</div>
+            <br />
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password" id="inputPassword" required minlength="8" [(ngModel)]="user.password">
+              <mat-hint>Must be 8 characters</mat-hint>
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+              <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" required minlength="8" [(ngModel)]="confirmPassword">
+              <mat-hint>Passwords must match</mat-hint>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext type="submit" ng-disabled=!vm.form.$valid>Next</button>
+              <a mat-button routerLink="/auth/login">Return to Login</a>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-flat-button type="button" (click)="register()"><strong>Create Account</strong></button>
+            <a mat-button routerLink="/auth/login">Cancel</a>
+            <div id="registerSpinner" *ngIf='registering'><mat-spinner [diameter]="30"></mat-spinner><span>Registering</span></div>
+            <div id="registerSpinner" *ngIf='authenticating'><mat-spinner [diameter]="30"></mat-spinner><span>Authenticating</span></div>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+    </mat-jumbotron-content>
+  </mat-jumbotron>
+</div>

@@ -1,0 +1,110 @@
+<div id="view-project-layout">
+  <!-- a field for users to enter in a string to filter the table -->
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  
+  <div class="table-container mat-elevation-z8 my-theme" color="primary">
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let project"> {{project.name}} </td>
+      </ng-container>
+  
+      <!-- Batch Column -->
+      <ng-container matColumnDef="batch">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Batch </th>
+        <td mat-cell *matCellDef="let project"> {{project.batch}} </td>
+      </ng-container>
+  
+      <!-- Trainer Column (Assume there are only one trainer per batch) -->
+      <ng-container matColumnDef="trainer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Trainer </th>
+        <td mat-cell *matCellDef="let project"> {{project.trainer}} </td>
+      </ng-container>
+
+      <!-- Tech Stack Column -->
+      <ng-container matColumnDef="techStack">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Stack </th>
+        <td mat-cell *matCellDef="let project"> {{project.techStack}} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+        <td mat-cell *matCellDef="let project"> {{project.status}} </td>
+      </ng-container>
+  
+      <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let project" [attr.colspan]="displayedColumns.length">
+          <div class="project-detail" [@detailExpand]="project == expandedProject ? 'expanded' : 'collapsed'">
+
+            <div id="expanded-row" class="container" fxLayout="row">
+              <!-- display custom image slider for project's screenshots -->
+              <div fxLayout.xs="column">
+                <button id="arrow-icon" mat-icon-button mat-stroked-button color="primary" mat-button matTooltip="Previous"
+                  matTooltipPosition="left" (click)="previousImage(project.screenShots.length)">
+                  <mat-icon>skip_previous</mat-icon>
+                </button>
+              </div>
+              <div fxLayout.xs="column">
+                <img id="project-image" alt="Image Unavailable" [src]="project.screenShots[imagePage%project.screenShots.length]"
+                  onerror="this.src='../../../assets/icons/RPM_Logo.png'">
+              </div>
+              <div fxLayout.xs="column">
+                <button id="arrow-icon" mat-icon-button mat-stroked-button color="primary" mat-button matTooltip="Next"
+                  matTooltipPosition="right" (click)="nextImage(project.screenShots.length)">
+                  <mat-icon>skip_next</mat-icon>
+                </button>
+              </div>
+
+              <!-- display project's group members and project's description -->
+              <div class="container" fxLayout="column">
+                  <div id="group-members-label">
+                    <label><strong> Group Members: </strong></label>
+                    <div>{{project.groupMembers.join(', ')}}</div>
+                  </div>
+  
+                  <!--  this line is needed for styling purpose -->
+  
+                  <div id="group-members-label">
+                    <label><strong> Description: </strong></label>
+                    <div>{{project.description}}</div>
+                  </div>
+                </div>
+  
+
+              <!-- display buttons for routing to project's codebase as well as routing to editing a project -->
+              <div fxLayout.xs="column">
+                <div class="container" fxLayout="row">
+                  <a id="codebase-button" target="_blank">
+                    <button (click)="codebase(project)" mat-icon-button mat-stroked-button color="primary" mat-button
+                      matTooltip="Codebase" matTooltipPosition="left">
+                      <mat-icon>folder_special</mat-icon>
+                    </button>
+                  </a>
+                  <a id="edit-button">
+                    <button *ngIf="trainerCanEdit" (click)="edit(project)" id="icon" mat-icon-button
+                      mat-stroked-button color="primary" matTooltip="Edit" matTooltipPosition="right">
+                      <mat-icon id="profile-icon">edit</mat-icon>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let project; columns: displayedColumns;" class="project-row" [class.expanded-row]="expandedProject === project"
+        (click)="expandedProject = expandedProject === project ? null : project; canEdit(project)">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+    </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

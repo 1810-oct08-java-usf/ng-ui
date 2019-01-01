@@ -1,0 +1,919 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>EditProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/account/edit-profile/edit-profile.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-edit-profile</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./edit-profile.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./edit-profile.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fname">fname</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#setReadOnly">setReadOnly</a>
+                            </li>
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#updateProfile">updateProfile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/account/edit-profile/edit-profile.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/account/edit-profile/edit-profile.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateProfile"></a>
+                        <span class="name">
+                            <b>
+                            updateProfile
+                            </b>
+                            <a href="#updateProfile"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>updateProfile()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/account/edit-profile/edit-profile.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fname"></a>
+                        <span class="name">
+                            <b>
+                            fname
+                            </b>
+                            <a href="#fname"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>fname:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;    blah   &#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/account/edit-profile/edit-profile.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/account/edit-profile/edit-profile.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setReadOnly"></a>
+                        <span class="name">
+                            <b>
+                            setReadOnly
+                            </b>
+                            <a href="#setReadOnly"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>setReadOnly:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/account/edit-profile/edit-profile.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                            user
+                            </b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>user:     <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/account/edit-profile/edit-profile.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { User } from &#x27;src/app/core/models/User&#x27;;
+
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-edit-profile&#x27;,
+  templateUrl: &#x27;./edit-profile.component.html&#x27;,
+  styleUrls: [&#x27;./edit-profile.component.scss&#x27;]
+})
+export class EditProfileComponent implements OnInit {
+
+  form: FormGroup;
+  user: User; 
+  setReadOnly: boolean &#x3D; true;
+
+  constructor(private router: Router, private fb: FormBuilder) { }
+
+  ngOnInit() {
+    let tempUser: User &#x3D; {
+      id: 1,
+      firstname: &#x27;Yuki&#x27;,
+      lastname: &#x27;Mano&#x27;,
+      username: &#x27;ysm&#x27;,
+      password: &#x27;password&#x27;,
+      userRole: &#x27;trainer&#x27;,
+      email: &#x27;ym@gmail.com&#x27;,
+    }
+
+    window.localStorage.setItem(&#x27;user&#x27;, JSON.stringify(tempUser)); 
+
+    this.user &#x3D; JSON.parse(window.localStorage.getItem(&#x27;user&#x27;));
+
+    this.form &#x3D; this.fb.group({
+      firstname: [this.user.firstname, Validators.required],
+      lastname: [this.user.lastname, Validators.required],
+      email: [this.user.email, [Validators.required, Validators.email]],
+      username: [this.user.username, Validators.required],
+      password: [this.user.password, Validators.required],
+      retypePassword: [&#x27;&#x27;, Validators.required],
+    });
+  }
+
+  fname: string &#x3D; &#x27;    blah   &#x27;;
+
+  updateProfile() {
+    console.log(this.fname.trim());
+
+    let updatedUserInfo: User &#x3D; {
+      id: this.user.id,
+      firstname: this.form.get(&#x27;firstname&#x27;).value,
+      lastname: this.form.get(&#x27;lastname&#x27;).value,
+      email: this.form.get(&#x27;email&#x27;).value,
+      username: this.form.get(&#x27;username&#x27;).value,
+      password: this.form.get(&#x27;password&#x27;).value,
+      userRole: this.user.userRole,
+    }; 
+
+    // this line should be put in user service 
+    window.localStorage.setItem(&#x27;user&#x27;, JSON.stringify(updatedUserInfo));
+
+    
+    console.log(updatedUserInfo);
+  }
+
+}
+
+/*
+
+TO-DO
+
+validdation:
+- password and retype password must match 
+- usernme must be uniqued (call to the db)
+- email must be uniqued (call to the db) *not required*
+
+- mat-error for every field input 
+
+- disabled update button when all inputs are not filled 
+- include &#x27;cancel&#x27; button, which brings back to &#x27;view&#x27; page and repopulate fields with local storage, which has not been changed 
+
+- create a function in user-service which call to the server side and set the data into local storage
+
+*/</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+  &lt;div class&#x3D;&quot;form-row&quot;&gt;
+    &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+      &lt;label for&#x3D;&quot;inputFirstName&quot;&gt;First Name&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputFirstName&quot; placeholder&#x3D;&quot;First Name&quot; formControlName&#x3D;&quot;firstname&quot;
+        required&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+      &lt;label for&#x3D;&quot;inputLastName&quot;&gt;Last Name&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputLastName&quot; placeholder&#x3D;&quot;Last Name&quot; formControlName&#x3D;&quot;lastname&quot;
+        required&gt;
+    &lt;/div&gt;
+  &lt;/div&gt; --&gt;
+&lt;!-- &lt;div class&#x3D;&quot;form-row&quot;&gt;
+    &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+      &lt;label for&#x3D;&quot;inputEmail&quot;&gt;Email&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputEmail&quot; placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;email&quot; required&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;form-row&quot;&gt;
+    &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+      &lt;label for&#x3D;&quot;inputUsername&quot;&gt;Username&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputUsername&quot; placeholder&#x3D;&quot;Username&quot; formControlName&#x3D;&quot;username&quot;
+        required&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+      &lt;label for&#x3D;&quot;inputPassword&quot;&gt;Password&lt;/label&gt;
+      &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputPassword&quot; placeholder&#x3D;&quot;Password&quot; formControlName&#x3D;&quot;password&quot;
+        required&gt;
+    &lt;/div&gt;
+  &lt;/div&gt; --&gt;
+&lt;!-- &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn ts-button&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt; --&gt;
+
+
+&lt;div class&#x3D;&quot;container&quot;&gt;
+
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+
+    &lt;div class&#x3D;&quot;col-2&quot;&gt;&lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;jumbotron&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-9&quot;&gt;
+          &lt;h1&gt;Profile&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-3&quot;&gt;
+          &lt;h3 id&#x3D;&quot;user-role&quot;&gt;{{user.userRole}}&lt;/h3&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p&gt; Edit your profile information, and then press the &#x27;Save&#x27; button to update your information.&lt;/p&gt;
+      &lt;hr&gt;  
+        &lt;form [formGroup]&#x3D;&quot;form&quot; class&#x3D;&quot;col-8&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;
+              &lt;mat-form-field&gt;
+                &lt;input matInput readonly&#x3D;{{setReadOnly}} id&#x3D;&quot;inputFirstName&quot; placeholder&#x3D;&quot;First Name&quot; formControlName&#x3D;&quot;firstname&quot;
+                  required&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;
+              &lt;mat-form-field&gt;
+                &lt;input matInput readonly&#x3D;{{setReadOnly}} id&#x3D;&quot;inputLastName&quot; placeholder&#x3D;&quot;Last Name&quot; formControlName&#x3D;&quot;lastname&quot;
+                  required&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;
+              &lt;mat-form-field&gt;
+                &lt;input matInput readonly&#x3D;{{setReadOnly}} id&#x3D;&quot;inputEmail&quot; placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;email&quot;
+                  required&gt;
+                  &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;).hasError(&#x27;email&#x27;) &amp;&amp; !form.get(&#x27;email&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+                      Please enter a valid email address
+                    &lt;/mat-error&gt;
+                  &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+                      Email is &lt;strong&gt;required&lt;/strong&gt;
+                    &lt;/mat-error&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;
+              &lt;mat-form-field&gt;
+                &lt;input matInput readonly&#x3D;{{setReadOnly}} id&#x3D;&quot;inputUsername&quot; placeholder&#x3D;&quot;Username&quot; formControlName&#x3D;&quot;username&quot;
+                  required&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;
+              &lt;mat-form-field&gt;
+                &lt;input matInput readonly&#x3D;{{setReadOnly}} type&#x3D;&quot;password&quot; id&#x3D;&quot;inputPassword&quot; placeholder&#x3D;&quot;Password&quot;
+                  formControlName&#x3D;&quot;password&quot; required&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;&lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-4&quot;&gt;
+              &lt;mat-form-field *ngIf&#x3D;&quot;!setReadOnly&quot;&gt;
+                &lt;input matInput type&#x3D;&quot;password&quot; id&#x3D;&quot;inputRetypePassword&quot; placeholder&#x3D;&quot;Retype Password&quot; formControlName&#x3D;&quot;retypePassword&quot;
+                  required&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;button *ngIf&#x3D;&quot;setReadOnly&quot; type&#x3D;&quot;button&quot; mat-stroked-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;setReadOnly&#x3D;false&quot;&gt;Edit&lt;/button&gt;
+            &lt;button *ngIf&#x3D;&quot;!setReadOnly&quot; type&#x3D;&quot;button&quot; mat-stroked-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;setReadOnly&#x3D;true; updateProfile()&quot;&gt;Save&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;col-2&quot;&gt;&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;!-- &lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;&lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;col-6&quot;&gt;
+      &lt;hr&gt;
+      &lt;div class&#x3D;&quot;jumbotron&quot;&gt;
+        &lt;form class&#x3D;&quot;form-group&quot; (ngSubmit)&#x3D;&quot;updateProfile()&quot; id&#x3D;&quot;editProfile&quot;&gt;
+
+          &lt;div class&#x3D;&quot;form-row&quot;&gt;
+            &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+              &lt;label for&#x3D;&quot;inputFirstName&quot;&gt;First Name&lt;/label&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputFirstName&quot; placeholder&#x3D;&quot;First Name&quot;
+                required&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;form-group col-md-4&quot;&gt;
+              &lt;label for&#x3D;&quot;inputLastName&quot;&gt;Last Name&lt;/label&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inputLastName&quot; placeholder&#x3D;&quot;Last Name&quot;
+                required&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+
+          &lt;div class&#x3D;&quot;form-row&quot;&gt;
+            &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+              &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+                &lt;label for&#x3D;&quot;first_name&quot;&gt;
+                  &lt;h4&gt;First Name&lt;/h4&gt;
+                &lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;first_name&quot; id&#x3D;&quot;first_name&quot; placeholder&#x3D;&quot;{{user.firstname}}&quot;
+                  title&#x3D;&quot;Update your first name if wanted.&quot;&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+                &lt;label for&#x3D;&quot;last_name&quot;&gt;
+                  &lt;h4&gt;Last name&lt;/h4&gt;
+                &lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;last_name&quot; id&#x3D;&quot;last_name&quot; placeholder&#x3D;&quot;last name&quot; title&#x3D;&quot;enter your last name if any.&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+            &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+              &lt;label for&#x3D;&quot;phone&quot;&gt;
+                &lt;h4&gt;Phone&lt;/h4&gt;
+              &lt;/label&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;phone&quot; id&#x3D;&quot;phone&quot; placeholder&#x3D;&quot;enter phone&quot; title&#x3D;&quot;enter your phone number if any.&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+              &lt;label for&#x3D;&quot;mobile&quot;&gt;
+                &lt;h4&gt;Mobile&lt;/h4&gt;
+              &lt;/label&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;mobile&quot; id&#x3D;&quot;mobile&quot; placeholder&#x3D;&quot;enter mobile number&quot; title&#x3D;&quot;enter your mobile number if any.&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+            &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+              &lt;label for&#x3D;&quot;email&quot;&gt;
+                &lt;h4&gt;Email&lt;/h4&gt;
+              &lt;/label&gt;
+              &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;email&quot; id&#x3D;&quot;email&quot; placeholder&#x3D;&quot;you@email.com&quot; title&#x3D;&quot;enter your email.&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+            &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+              &lt;label for&#x3D;&quot;email&quot;&gt;
+                &lt;h4&gt;Location&lt;/h4&gt;
+              &lt;/label&gt;
+              &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;location&quot; placeholder&#x3D;&quot;somewhere&quot; title&#x3D;&quot;enter a location&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+            &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+              &lt;label for&#x3D;&quot;password&quot;&gt;
+                &lt;h4&gt;Password&lt;/h4&gt;
+              &lt;/label&gt;
+              &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;password&quot; id&#x3D;&quot;password&quot; placeholder&#x3D;&quot;password&quot; title&#x3D;&quot;enter your password.&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+            &lt;div class&#x3D;&quot;col-xs-6&quot;&gt;
+              &lt;label for&#x3D;&quot;password2&quot;&gt;
+                &lt;h4&gt;Verify&lt;/h4&gt;
+              &lt;/label&gt;
+              &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;password2&quot; id&#x3D;&quot;password2&quot; placeholder&#x3D;&quot;password2&quot; title&#x3D;&quot;enter your password2.&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;div class&#x3D;&quot;col-xs-12&quot;&gt;
+              &lt;br&gt;
+              &lt;button class&#x3D;&quot;btn btn-lg btn-success pull-left&quot; type&#x3D;&quot;submit&quot;&gt;&lt;i class&#x3D;&quot;glyphicon glyphicon-ok-sign&quot;&gt;&lt;/i&gt;
+                Save&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-3&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; --&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./edit-profile.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.container {
+  height: 100%;
+  width: 100%;
+}
+
+#user-role {
+  margin-top: -48%;
+  border-color: black;  
+}
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .container &gt; * {
+//   width: 100%;
+// }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">  <div class="form-row">    <div class="form-group col-md-4">      <label for="inputFirstName">First Name</label>      <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" formControlName="firstname"        required>    </div>    <div class="form-group col-md-4">      <label for="inputLastName">Last Name</label>      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" formControlName="lastname"        required>    </div>  </div> --><!-- <div class="form-row">    <div class="form-group col-md-4">      <label for="inputEmail">Email</label>      <input type="text" class="form-control" id="inputEmail" placeholder="Email" formControlName="email" required>    </div>  </div>  <div class="form-row">    <div class="form-group col-md-4">      <label for="inputUsername">Username</label>      <input type="text" class="form-control" id="inputUsername" placeholder="Username" formControlName="username"        required>    </div>    <div class="form-group col-md-4">      <label for="inputPassword">Password</label>      <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password"        required>    </div>  </div> --><!-- <button type="submit" class="btn ts-button">Submit</button></form> --><div class="container">  <div class="row">    <div class="col-2"></div>    <div class="jumbotron">      <div class="row">        <div class="col-9">          <h1>Profile</h1>        </div>        <div class="col-3">          <h3 id="user-role">{{user.userRole}}</h3>        </div>      </div>      <p> Edit your profile information, and then press the \'Save\' button to update your information.</p>      <hr>          <form [formGroup]="form" class="col-8">          <div class="row">            <div class="col-4">              <mat-form-field>                <input matInput readonly={{setReadOnly}} id="inputFirstName" placeholder="First Name" formControlName="firstname"                  required>              </mat-form-field>            </div>            <div class="col-4"></div>            <div class="col-4">              <mat-form-field>                <input matInput readonly={{setReadOnly}} id="inputLastName" placeholder="Last Name" formControlName="lastname"                  required>              </mat-form-field>            </div>          </div>          <div class="row">            <div class="col-4">              <mat-form-field>                <input matInput readonly={{setReadOnly}} id="inputEmail" placeholder="Email" formControlName="email"                  required>                  <mat-error *ngIf="form.get(\'email\').hasError(\'email\') && !form.get(\'email\').hasError(\'required\')">                      Please enter a valid email address                    </mat-error>                  <mat-error *ngIf="form.get(\'email\').hasError(\'required\')">                      Email is <strong>required</strong>                    </mat-error>              </mat-form-field>            </div>            <div class="col-4"></div>            <div class="col-4">              <mat-form-field>                <input matInput readonly={{setReadOnly}} id="inputUsername" placeholder="Username" formControlName="username"                  required>              </mat-form-field>            </div>          </div>          <div class="row">            <div class="col-4">              <mat-form-field>                <input matInput readonly={{setReadOnly}} type="password" id="inputPassword" placeholder="Password"                  formControlName="password" required>              </mat-form-field>            </div>            <div class="col-4"></div>            <div class="col-4">              <mat-form-field *ngIf="!setReadOnly">                <input matInput type="password" id="inputRetypePassword" placeholder="Retype Password" formControlName="retypePassword"                  required>              </mat-form-field>            </div>          </div>          <div class="row">            <button *ngIf="setReadOnly" type="button" mat-stroked-button color="primary" (click)="setReadOnly=false">Edit</button>            <button *ngIf="!setReadOnly" type="button" mat-stroked-button color="primary" (click)="setReadOnly=true; updateProfile()">Save</button>          </div>        </form>    </div>    <div class="col-2"></div>  </div></div><!-- <div class="container">  <div class="row">    <div class="col-3"></div>    <div class="col-6">      <hr>      <div class="jumbotron">        <form class="form-group" (ngSubmit)="updateProfile()" id="editProfile">          <div class="form-row">            <div class="form-group col-md-4">              <label for="inputFirstName">First Name</label>              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name"                required>            </div>            <div class="form-group col-md-4">              <label for="inputLastName">Last Name</label>              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name"                required>            </div>          </div>          <div class="form-row">            <div class="form-group">              <div class="col-xs-6">                <label for="first_name">                  <h4>First Name</h4>                </label>                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="{{user.firstname}}"                  title="Update your first name if wanted.">              </div>              <div class="col-xs-6">                <label for="last_name">                  <h4>Last name</h4>                </label>                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">              </div>            </div>          </div>          <div class="form-group">            <div class="col-xs-6">              <label for="phone">                <h4>Phone</h4>              </label>              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">            </div>          </div>          <div class="form-group">            <div class="col-xs-6">              <label for="mobile">                <h4>Mobile</h4>              </label>              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">            </div>          </div>          <div class="form-group">            <div class="col-xs-6">              <label for="email">                <h4>Email</h4>              </label>              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">            </div>          </div>          <div class="form-group">            <div class="col-xs-6">              <label for="email">                <h4>Location</h4>              </label>              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">            </div>          </div>          <div class="form-group">            <div class="col-xs-6">              <label for="password">                <h4>Password</h4>              </label>              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">            </div>          </div>          <div class="form-group">            <div class="col-xs-6">              <label for="password2">                <h4>Verify</h4>              </label>              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">            </div>          </div>          <div class="form-group">            <div class="col-xs-12">              <br>              <button class="btn btn-lg btn-success pull-left" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>                Save</button>            </div>          </div>        </form>      </div>      <div class="col-3"></div>    </div>  </div></div> --></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'HomePageComponent', 'selector': 'app-home-page'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProjectCardComponent', 'selector': 'app-project-card'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'RenderZipComponent', 'selector': 'app-render-zip'},{'name': 'UserActionsComponent', 'selector': 'app-user-actions'},{'name': 'ViewProjectsComponent', 'selector': 'app-view-projects'},{'name': 'ZipComponentComponent', 'selector': 'app-zip-component'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EditProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EditProfileComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
