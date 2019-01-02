@@ -218,7 +218,7 @@ export class RegistrationComponent implements OnInit {
               this.usernameIsAvailable = true;
             } else {
               this.checkingIfUsernameIsAvailable = false;
-              this.usernameIsNotAvailable = true;
+              this.usernameIsAvailable = false;
             }
   
   
@@ -248,7 +248,7 @@ export class RegistrationComponent implements OnInit {
             this.usernameIsAvailable = true;
           } else {
             this.checkingIfUsernameIsAvailable = false;
-            this.usernameIsNotAvailable = true;
+            this.usernameIsAvailable = false;
           }
 
 

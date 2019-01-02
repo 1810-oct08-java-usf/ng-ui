@@ -35,7 +35,7 @@ describe('RegistrationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RegistrationComponent);
     component = fixture.componentInstance;
-    //fixture.detectChanges();
+    fixture.detectChanges();
   });
 
   // Testing the successful creation of the registration componenet
@@ -53,10 +53,10 @@ describe('RegistrationComponent', () => {
     const serviceSpy = spyOn(userService, 'register').and.callThrough(); // Set a spy on the service class
 
     // Act
-    //component.register();
+    component.register();
 
     // Assert
-    //expect(serviceSpy).toHaveBeenCalledTimes(1);
+    expect(serviceSpy).toHaveBeenCalledTimes(1);
   });
 
 

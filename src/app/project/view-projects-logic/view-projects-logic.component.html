@@ -35,15 +35,15 @@
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
         <td mat-cell *matCellDef="let project"> {{project.status}}
-          <button class="formatButtons" *ngIf="project.status == 'pending' || project.status == 'Pending'" color=primary
+          <button *ngIf="project.status == 'pending' || project.status == 'Pending'" mat-raised-button color=primary
             (click)="approve(project, $event)">Approve</button>
-          <button class="formatButtons" *ngIf="project.status == 'pending' || project.status == 'Pending'" color=warn
-            (click)="decline(project, $event)">Deny</button>
+          <button *ngIf="project.status == 'pending' || project.status == 'Pending'" mat-raised-button color=warn
+            (click)="decline(project, $event)">Decline</button>
           <div id="registerSpinner" *ngIf='project.approvingProject'>
             <mat-spinner [diameter]="20"></mat-spinner><span>Updating project</span>
           </div>
           <div id="projectApproved" *ngIf='project.projectApproved'>Project Approved</div>
-          <div id="projectDeclined" *ngIf='project.projectDeclined'>Project Denied</div>
+          <div id="projectDeclined" *ngIf='project.projectDeclined'>Project Declined</div>
 
         </td>
       </ng-container>

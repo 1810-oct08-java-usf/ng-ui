@@ -28,7 +28,7 @@ describe('HomePageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
-    //fixture.detectChanges();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
