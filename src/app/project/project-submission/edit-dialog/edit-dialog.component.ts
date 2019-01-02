@@ -79,8 +79,12 @@ export class EditDialogComponent implements OnInit {
    */
   modifyField(e) {
     const indexOfName = this.data.values.indexOf(e.target.id);
-    this.data.values[indexOfName] = this.editedValues[indexOfName];
-    this.inEditMode[indexOfName] = false;
+    if (this.editedValues[indexOfName] !== null && this.editedValues[indexOfName].length !== 0) {
+      this.data.values[indexOfName] = this.editedValues[indexOfName];
+      this.inEditMode[indexOfName] = false;
+    } else {
+      this.removeItem(e);
+    }
   }
 
   /**

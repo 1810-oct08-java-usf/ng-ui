@@ -28,7 +28,7 @@ describe('ViewProjectsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ViewProjectsComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    //fixture.detectChanges();
   });
 
   it('should create', () => {

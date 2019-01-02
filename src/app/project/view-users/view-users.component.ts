@@ -23,14 +23,16 @@ export class ViewUsersComponent implements OnInit {
   constructor(private router: Router, private viewProjectsService: ProjectService, private userService: UserService) { }
 
   ngOnInit() {
+    if (this.userService.user.role === 'ROLE_ADMIN') {
     this.userSubscription = this.userService.getAllUsers().subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.allUsersArray = data;
         this.dataSourceUsers = new MatTableDataSource(this.allUsersArray);
         this.dataSourceUsers.sort = this.sortUsers;
         this.dataSourceUsers.paginator = this.userPaginator;
     });
+    }
   }
 
   applyUserFilter(filterValue: string) {

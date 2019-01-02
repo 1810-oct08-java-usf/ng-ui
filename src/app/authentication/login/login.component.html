@@ -22,6 +22,8 @@
             <div id='field' *ngIf="passwordO">Password must be filled out</div>
             <br />
             <mat-error *ngIf="!formcontrol.form.valid">Please enter all fields</mat-error>
+            <div id="registerSpinner" *ngIf='authenticating'><mat-spinner [diameter]="30"></mat-spinner><span>Authenticating</span></div>
+            <div id='o' *ngIf='loggedIn'><mat-icon>check</mat-icon><span>Logging In</span></div>
             <button color="accent" mat-flat-button type="button" [disabled]="!formcontrol.form.valid" (click)="login()">Login</button>
             <a mat-button routerLink="/auth/register">Register</a>
           </mat-card-content>

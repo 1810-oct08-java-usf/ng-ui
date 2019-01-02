@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
 
   usernameO = false;
   passwordO = false;
+  authenticating = false;
+  loggedIn = false;
 
   constructor(private userService: UserService, private router: Router, private ngmeta: NgMetaService) { }
 
@@ -34,13 +36,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.authenticating = true;
     this.userService.login(this.user).pipe(first()).subscribe((user) => {
       if (user) {
+        this.authenticating = false;
+        this.loggedIn = true;
         this.router.navigate(['/home']);
       } else {
+        this.authenticating = false;
         alert('Error logging in');
       }
-    }, (error) => { alert('ERROR LOGGING IN'); });
+    }, (error) => { this.authenticating = false; alert('ERROR LOGGING IN'); });
   }
 
   /* Logs in user upon enter
@@ -60,13 +66,17 @@ export class LoginComponent implements OnInit {
     }
 
     if(this.user.username.length != 0 && this.user.password.length != 0) {
+      this.authenticating = true;
       this.userService.login(this.user).pipe(first()).subscribe((user) => {
         if (user) {
+          this.authenticating = false;
+          this.loggedIn = true;
           this.router.navigate(['/home']);
         } else {
+          this.authenticating = false;
           alert('Error logging in');
         }
-      }, (error) => { alert('ERROR LOGGING IN'); });
+      }, (error) => { this.authenticating = false; alert('ERROR LOGGING IN'); });
     }
 
   }

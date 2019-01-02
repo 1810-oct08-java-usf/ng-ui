@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { environment } from 'src/environments/environment';
 import { TokenInterceptor} from 'src/app/core/services/jwtInterceptor.interceptor';
+import 'hammerjs';
 
 export function tokenGetter() {
   return window.localStorage.getItem('jwt');

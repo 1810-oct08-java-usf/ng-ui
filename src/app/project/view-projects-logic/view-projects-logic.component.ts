@@ -173,7 +173,7 @@ export class ViewProjectsLogicComponent implements OnInit, OnDestroy {
 
   decline(project, event) {
     event.stopPropagation();
-    project.status = 'Declined';
+    project.status = 'Denied';
     project.approvingProject = true;
     this.viewProjectsService.updateProject(project, project.id).subscribe(
       result => {

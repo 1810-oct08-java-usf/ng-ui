@@ -8,6 +8,7 @@ import { ProjectModule } from '../../project.module';
 import { ProjectService } from 'src/app/core/services/project.service';
 
 import { EditDialogComponent } from './edit-dialog.component';
+import { AuthenticationModule } from 'src/app/authentication/authentication.module';
 
 xdescribe('EditDialogComponent', () => {
   let component: EditDialogComponent;
@@ -16,7 +17,7 @@ xdescribe('EditDialogComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ EditDialogComponent ],
-      imports: [SharedModule, RouterTestingModule, BrowserAnimationsModule, AppModule, ProjectModule],
+      imports: [SharedModule, RouterTestingModule, BrowserAnimationsModule, AppModule, ProjectModule, AuthenticationModule],
       providers: [ProjectService]
     })
     .compileComponents();

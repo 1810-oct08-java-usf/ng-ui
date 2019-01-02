@@ -19,7 +19,7 @@ import { UserService } from 'src/app/core/services/user.service';
     error: The 'Access-Control-Allow-Origin' header contains multiple values 'http://localhost:4200, http://localhost:4200', but only one is allowed.
     This needs to be addressed on the server to move forward. */
 export class EditProjectComponent implements OnInit {
-
+  techStackList = ['Java/J2EE', 'PEGA', 'JavaScript MVC', '.Net', 'React.js', 'Java', 'iOS9'];
   /* This field is initially true since the project contents for a particular project are placed in the form fields using two-way binding when
         ngOnInit() is called and the project is retrieved by id from the server */
   validForm: Boolean = true;
@@ -77,7 +77,7 @@ export class EditProjectComponent implements OnInit {
               this.projectToUpdate = this.allProjects[i];
             }
           }
-        })
+        });
       });
     }
   }
@@ -105,7 +105,12 @@ export class EditProjectComponent implements OnInit {
    * @author Shawn Bickel (1810-Oct08-Java-USF)
    */
   submitForm() {
-    this.projectService.updateProject(this.projectToUpdate, this.projectToUpdate.id).subscribe(project => {});
+    if (JSON.parse(localStorage.getItem('user')).role === 'ROLE_USER') {
+      if (this.projectToUpdate.status === 'Approved'){
+        this.projectToUpdate.status = 'Pending';
+      }
+    }
+    this.projectService.updateProject(this.projectToUpdate, this.projectToUpdate.id).subscribe(project => { });
     this.snackBar.open('The edited changes may take time to appear', '', {
       duration: 5000,
     });

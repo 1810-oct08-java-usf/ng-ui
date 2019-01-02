@@ -34,13 +34,28 @@
                     [ngModelOptions]="{standalone: true}" required #trainerName="ngModel">
                   </mat-form-field>
             </td>
-            <td><mat-form-field class="example-full-width" appearance="outline">
+            <td>
+            <!--   <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Tecknology Stack</mat-label>
               <mat-error *ngIf="!validForm">Technology stack is required</mat-error>
               <input type="text"  (blur)="checkForValidField(name, batch, trainerName, description, techStack)" type=text matInput 
               name="stack" placeholder="Project Technology Stack" [(ngModel)]="projectToUpdate.techStack" 
               [ngModelOptions]="{standalone: true}" required #techStack="ngModel">
-            </mat-form-field></td>
+            </mat-form-field> -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Technology Stack</mat-label>
+                <mat-error *ngIf="!validForm">Technology stack is required</mat-error>
+                <mat-select 
+                placeholder="Select Batch" 
+                [(ngModel)]="projectToUpdate.techStack"
+                [ngModelOptions]="{standalone: true}" required #techStack="ngModel" 
+                required #techStack="ngModel">
+                  <mat-option *ngFor="let tech of techStackList" [value]="tech">
+                    {{tech}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </td>
           </tr>
         </table>
     
