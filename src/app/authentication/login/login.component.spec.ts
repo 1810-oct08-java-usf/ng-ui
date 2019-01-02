@@ -88,9 +88,4 @@ describe('LoginComponent', () => {
     // Assert
     expect(serviceSpy).toHaveBeenCalled();
   });
-
-  it('should render \'Login\' in title', () => {
-    expect(fixture.debugElement.query(By.css('mat-card-title')).nativeElement.textContent).toContain('Login');
-  })
-
 });

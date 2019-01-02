@@ -36,8 +36,6 @@ export class ViewProjectsComponent implements OnInit {
     if(sessionStorage.getItem('lastPage') == 'project_Submit') {
       sessionStorage.removeItem('lastPage');
       this.yourProjects();
-    } else if (this.currentUser.role !== 'ROLE_ADMIN') {
-      this.yourProjects();
     }
   }
 
@@ -46,13 +44,9 @@ export class ViewProjectsComponent implements OnInit {
    * @author Michael Grammens (1810-Oct22-Java-USF)
    */
   allUsers() {
-    if (this.currentUser.role === 'ROLE_ADMIN') {
-      this.usersPage = true;
-      this.projectsPage = false;
-      this.userProjectsPage = false;
-    } else {
-      this.yourProjects();
-    }
+    this.usersPage = true;
+    this.projectsPage = false;
+    this.userProjectsPage = false;
   }
   projects() {
     this.usersPage = false;
