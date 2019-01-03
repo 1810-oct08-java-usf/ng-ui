@@ -20,6 +20,8 @@ export class ProfileComponent implements OnInit {
   disableButton = true;
   filledPassword = true;
   emailPattern = '^[a-zA-Z0-9_.+-]+(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?@(revature)\.com$';
+  profileUpdate = false;
+  profileUpdateError = false;
 
   /**
    * source: <https://scotch.io/@ibrahimalsurkhi/match-password-validation-with-angular-2>
@@ -59,6 +61,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     // pre-fill the profile information with logged-in user information
+    this.profileUpdate = false;
+    this.profileUpdateError = false;
     this.user = this.userService.getUser();
     if (!this.user) {
       this.router.navigate(['/auth/login']);
@@ -95,13 +99,16 @@ export class ProfileComponent implements OnInit {
 
           localStorage.setItem('user', JSON.stringify(this.user));
           // alert('profile updated');
-
+          this.profileUpdateError = false;
+          this.profileUpdate = true;
           this.fillFormGroup(this.user.firstName, this.user.lastName, this.user.email, this.user.username, this.user.password);
         }
       }, (error) => {
           this.user = this.userService.getUser();
           this.fillFormGroup(this.user.firstName, this.user.lastName, this.user.email, this.user.username, this.user.password);
           // alert('error updating profile');
+          this.profileUpdate = false;
+          this.profileUpdateError = true;
       });
     }
   }

@@ -118,9 +118,30 @@
                 </mat-form-field>
               </div>
             </div>
-
+            <div *ngIf="profileUpdate" class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
+                <div fxLayout.xs="column">  
+                </div>
+                <div fxLayout.xs="column">
+                 <div >
+                      <div>Update Successful</div>
+                    </div>
+                </div>
+              </div>
+              <div *ngIf="profileUpdateError" class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
+                  <div fxLayout.xs="column">  
+                  </div>
+                  <div fxLayout.xs="column">
+                   <div >
+                        <div>Update Could Not Complete</div>
+                      </div>
+                  </div>
+                </div>
+            
+                
             <div class="container" fxLayout="row" fxLayoutGap="10%" fxLayoutGap.xs="0">
-              <div fxLayout.xs="column"></div>
+              <div fxLayout.xs="column">
+                 
+              </div>
               <div fxLayout.xs="column">
                 <button *ngIf="setReadOnly" type="button" mat-stroked-button color="primary" (click)="setReadOnly=false">Edit</button>
                 <button *ngIf="!setReadOnly" type="button" mat-stroked-button color="primary" [disabled]="disableButton"
