@@ -107,19 +107,19 @@ describe("RegistrationComponent", () => {
     
   });
 
-  /**
-   * This test should check email in  checkIfEmailIsInUse false 
-   * and email is avalibale is true
+  /** 
+   * should test the initialization values in checkIfEmailIsInUse method
+   * 
+   * @author Fadi Alzoubi (190107-Java-Spark-USF)
    */
-  it("should check the properties of checkIfEmailIsInUse method values of emailToCheck, emailIsAvailable, emailIsNotAvailable, checkingIfEmailIsInUse ", () => {
-    
-    component.user.email = 'testEmail';
-    component.checkIfEmailIsInUse(); 
-    expect(component.emailToCheck).toBe('testEmail');
-    expect(component.emailIsAvailable).toBeFalsy();
-    expect(component.emailIsNotAvailable).toBeFalsy();
-    expect(component.checkingIfEmailIsInUse).toBeTruthy();
-
+  it("should test the initialization values in checkIfEmailIsInUse method ",
+   () => {
+      component.user.email = 'testEmail';
+      component.checkIfEmailIsInUse(); 
+      expect(component.emailToCheck).toBe('testEmail');
+      expect(component.emailIsAvailable).toBeFalsy();
+      expect(component.emailIsNotAvailable).toBeFalsy();
+      expect(component.checkingIfEmailIsInUse).toBeTruthy();
   });
 
 
@@ -135,7 +135,7 @@ describe("RegistrationComponent", () => {
   });
 
 
-  xit("should check the checkIfEmailIsInUse (result else) checkingIfEmailIsInUse,and emailIsNotAvailable", () => {
+  it("should check the checkIfEmailIsInUse (result else) checkingIfEmailIsInUse,and emailIsNotAvailable", () => {
    
     component.checkIfEmailIsInUse();
     expect(component.checkingIfEmailIsInUse).toBeFalsy();
