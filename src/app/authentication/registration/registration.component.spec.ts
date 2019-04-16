@@ -107,31 +107,7 @@ describe("RegistrationComponent", () => {
     expect(component.loginUser.password).toEqual(testUser.password);
   });
 
-  /**
-   * This test should check email in  checkIfEmailIsInUse false 
-   * and email is avalibale is true
-   */
-  it("should check the properties of checkIfEmailIsInUse method values of emailToCheck, emailIsAvailable, emailIsNotAvailable, checkingIfEmailIsInUse", () => { 
-    component.user.email = 'testEmail';
-    component.checkIfEmailIsInUse(); 
-    //expect(component.emailToCheck).toBe('testEmail');
-    expect(component.emailIsAvailable).toBeFalsy();
-    expect(component.emailIsNotAvailable).toBeFalsy();
-    expect(component.checkingIfEmailIsInUse).toBeTruthy();
-  });
 
-  it("Should check the properties of checkIfEmailIsInUseKey method values of emailToCheck, emailIsAvailable, emailIsNotAvailable, checkingIfEmailIsInUse", (done) => { 
-    component.user.email = 'testEmail';
-    component.checkIfEmailIsInUseKey();
-
-    setTimeout(() => {
-      //expect(component.emailToCheck).toBe('testEmail');
-      expect(component.emailIsAvailable).toBeFalsy();
-      expect(component.emailIsNotAvailable).toBeFalsy();
-      expect(component.checkingIfEmailIsInUse).toBeTruthy();
-
-      done();
-    }, 1000);
   });
 
   /**
@@ -170,7 +146,6 @@ describe("RegistrationComponent", () => {
   });
 
 
-  xit("should check the checkIfEmailIsInUse (result else) checkingIfEmailIsInUse,and emailIsNotAvailable", () => {
     component.checkIfEmailIsInUse();
     expect(component.checkingIfEmailIsInUse).toBeFalsy();
     expect(component.emailIsNotAvailable).toBeTruthy();
