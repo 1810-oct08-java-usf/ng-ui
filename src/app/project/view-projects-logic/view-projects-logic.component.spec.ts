@@ -1,10 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
 
 import { SharedModule } from '../../shared/shared.module';
 import { AppModule} from '../../app.module';
 import { ViewProjectsLogicComponent } from './view-projects-logic.component';
+import { Project } from 'src/app/core/models/Project';
 
 
 
@@ -19,11 +21,13 @@ import { ViewProjectsLogicComponent } from './view-projects-logic.component';
 describe('ViewProjectsLogicComponent', () => {
   let component: ViewProjectsLogicComponent;
   let fixture: ComponentFixture<ViewProjectsLogicComponent>;
+  let router: Router;
+  
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ],
-      imports: [ SharedModule, RouterTestingModule, BrowserAnimationsModule, AppModule]
+      imports: [ SharedModule, RouterTestingModule, BrowserAnimationsModule, AppModule],
     })
     .compileComponents();
   }));
@@ -32,37 +36,47 @@ describe('ViewProjectsLogicComponent', () => {
     fixture = TestBed.createComponent(ViewProjectsLogicComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    router = TestBed.get(Router);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should approve a project', () => {
-    let project = {
-      status: 'Approved',
-      approvingProject: true
+  /**
+   * the tested method should navigate to /codebase
+   * 
+   * @author Alex Johnson (190107-Java-Spark-USF)
+   */
+  it('should navigate to codebase', () => {
+    
+    let testProject: Project;
+    testProject ={
+      id: 1
     }
-    let event = new MouseEvent('click');
-    let spy = spyOn(event, 'stopPropagation'); 
+    let navigateSpy = spyOn(router, 'navigate');
 
-    component.approve(project, event);
-    expect(spy).toHaveBeenCalled();
-    expect(project.status).toBe('Approved');
-    expect(project.approvingProject).toBeTruthy();
+    component.codebase(testProject);
+    
+    expect(navigateSpy).toHaveBeenCalledWith(['/codebase']);
   });
 
-  it('should decline a project', () => {
-    let project = {
-      status: 'Denied',
-      approvingProject: true
+  /**
+   * the tested method should navigate to /edit
+   * 
+   * @author Alex Johnson (190107-Java-Spark-USF)
+   */
+  it('should navigate to edit', () => {
+    
+    let testProject: Project;
+    testProject ={
+      id: 1
     }
-    let event = new MouseEvent('click');
-    let spy = spyOn(event, 'stopPropagation'); 
+    let navigateSpy = spyOn(router, 'navigate');
 
-    component.decline(project, event);
-    expect(spy).toHaveBeenCalled();
-    expect(project.status).toBe('Denied');
-    expect(project.approvingProject).toBeTruthy();
-  });
+    component.edit(testProject);
+
+    expect(navigateSpy).toHaveBeenCalledWith([testProject.id + '/edit']);
+  })
+
 });
