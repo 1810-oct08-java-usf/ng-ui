@@ -17,7 +17,7 @@ import { MatTableDataSource } from '@angular/material';
  * @author Ryan Williams | Michael Grammens | (1810-Oct22-Java-USF)
  */
 
-fdescribe('ViewUsersComponent', () => {
+describe('ViewUsersComponent', () => {
   let component: ViewUsersComponent;
   let fixture: ComponentFixture<ViewUsersComponent>;
   let injector: TestBed;
@@ -37,7 +37,6 @@ fdescribe('ViewUsersComponent', () => {
     service = TestBed.get(UserService);
     fixture = TestBed.createComponent(ViewUsersComponent);
     component = fixture.componentInstance;
-    //fixture.detectChanges();
   });
  /**
  *should view all users if logged-in as administrator
@@ -88,9 +87,5 @@ fdescribe('ViewUsersComponent', () => {
     expect(component.applyUserFilter).toBeTruthy();
     expect(component.applyUserFilter).toThrow('error');
   });
-
-
-
-
 
 });

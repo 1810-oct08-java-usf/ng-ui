@@ -22,15 +22,8 @@ describe('ProjectSubmissionComponent', () => {
   let fixture: ComponentFixture<ProjectSubmissionComponent>;
   let router: Router;
   let service: UserService;
-  let testUser: User = {
-    id: 10000,
-    firstName: 'Alex',
-    lastName: 'Johnson',
-    email: 'alexjohnson4564@gmail.com',
-    username: 'alexj4564',
-    password: 'Password1234',
-    role: 'admin'
-  };
+  let testUser: User
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -44,14 +37,15 @@ describe('ProjectSubmissionComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectSubmissionComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    service = TestBed.get(UserService);
+    
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should display \'Project Name\' in mat-label', () => {
+  it('should display \'Project Name\' in mat-label', () => {
     expect(fixture.debugElement.query(By.css('mat-label')).nativeElement.textContent).toContain('Project Name');
   });
 
@@ -71,16 +65,121 @@ describe('ProjectSubmissionComponent', () => {
     component.ngOnInit();
 
     expect(navigateSpy).toHaveBeenCalledWith(['/auth/login']);
-  })
-
-  xit('should do stuff', () => {
-
-    localStorage.clear();
-    localStorage.setItem('user', `${testUser}`);
+  });
+  
+  /**
+   * Test ngOnit if userService.getUser is not null
+   * 
+   * @author Gabriel Zapata, Alex Johnson (010719-Java-Spark-USF)
+   * 
+   */
+  it('should verify ngOninit fields if userService.getUser is not null',()=>{
+    let testUser: User;
+    testUser ={
+      username:'testUsername',
+      password:'testPassword',
+      firstName: 'testFirstName',
+      lastName: 'testLastName',
+      role:'test'
+    }
+   
+    spyOn(service,'getUser').and.returnValue(testUser);
 
     component.ngOnInit();
-
-    expect(component.groupMemberString).toBeUndefined;
+ 
+      expect(component.projectToUpload.groupMembers).toBeTruthy();
+  
   })
 
+   /**
+    * Test openDialog with event listener = inputGroupMembers
+    *
+   * @author Gabriel Zapata (010719-Java-Spark-USF)
+   * 
+   */
+  it('should verify openDialog fields, and title, questiontype, ',()=>{
+    let id = 'inputGroupMembers';
+    let event = {
+      target: id
+    }
+
+    component.openDialog(event);
+
+    expect(component.title).toContain('Repository Link')
+    expect(component.questionType).toContain('Enter the Github URL of your repository')
+
+  })
+
+    /**
+     * Test openEditableDialog with event listener = inputGroupMember
+     * 
+    * @author Gabriel Zapata (010719-Java-Spark-USF)
+   */
+  it('should verify openEditableDialog fields if id is not inputGroupMembers',()=>{
+    let id = 'notInputGroupMembers';
+    let event = {
+      target: id
+    }
+    
+    component.openEditableDialog(event);
+
+    expect(component.title).toBeTruthy();
+    expect(component.questionType).toBeTruthy();
+    expect(component.width).toBeTruthy();
+    
+  })
+
+    /**
+     * Test openEditableDialog with event listener = inputGroupMember
+     * 
+    * @author Gabriel Zapata (010719-Java-Spark-USF)
+   */
+  it('should verify openEditableDialog fields if id is inputGroupMembers',()=>{
+    let id = 'inputGroupMembers';
+    let event = {
+      target: id
+    }
+    
+    component.openEditableDialog(event);
+
+    expect(component.title).toBeTruthy();
+    expect(component.questionType).toBeTruthy();
+    expect(component.width).toBeTruthy();
+  })
+
+  /**
+   * Test submitForm formData
+   * 
+   * @author Gabriel Zapata (010719-Java-Spark-USF)
+   */
+  it('should test submitForm ',() =>{
+    component.projectToUpload = {
+      groupMembers : ['testGroupMember'],
+      screenShots :  ['testScreenShots'],
+      zipLinks : ['testZip'],
+    }
+    component.projectToUpload.groupMembers = ['test'];
+    component.submitForm();
+    expect(component.submitting).toBeTruthy();
+    
+  })
+
+    /**
+     * Test openEditableDialog with event listener = inputGroupMember
+     * 
+    * @author Gabriel Zapata (010719-Java-Spark-USF)
+   */
+  it('should verify onFileSelected fields if file property is truthy',()=>{
+    let files: String [];
+    files = ['test'];
+    let event = {
+      target: files
+    }
+    
+    component.onFileSelected(event);
+
+    expect(component.projectToUpload.screenShots).toBeTruthy();
+    expect(component.validScreenshots).toBeTruthy();
+    
+  })
 });

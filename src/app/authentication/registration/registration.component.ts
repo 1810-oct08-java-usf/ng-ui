@@ -165,6 +165,11 @@ export class RegistrationComponent implements OnInit {
 
   /*Function to be called when focus is deselected on email input form
   */
+
+  
+  /*
+ * Function to check the user email is unique
+ */
   checkIfEmailIsInUse() {  
       this.emailToCheck = this.user.email;
       this.emailIsAvailable = false;

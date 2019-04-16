@@ -51,6 +51,7 @@ describe('ViewProjectsComponent', () => {
     expect(fixture.componentInstance.projectsPage).toEqual(true)
   })
   /**
+   * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test ngOnit with current user with sessionStorage equal to 'lastPage' and role of ADMIN
    */
   it('should verify sessionstorage is clear, tab = 1 and yourProject is called ',() =>{
@@ -69,6 +70,7 @@ describe('ViewProjectsComponent', () => {
  
   })
    /**
+    * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test ngOnit with current user with sessionStorage equal to 'project_Submit' role of NOT ADMIN
    */
   it('should verify sessionstorage is clear, tab = 1 and yourProject is called ',() =>{
@@ -87,6 +89,7 @@ describe('ViewProjectsComponent', () => {
  
   })
   /**
+   * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test ngOnit with current user with sessionStorage equal to 'edit' and role of ADMIN
    */
   it('should verify sessionstorage is clear, tab = 2 and yourProject is called ',() =>{
@@ -105,6 +108,7 @@ describe('ViewProjectsComponent', () => {
  
   })
    /**
+    * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test ngOnit with current user with sessionStorage equal to 'edit' and role of NOT ADMIN
    */
   it('should verify sessionstorage is clear, tab = 0 and yourProject is called ',() =>{
@@ -122,10 +126,12 @@ describe('ViewProjectsComponent', () => {
     expect(component.yourProjects).toHaveBeenCalledTimes(1);
  
   })
+
   /**
+   * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test ngOnit with current user role of NOT ADMIN
    */
-  it('should verify tab = 0 and yourProject is called ',() =>{
+  it('should verify tab = 0 and yourProject is called once ',() =>{
     testUser = {
      role:'test'
     }
@@ -142,6 +148,7 @@ describe('ViewProjectsComponent', () => {
 
 
   /**
+   * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test allUsers is role is ADMIN will set userPage, projectPage,and userProject
    */
   it('should verify userPage is truthy, and projectPage, and userProjectPage to be falsy, if currentUser role is ADMIN',() =>{
@@ -160,6 +167,7 @@ describe('ViewProjectsComponent', () => {
     
   })
   /**
+   * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test allUsers role is not ADMIN and verify if yourproject method is called
    */
   it('should verify if yourProject method is called if role isnotADMIN in alluser method',()=>{
@@ -173,6 +181,7 @@ describe('ViewProjectsComponent', () => {
   })
 
   /**
+   * @author Gabriel Zapata (190107-Java-Spark-USF)
    * Test projects fields userPage, projectPage,and userProjectsPage
    */
   it('should verify userPage,and userProjectsPage to be falsy, and projectsPage to be truthy', () =>{
@@ -188,6 +197,7 @@ describe('ViewProjectsComponent', () => {
    })
 
   /**
+   * @author Gabriel Zapata
    * Test yourProject fields userPage, projectpage and userProjectPage
    */
   it('should verify userPage and projectPage are falsy and userProjectsPage is truthy', () =>{

@@ -6,7 +6,7 @@ import { AppModule} from '../../app.module';
 
 
 import { LogoutComponent } from './logout.component';
-import { AuthenticationModule } from '../authentication.module';
+import { AuthenticationModule } from 'src/app/authentication/authentication.module';
 import { AuthenticationRoutingModule } from '../authentication-routing.module';
 
 /**
