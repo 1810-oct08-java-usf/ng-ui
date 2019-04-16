@@ -10,6 +10,8 @@ import { ProjectService } from 'src/app/core/services/project.service';
 import { EditDialogComponent } from './edit-dialog.component';
 import { AuthenticationModule } from 'src/app/authentication/authentication.module';
 
+import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 describe('EditDialogComponent', () => {
   let component: EditDialogComponent;
   let fixture: ComponentFixture<EditDialogComponent>;
@@ -17,8 +19,8 @@ describe('EditDialogComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ ],
-      imports: [SharedModule, RouterTestingModule, BrowserAnimationsModule, AppModule, ProjectModule, AuthenticationModule],
-      providers: [ProjectService]
+      imports: [MatDialogModule, SharedModule, RouterTestingModule, BrowserAnimationsModule, AppModule, ProjectModule, AuthenticationModule],
+      providers: [ProjectService, {provide: MatDialogRef, useValue: {}}, { provide: MAT_DIALOG_DATA, useValue: {}}]
     })
     .compileComponents();
   });
