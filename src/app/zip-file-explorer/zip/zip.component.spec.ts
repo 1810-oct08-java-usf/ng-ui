@@ -83,13 +83,11 @@ fdescribe('ZipComponent', () => {
       fileContent: 'testFileContent'
     }
 
-
     spyOn(component,'defaultFile').and.returnValue(testFile);
     component.ngOnInit();
 
     expect(component.SelectedFile).toBeTruthy();
   });
-
 
    /**
    * Test test openRenderFile 
@@ -184,7 +182,6 @@ fdescribe('ZipComponent', () => {
       name: ''
     }
     let datafilename = 'test'
-
 
     component.openData(data,datafilename);
 
