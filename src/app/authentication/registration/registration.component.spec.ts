@@ -108,8 +108,6 @@ describe("RegistrationComponent", () => {
   });
 
 
-  });
-
   /**
    * This test should check username available checkIfUsernameIsAvailable method
    */
@@ -143,13 +141,6 @@ describe("RegistrationComponent", () => {
     expect(component.checkIfEmailIsInUse).toBeFalsy();
     expect(component.emailIsAvailable).toBeTruthy();
     
-  });
-
-
-    component.checkIfEmailIsInUse();
-    expect(component.checkingIfEmailIsInUse).toBeFalsy();
-    expect(component.emailIsNotAvailable).toBeTruthy();
-
   });
 
   xit("should check the checkIfEmailIsInUse (error) checkingIfEmailIsInUse,and emailIsNotAvailable", () => {
