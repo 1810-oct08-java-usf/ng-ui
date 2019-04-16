@@ -107,7 +107,6 @@ describe("RegistrationComponent", () => {
     expect(component.loginUser.password).toEqual(testUser.password);
   });
 
-<<<<<<< HEAD
   /**
    * This test should check email in  checkIfEmailIsInUse false 
    * and email is avalibale is true
@@ -135,8 +134,6 @@ describe("RegistrationComponent", () => {
       done();
     }, 1000);
   });
-=======
->>>>>>> 167e2dd61912ef2d8c1222441b4fd4f1cedc54bb
 
   /**
    * This test should check username available checkIfUsernameIsAvailable method
