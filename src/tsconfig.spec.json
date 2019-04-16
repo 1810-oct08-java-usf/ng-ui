@@ -14,5 +14,9 @@
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"
+  ],
+  "exclude": [
+    "src/app/zip-file-explorer/lex.pipe.spec.ts",
+    "src/app/zip-file-explorer/line-number.pipe.spec.ts"
   ]
 }

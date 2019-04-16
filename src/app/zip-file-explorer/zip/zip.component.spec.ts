@@ -10,7 +10,7 @@ import { ZipFileExplorerModule } from '../zip-file-explorer.module';
 import { ProjectService } from 'src/app/core/services/project.service';
 import { Observable } from 'rxjs';
 
-describe('ZipComponent', () => {
+fdescribe('ZipComponent', () => {
   let component: ZipComponent;
   let fixture: ComponentFixture<ZipComponent>;
   let router: Router;
