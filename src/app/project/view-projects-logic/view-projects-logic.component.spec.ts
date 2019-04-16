@@ -37,4 +37,32 @@ describe('ViewProjectsLogicComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should approve a project', () => {
+    let project = {
+      status: 'Approved',
+      approvingProject: true
+    }
+    let event = new MouseEvent('click');
+    let spy = spyOn(event, 'stopPropagation'); 
+
+    component.approve(project, event);
+    expect(spy).toHaveBeenCalled();
+    expect(project.status).toBe('Approved');
+    expect(project.approvingProject).toBeTruthy();
+  });
+
+  it('should decline a project', () => {
+    let project = {
+      status: 'Denied',
+      approvingProject: true
+    }
+    let event = new MouseEvent('click');
+    let spy = spyOn(event, 'stopPropagation'); 
+
+    component.decline(project, event);
+    expect(spy).toHaveBeenCalled();
+    expect(project.status).toBe('Denied');
+    expect(project.approvingProject).toBeTruthy();
+  });
 });
