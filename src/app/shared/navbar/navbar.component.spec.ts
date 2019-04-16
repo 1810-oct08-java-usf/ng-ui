@@ -34,7 +34,7 @@ describe('NavbarComponent', () => {
     router = TestBed.get(Router);
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 

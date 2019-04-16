@@ -33,7 +33,7 @@ describe('AppLogoComponent', () => {
     router = TestBed.get(Router);
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
@@ -42,7 +42,7 @@ describe('AppLogoComponent', () => {
    * 
    * @author Alex Johnson (190107-Java-Spark-USF)
    */
-  xit('should navigate to project, home', () => {
+  it('should navigate to project, home', () => {
 
     let navigateSpy = spyOn(router, 'navigate');
 

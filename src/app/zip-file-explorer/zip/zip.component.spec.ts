@@ -34,7 +34,6 @@ fdescribe('ZipComponent', () => {
     fixture = TestBed.createComponent(ZipComponent);
     component = fixture.componentInstance;
     projectService = TestBed.get(ProjectService);
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -47,6 +46,7 @@ fdescribe('ZipComponent', () => {
    */
   it('should call ErrorFile an error', () => {
     
+    fixture.detectChanges();
     let message = 'test';
     
     component.errorFile(message);
@@ -61,6 +61,7 @@ fdescribe('ZipComponent', () => {
    */
   it('should return a substring of link', () => {
     
+    fixture.detectChanges();
     let link = 'test';
     
     component.safeTitle(link);
@@ -73,6 +74,7 @@ fdescribe('ZipComponent', () => {
    * 
    * @author Gabriel Zapata (190107-Java-Spark-USF)
    */
+
   it('should verify to fields if the user is NOT null', () => {
     
     let testFile : RenderFile
@@ -81,11 +83,13 @@ fdescribe('ZipComponent', () => {
       fileContent: 'testFileContent'
     }
 
+
     spyOn(component,'defaultFile').and.returnValue(testFile);
     component.ngOnInit();
 
     expect(component.SelectedFile).toBeTruthy();
   });
+
 
    /**
    * Test test openRenderFile 
@@ -105,6 +109,7 @@ fdescribe('ZipComponent', () => {
 
     expect(component.SelectedFile).toBe(testFile);
     expect(component.OpenFile).toContain(testFile);
+
   })
 
    /**
@@ -113,6 +118,7 @@ fdescribe('ZipComponent', () => {
    * @author Gabriel Zapata (190107-Java-Spark-USF)
    * 
    */
+
   it('should test closeRenderFile if OpenFile array removes testFile but still contain testFile2  ',()=>{
     let testFile : RenderFile
     testFile ={
@@ -132,6 +138,7 @@ fdescribe('ZipComponent', () => {
 
     expect(component.OpenFile).toContain(testFile2);
     expect(component.SelectedFile).toBe(testFile2);
+
   })
 
    /**
@@ -140,9 +147,11 @@ fdescribe('ZipComponent', () => {
    * @author Gabriel Zapata (190107-Java-Spark-USF)
    * 
    */
+
   it('should test getFileNameFromHttpResponse with testContentDispositionHeader',()=>{
     let testContentDispositionHeader = ['test=1; test=2; test=3;'].toString();
     component.getFileNameFromHttpResponse(testContentDispositionHeader);
+
 
   })
   /**
@@ -150,6 +159,7 @@ fdescribe('ZipComponent', () => {
    * 
    * @author Gabriel Zapata (190107-Java-Spark-USF)
    */
+
   it('should verify RenderFile, Select, OpenFile, with data.name is truthy should be truthy',() =>{
     let data={
       name: 'testName'
@@ -160,6 +170,7 @@ fdescribe('ZipComponent', () => {
 
     expect(component.OpenFile).toBeTruthy();
    
+
   })
 
    /**
@@ -167,11 +178,13 @@ fdescribe('ZipComponent', () => {
    * 
    * @author Gabriel Zapata (190107-Java-Spark-USF)
    */
+
   it('should verify RenderFile, Select, OpenFile, with data.name is falsy OpenFile should be truthy',() =>{
     let data={
       name: ''
     }
     let datafilename = 'test'
+
 
     component.openData(data,datafilename);
 

@@ -267,8 +267,6 @@ export class ProjectSubmissionComponent implements OnInit {
     formData.append('description', this.projectToUpload.description);
     formData.append('status', 'pending');
 
-    console.log(this.projectToUpload);
-
     // elements of an array are appended to the FormData object using the same key name
     for (let i = 0; i < this.projectToUpload.groupMembers.length; i++) {
       formData.append('groupMembers', this.projectToUpload.groupMembers[i]);

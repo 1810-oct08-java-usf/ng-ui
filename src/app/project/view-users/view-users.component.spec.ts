@@ -6,10 +6,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { AppModule} from '../../app.module';
 import { ViewUsersComponent } from './view-users.component';
 import { User } from 'src/app/core/models/User';
-import { Observable } from 'rxjs';
-
-
-
+import { Observable, of } from 'rxjs';
+import { MatTableDataSource } from '@angular/material';
 
 /**
  * This test suite serves to check the proper creation of the ViewProjects
@@ -18,16 +16,8 @@ import { Observable } from 'rxjs';
  * @author Ryan Beevers | Shawn Bickel | Sahil Makhijani | Andrew Mitchem | Yuki Mano | Jeffly Luctamar | (1810-Oct08-Java-USF)
  * @author Ryan Williams | Michael Grammens | (1810-Oct22-Java-USF)
  */
-class userService {
-  user:User;
-    getAllUsers(){
-      return true;
-    }
-}
 
-
-
-fdescribe('ViewUsersComponent', () => {
+describe('ViewUsersComponent', () => {
   let component: ViewUsersComponent;
   let fixture: ComponentFixture<ViewUsersComponent>;
   let injector: TestBed;
@@ -47,24 +37,55 @@ fdescribe('ViewUsersComponent', () => {
     service = TestBed.get(UserService);
     fixture = TestBed.createComponent(ViewUsersComponent);
     component = fixture.componentInstance;
-    //fixture.detectChanges();
   });
-
-  it('should create', () => {
+ /**
+ *should view all users if logged-in as administrator
+ * @author Fadi Alzoubi
+ */
+  it('should create the mian component view users', () => {
     expect(component).toBeTruthy();
   });
 
+ /**
+ *should view all users if logged-in as administrator
+ * @author Fadi Alzoubi
+ */
   it('should view all users if logged-in as administrator', () => {
     testUser = {
       role:'ROLE_ADMIN'
     }
+    let data;
     service.user = testUser;
-    component.ngOnInit() 
-    component.userSubscription = this.service.getAllUsers().subsribe( data => {
+    spyOn(service,'getUser').and.returnValue(
+      of(data));
+    component.ngOnInit()
 
-      expect(component.retrievingProjects).toBeFalsy();
-      expect(component.allUsersArray).toEqual(data);
-    });
-
+    expect(component.retrievingProjects).toBeTruthy();
+   
   });
+ /**
+ *should test applyUserFilte
+ * @author Fadi Alzoubi
+ */
+  it('should test applyUserFilter', () => {
+   
+    let filterValue = "test";
+     component.applyUserFilter(filterValue);
+     expect(component.applyUserFilter).toEqual(filterValue);
+     expect(component.applyUserFilter).toBeTruthy();
+   });
+ /**
+ *should test updateToAdmin
+ * @author Fadi Alzoubi
+ */
+  it('test updateToAdmin ',() =>{
+    let user={
+      name:'test'
+    }
+    component.updateToAdmin(user); 
+    expect(component.applyUserFilter).toEqual(user);
+    expect(component.applyUserFilter).toBeTruthy();
+    expect(component.applyUserFilter).toThrow('error');
+  });
+
 });

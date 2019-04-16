@@ -5,7 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { AppModule } from '../../app.module';
 import { LoginComponent } from './login.component';
 import { UserService } from '../../core/services/user.service';
-import { AuthenticationModule } from '../authentication.module';
+import { AuthenticationModule } from 'src/app/authentication/authentication.module';
 import { By } from '@angular/platform-browser';
 import { User } from 'src/app/core/models/User';
 import { componentFactoryName } from '@angular/compiler';
@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
  * of the various methods within it.
  * @author Ryan Beevers | Shawn Bickel | Sahil Makhijani | Andrew Mitchem | Yuki Mano | Jeffly Luctamar | (1810-Oct08-Java-USF)
  */
-fdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let userService: UserService;
@@ -93,7 +93,7 @@ fdescribe('LoginComponent', () => {
     expect(serviceSpy).toHaveBeenCalled();
   });
 
-  xit('should render \'Login\' in title', () => {
+  it('should render \'Login\' in title', () => {
     expect(fixture.debugElement.query(By.css('mat-card-title')).nativeElement.textContent).toContain('Login');
   })
 
@@ -103,7 +103,7 @@ fdescribe('LoginComponent', () => {
    * @author Fadi Alzoubi
    */
 
-  xit('Check the initialization values of login component ', () => {
+  it('Check the initialization values of login component ', () => {
     let testUser = {
       username: "test",
       password: "testpassword"

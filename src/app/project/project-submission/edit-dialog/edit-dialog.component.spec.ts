@@ -10,7 +10,7 @@ import { ProjectService } from 'src/app/core/services/project.service';
 import { EditDialogComponent } from './edit-dialog.component';
 import { AuthenticationModule } from 'src/app/authentication/authentication.module';
 
-xdescribe('EditDialogComponent', () => {
+describe('EditDialogComponent', () => {
   let component: EditDialogComponent;
   let fixture: ComponentFixture<EditDialogComponent>;
 
@@ -29,7 +29,4 @@ xdescribe('EditDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

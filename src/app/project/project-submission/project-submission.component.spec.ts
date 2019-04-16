@@ -22,7 +22,8 @@ describe('ProjectSubmissionComponent', () => {
   let fixture: ComponentFixture<ProjectSubmissionComponent>;
   let router: Router;
   let service: UserService;
- 
+  let testUser: User
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -44,7 +45,7 @@ describe('ProjectSubmissionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should display \'Project Name\' in mat-label', () => {
+  it('should display \'Project Name\' in mat-label', () => {
     expect(fixture.debugElement.query(By.css('mat-label')).nativeElement.textContent).toContain('Project Name');
   });
 
@@ -65,14 +66,14 @@ describe('ProjectSubmissionComponent', () => {
 
     expect(navigateSpy).toHaveBeenCalledWith(['/auth/login']);
   });
-
+  
   /**
    * Test ngOnit if userService.getUser is not null
    * 
    * @author Gabriel Zapata, Alex Johnson (010719-Java-Spark-USF)
    * 
    */
-  xit('should verify ngOninit feilds if userService.getUser is not null',()=>{
+  it('should verify ngOninit fields if userService.getUser is not null',()=>{
     let testUser: User;
     testUser ={
       username:'testUsername',
@@ -114,7 +115,7 @@ describe('ProjectSubmissionComponent', () => {
      * 
     * @author Gabriel Zapata (010719-Java-Spark-USF)
    */
-  it('should verify openEditableDialog feilds if id is not inputGroupMembers',()=>{
+  it('should verify openEditableDialog fields if id is not inputGroupMembers',()=>{
     let id = 'notInputGroupMembers';
     let event = {
       target: id
@@ -133,7 +134,7 @@ describe('ProjectSubmissionComponent', () => {
      * 
     * @author Gabriel Zapata (010719-Java-Spark-USF)
    */
-  it('should verify openEditableDialog feilds if id is inputGroupMembers',()=>{
+  it('should verify openEditableDialog fields if id is inputGroupMembers',()=>{
     let id = 'inputGroupMembers';
     let event = {
       target: id
@@ -168,7 +169,7 @@ describe('ProjectSubmissionComponent', () => {
      * 
     * @author Gabriel Zapata (010719-Java-Spark-USF)
    */
-  xit('should verify onFileSelected feilds if file property is truthy',()=>{
+  it('should verify onFileSelected fields if file property is truthy',()=>{
     let files: String [];
     files = ['test'];
     let event = {
