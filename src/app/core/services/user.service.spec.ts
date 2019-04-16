@@ -60,17 +60,22 @@ describe('UserService', () => {
 
  
   /**
-   * testing logout if items are cleared from local storage
+   * Testing logout method for user-service component. 
+   * Items should be cleared from local storage.
+   * @author Gabriel Zapata | Slavik Gleanco (190107-Java-Spark-USF)
    */
-  it('should remove items from local storage and return null for jwtauth and user',() => {
-    
+  it('should remove items from local storage and return null for jwtauth and user', () => {
+
+    // Arrange
     localStorage.setItem('jwt','testJwt');
-    localStorage.setItem('user','testUser')
+    localStorage.setItem('user','testUser');
+
+    // Act
     service.logout();
-
-    expect(service.jwtauthtoken).toBeNull;
-    expect(service.user).toBeNull;
-
+    
+    // Assert
+    expect(service.jwtauthtoken).toBeNull();
+    expect(service.user).toBeNull();
   })
 
 });

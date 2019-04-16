@@ -16,7 +16,7 @@ describe('EditDialogComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditDialogComponent ],
+      declarations: [ ],
       imports: [SharedModule, RouterTestingModule, BrowserAnimationsModule, AppModule, ProjectModule, AuthenticationModule],
       providers: [ProjectService]
     })
@@ -27,6 +27,10 @@ describe('EditDialogComponent', () => {
     fixture = TestBed.createComponent(EditDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 
 });

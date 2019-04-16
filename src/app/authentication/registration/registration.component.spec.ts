@@ -42,7 +42,8 @@ describe("RegistrationComponent", () => {
   });
 
   afterEach(() => {
-    component.user = null;
+    component.user.email = null;
+    component.user.username = null;
   });
 
   // Testing the successful creation of the registration componenet
@@ -53,7 +54,6 @@ describe("RegistrationComponent", () => {
   // Test component's call to the user service ts file
   it("Should call service level register method", () => {
     // Arrange
-    
     const serviceSpy = spyOn(userService, "register").and.callThrough(); // Set a spy on the service class
     // Act
     component.register();
@@ -118,6 +118,7 @@ describe("RegistrationComponent", () => {
     expect(component.emailIsAvailable).toBeFalsy();
     expect(component.emailIsNotAvailable).toBeFalsy();
     expect(component.checkingIfEmailIsInUse).toBeTruthy();
+
   });
 
   it("Should check the properties of checkIfEmailIsInUseKey method values of emailToCheck, emailIsAvailable, emailIsNotAvailable, checkingIfEmailIsInUse", (done) => { 
