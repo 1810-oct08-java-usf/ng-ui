@@ -39,11 +39,18 @@ fdescribe('ViewUsersComponent', () => {
     component = fixture.componentInstance;
     //fixture.detectChanges();
   });
-
-  it('should create', () => {
+ /**
+ *should view all users if logged-in as administrator
+ * @author Fadi Alzoubi
+ */
+  it('should create the mian component view users', () => {
     expect(component).toBeTruthy();
   });
 
+ /**
+ *should view all users if logged-in as administrator
+ * @author Fadi Alzoubi
+ */
   it('should view all users if logged-in as administrator', () => {
     testUser = {
       role:'ROLE_ADMIN'
@@ -57,7 +64,10 @@ fdescribe('ViewUsersComponent', () => {
     expect(component.retrievingProjects).toBeTruthy();
    
   });
-
+ /**
+ *should test applyUserFilte
+ * @author Fadi Alzoubi
+ */
   it('should test applyUserFilter', () => {
    
     let filterValue = "test";
@@ -65,7 +75,10 @@ fdescribe('ViewUsersComponent', () => {
      expect(component.applyUserFilter).toEqual(filterValue);
      expect(component.applyUserFilter).toBeTruthy();
    });
-
+ /**
+ *should test updateToAdmin
+ * @author Fadi Alzoubi
+ */
   it('test updateToAdmin ',() =>{
     let user={
       name:'test'
