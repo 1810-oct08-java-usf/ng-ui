@@ -10,7 +10,7 @@ import { ZipFileExplorerModule } from '../zip-file-explorer.module';
 import { ProjectService } from 'src/app/core/services/project.service';
 import { Observable } from 'rxjs';
 
-fdescribe('ZipComponent', () => {
+describe('ZipComponent', () => {
   let component: ZipComponent;
   let fixture: ComponentFixture<ZipComponent>;
   let router: Router;
@@ -83,13 +83,11 @@ fdescribe('ZipComponent', () => {
       fileContent: 'testFileContent'
     }
 
-
     spyOn(component,'defaultFile').and.returnValue(testFile);
     component.ngOnInit();
 
     expect(component.SelectedFile).toBeTruthy();
   });
-
 
    /**
    * Test test openRenderFile 
@@ -184,7 +182,6 @@ fdescribe('ZipComponent', () => {
       name: ''
     }
     let datafilename = 'test'
-
 
     component.openData(data,datafilename);
 
