@@ -78,4 +78,5 @@ describe('ViewProjectsLogicComponent', () => {
 
     expect(navigateSpy).toHaveBeenCalledWith([testProject.id + '/edit']);
   })
+
 });

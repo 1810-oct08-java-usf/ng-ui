@@ -41,18 +41,18 @@ describe('ProfileComponent', () => {
 
   // Test is failing need rework
   // Tests conditions for an invalid form (ie. missing field values)
-  xit('Should produce an invalid form', () => {
+  it('Should produce an invalid form', () => {
 
     expect(component.form.valid).toBeFalsy();
 
   });
   //Test is failing need rework
   // Tests conditions for an valid form (ie. when all fields are present)
-  xit('Should produce a valid form', () => {
+  it('Should produce a valid form', () => {
 
     component.form.controls['firstName'].setValue('Tester');
     component.form.controls['lastName'].setValue('Test');
-    component.form.controls['email'].setValue('Test@revature.com');
+    component.form.controls['email'].setValue('test@gmail.com');
     component.form.controls['username'].setValue('Tester');
     component.form.controls['password'].setValue('Testing');
 
@@ -102,6 +102,8 @@ describe('ProfileComponent', () => {
   /**
    * Test formField and disable buttons associated
    * //Not Working need rework.
+   * 
+   * @author: Gabriel Zapata.
    */
   xit('should verify disable button if form is valid',()=>{
     
