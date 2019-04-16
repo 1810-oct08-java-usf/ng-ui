@@ -93,7 +93,7 @@ describe('LoginComponent', () => {
     expect(serviceSpy).toHaveBeenCalled();
   });
 
-  xit('should render \'Login\' in title', () => {
+  it('should render \'Login\' in title', () => {
     expect(fixture.debugElement.query(By.css('mat-card-title')).nativeElement.textContent).toContain('Login');
   })
 
@@ -103,7 +103,7 @@ describe('LoginComponent', () => {
    * @author Fadi Alzoubi
    */
 
-  xit('Check the initialization values of login component ', () => {
+  it('Check the initialization values of login component ', () => {
     let testUser = {
       username: "test",
       password: "testpassword"

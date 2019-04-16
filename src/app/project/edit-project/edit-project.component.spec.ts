@@ -75,7 +75,7 @@ describe('EditProjectComponent', () => {
    * This doesn't work - revisit
    * @Author Gabriel Zapata and Edward Bechtold (190107 Java)
    */
-  xit('should improve code coverage', () => {
+  it('should improve code coverage', () => {
     let testUser = {
       username: 'test'
     };
@@ -96,7 +96,7 @@ describe('EditProjectComponent', () => {
   /**
    * This doesn't work either wow
    */
-  xit('should validateFields', () => {
+  it('should validateFields', () => {
     let nameField = { valid: false };
     let batchField = { valid: false };
     let trainerField = { valid: false };
@@ -111,7 +111,7 @@ describe('EditProjectComponent', () => {
   /** 
    * This doesn't submit a form
    */
-  xit('should submit a form', () => {
+  it('should submit a form', () => {
     localStorage.clear();
     let testUser = {
       role: 'ROLE_USER'
@@ -148,7 +148,7 @@ describe('EditProjectComponent', () => {
    * 
    * @author Alex Johnson (190107-Java-Spark-USF)
    */
-  xit('should navigate to home', () => {
+  it('should navigate to home', () => {
 
     router = TestBed.get(Router);
     let navigateSpy = spyOn(router, 'navigate');
@@ -163,7 +163,7 @@ describe('EditProjectComponent', () => {
    * 
    * @author Alex Johnson (190107-Java-Spark-USF)
    */
-  xit('should navigate to home', () => {
+  it('should navigate to home', () => {
 
     router = TestBed.get(Router);
     let navigateSpy = spyOn(router, 'navigate');
@@ -178,7 +178,7 @@ describe('EditProjectComponent', () => {
    * 
    * @author Alex Johnson (190107-Java-Spark-USF)
    */
-  xit('should navigate to home', () => {
+  it('should navigate to home', () => {
 
     router = TestBed.get(Router);
     let navigateSpy = spyOn(router, 'navigate');

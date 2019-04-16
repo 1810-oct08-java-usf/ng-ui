@@ -45,7 +45,7 @@ describe('ProjectSubmissionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should display \'Project Name\' in mat-label', () => {
+  it('should display \'Project Name\' in mat-label', () => {
     expect(fixture.debugElement.query(By.css('mat-label')).nativeElement.textContent).toContain('Project Name');
   });
 
@@ -73,7 +73,7 @@ describe('ProjectSubmissionComponent', () => {
    * @author Gabriel Zapata, Alex Johnson (010719-Java-Spark-USF)
    * 
    */
-  xit('should verify ngOninit fields if userService.getUser is not null',()=>{
+  it('should verify ngOninit fields if userService.getUser is not null',()=>{
     let testUser: User;
     testUser ={
       username:'testUsername',
@@ -169,7 +169,7 @@ describe('ProjectSubmissionComponent', () => {
      * 
     * @author Gabriel Zapata (010719-Java-Spark-USF)
    */
-  xit('should verify onFileSelected fields if file property is truthy',()=>{
+  it('should verify onFileSelected fields if file property is truthy',()=>{
     let files: String [];
     files = ['test'];
     let event = {
