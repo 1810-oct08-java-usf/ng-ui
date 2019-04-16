@@ -42,7 +42,8 @@ describe("RegistrationComponent", () => {
   });
 
   afterEach(() => {
-    component.user = null;
+    component.user.email = null;
+    component.user.username = null;
   });
 
   // Testing the successful creation of the registration componenet
@@ -53,7 +54,6 @@ describe("RegistrationComponent", () => {
   // Test component's call to the user service ts file
   it("Should call service level register method", () => {
     // Arrange
-    
     const serviceSpy = spyOn(userService, "register").and.callThrough(); // Set a spy on the service class
     // Act
     component.register();
@@ -107,6 +107,33 @@ describe("RegistrationComponent", () => {
     expect(component.loginUser.password).toEqual(testUser.password);
   });
 
+  /**
+   * This test should check email in  checkIfEmailIsInUse false 
+   * and email is avalibale is true
+   */
+  it("should check the properties of checkIfEmailIsInUse method values of emailToCheck, emailIsAvailable, emailIsNotAvailable, checkingIfEmailIsInUse", () => { 
+    component.user.email = 'testEmail';
+    component.checkIfEmailIsInUse(); 
+    //expect(component.emailToCheck).toBe('testEmail');
+    expect(component.emailIsAvailable).toBeFalsy();
+    expect(component.emailIsNotAvailable).toBeFalsy();
+    expect(component.checkingIfEmailIsInUse).toBeTruthy();
+
+  });
+
+  it("Should check the properties of checkIfEmailIsInUseKey method values of emailToCheck, emailIsAvailable, emailIsNotAvailable, checkingIfEmailIsInUse", (done) => { 
+    component.user.email = 'testEmail';
+    component.checkIfEmailIsInUseKey();
+
+    setTimeout(() => {
+      //expect(component.emailToCheck).toBe('testEmail');
+      expect(component.emailIsAvailable).toBeFalsy();
+      expect(component.emailIsNotAvailable).toBeFalsy();
+      expect(component.checkingIfEmailIsInUse).toBeTruthy();
+
+      done();
+    }, 1000);
+  });
 
   /**
    * This test should check username available checkIfUsernameIsAvailable method
