@@ -38,21 +38,21 @@ describe('UserService', () => {
   });
 
   it('should return \'{emailIsInUse:true}\' on checking if email is in use with \'admin@revature.com\'', () => {
-    var response = {emailIsInUse:true};
+    let response = {emailIsInUse:true};
     service.checkIfEmailIsInUse('admin@revature.com').subscribe(res => {
       expect(res).toEqual(response);
     })
   })
 
   it('should return \'{emailIsInUse:false}\' on checking if email is in use with \'(╯• ◡•)╯︵ ┻━┻@email.o\'', () => {
-    var response = {emailIsInUse:false}
+    let response = {emailIsInUse:false}
     service.checkIfEmailIsInUse('(╯• ◡•)╯︵ ┻━┻@email.o').subscribe(res => {
       expect(res).toEqual(response);
     })
   })
 
   it('should return \'{usernameIsAvailable:false}\' on checking if username is available with \'admin\'', () => {
-    var response = {usernameIsAvailable:false}
+    let response = {usernameIsAvailable:false}
     service.checkIfUsernameIsAvailable('admin').subscribe(res => {
       expect(res).toEqual(response);
     });
