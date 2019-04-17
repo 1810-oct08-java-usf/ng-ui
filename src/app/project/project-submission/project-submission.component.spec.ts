@@ -17,7 +17,7 @@ import { User } from 'src/app/core/models/User';
  * of the various methods within it.
  * @author Ryan Beevers | Shawn Bickel | Sahil Makhijani | Andrew Mitchem | Yuki Mano | Jeffly Luctamar | (1810-Oct08-Java-USF)
  */
-describe('ProjectSubmissionComponent', () => {
+fdescribe('ProjectSubmissionComponent', () => {
   let component: ProjectSubmissionComponent;
   let fixture: ComponentFixture<ProjectSubmissionComponent>;
   let router: Router;
@@ -170,24 +170,7 @@ describe('ProjectSubmissionComponent', () => {
     
   })
 
-    /**
-     * Test openEditableDialog with event listener = inputGroupMember
-     * 
-    * @author Gabriel Zapata is an awesime guy (010719-Java-Spark-USF)
-   */
-  it('should verify openEditableDialog fields if id is inputGroupMembers',()=>{
-    let id = 'inputGroupMembers';
-    let event = {
-      target: id
-    }
     
-    component.openEditableDialog(event);
-
-    expect(component.title).toBeTruthy();
-    expect(component.questionType).toBeTruthy();
-    expect(component.width).toBeTruthy();
-  })
-
   /**
    * Test submitForm formData
    * 
