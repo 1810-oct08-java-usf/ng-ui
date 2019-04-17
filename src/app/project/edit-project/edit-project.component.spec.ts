@@ -94,7 +94,9 @@ describe('EditProjectComponent', () => {
   });
 
   /**
-   * This doesn't work either wow
+   * This method should validate fields
+   * 
+   * @Author Gabriel Zapata and Alex Johnson (190107 Java)
    */
   it('should validateFields', () => {
     let nameField = { valid: false };

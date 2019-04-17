@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
           this.authenticating = false;
           alert('Error logging in');
         }
-      }, (error) => { this.authenticating = false; alert('ERROR LOGGING IN'); });
+       }, (error) => { this.authenticating = false; alert('ERROR LOGGING IN'); });
     }
 
   }

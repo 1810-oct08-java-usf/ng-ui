@@ -41,6 +41,25 @@ describe('ZipComponent', () => {
   });
   
   /**
+   * testing that when the zip component is rendered, if the user is null
+   * then the user should be navigated back to login
+   * 
+   * @author Alex Johnson (190107-Java-Spark-USF)
+   */
+  xit('should navigate to login if the user is null', () => {
+
+    fixture.detectChanges();
+    router = TestBed.get(Router);
+    localStorage.clear();
+    localStorage.setItem('user', null);
+    let navigateSpy = spyOn(router, 'navigate');
+
+    component.ngOnInit();
+
+    expect(navigateSpy).toHaveBeenCalledWith(['/auth/login']);
+  });
+  
+  /**
    * This test should display error messages
    * @author Gabriel Zapata | Edward Bechtold (190107-Java-Spark-USF)
    */
@@ -187,6 +206,4 @@ describe('ZipComponent', () => {
 
     expect(component.OpenFile).toBeTruthy();
   })
-
-   
 });
