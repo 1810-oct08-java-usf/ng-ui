@@ -22,7 +22,7 @@ import { of } from 'rxjs';
  * @author Ryan Williams | Michael Grammens | (1810-Oct22-Java-USF)
  */
 
-fdescribe('ViewUsersProjectsComponent', () => {
+describe('ViewUsersProjectsComponent', () => {
   let component: ViewUsersProjectsComponent;
   let fixture: ComponentFixture<ViewUsersProjectsComponent>;
   let router: Router;
