@@ -45,10 +45,6 @@ describe('ProjectSubmissionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display \'Project Name\' in mat-label', () => {
-    expect(fixture.debugElement.query(By.css('mat-label')).nativeElement.textContent).toContain('Project Name');
-  });
-
   /**
    * testing that when the project submission component is rendered, if the user is null
    * then the user should be navigated back to login
@@ -82,12 +78,13 @@ describe('ProjectSubmissionComponent', () => {
       lastName: 'testLastName',
       role:'test'
     }
-   
+    service.user = testUser;
+    
     spyOn(service,'getUser').and.returnValue(testUser);
 
     component.ngOnInit();
  
-      expect(component.projectToUpload.groupMembers).toBeTruthy();
+    expect(component.projectToUpload.groupMembers).toBeTruthy();
   
   })
 
@@ -98,9 +95,32 @@ describe('ProjectSubmissionComponent', () => {
    * 
    */
   it('should verify openDialog fields, and title, questiontype, ',()=>{
-    let id = 'inputGroupMembers';
+    
     let event = {
-      target: id
+      target : {
+        id :'inputGroupMembers'
+      }
+    }
+
+    component.openDialog(event);
+
+    expect(component.title).toContain('New Group Member')
+    expect(component.questionType).toContain('Enter the name of the group member')
+
+  })
+
+   /**
+    * Test openDialog with event listener = inputGroupMembers
+    *
+   * @author Gabriel Zapata (010719-Java-Spark-USF)
+   * 
+   */
+  it('should verify openDialog fields, and title, questiontype, ',()=>{
+    
+    let event = {
+      target : {
+        id :'notInputGroupMembers'
+      }
     }
 
     component.openDialog(event);
@@ -110,29 +130,50 @@ describe('ProjectSubmissionComponent', () => {
 
   })
 
-    /**
+   /**
      * Test openEditableDialog with event listener = inputGroupMember
      * 
     * @author Gabriel Zapata (010719-Java-Spark-USF)
    */
   it('should verify openEditableDialog fields if id is not inputGroupMembers',()=>{
-    let id = 'notInputGroupMembers';
     let event = {
-      target: id
+      target : {
+        id :'inputGroupMembers'
+      }
     }
-    
+
     component.openEditableDialog(event);
 
-    expect(component.title).toBeTruthy();
-    expect(component.questionType).toBeTruthy();
-    expect(component.width).toBeTruthy();
+    expect(component.title).toContain('New Group Member')
+    expect(component.questionType).toContain('Enter the name of the group member')
+    expect(component.width).toEqual(300);
     
   })
 
     /**
      * Test openEditableDialog with event listener = inputGroupMember
      * 
-    * @author Gabriel Zapata (010719-Java-Spark-USF)
+    * @author Gabriel Zapata | Slavik Cool-Guy (010719-Java-Spark-USF)
+   */
+  it('should verify openEditableDialog fields if id is not inputGroupMembers',()=>{
+    let event = {
+      target : {
+        id :'notInputGroupMembers'
+      }
+    }
+
+    component.openEditableDialog(event);
+
+    expect(component.title).toContain('Repository Link')
+    expect(component.questionType).toContain('Enter the Github URL of your repository')
+    expect(component.width).toEqual(500);
+    
+  })
+
+    /**
+     * Test openEditableDialog with event listener = inputGroupMember
+     * 
+    * @author Gabriel Zapata is an awesime guy (010719-Java-Spark-USF)
    */
   it('should verify openEditableDialog fields if id is inputGroupMembers',()=>{
     let id = 'inputGroupMembers';
@@ -168,18 +209,20 @@ describe('ProjectSubmissionComponent', () => {
      * Test openEditableDialog with event listener = inputGroupMember
      * 
     * @author Gabriel Zapata (010719-Java-Spark-USF)
-   */
-  it('should verify onFileSelected fields if file property is truthy',()=>{
-    let files: String [];
-    files = ['test'];
-    let event = {
-      target: files
-    }
-    
-    component.onFileSelected(event);
+   */  
+    it('should test stuff',()=>{
 
-    expect(component.projectToUpload.screenShots).toBeTruthy();
-    expect(component.validScreenshots).toBeTruthy();
-    
-  })
+      let event = {
+        target : {
+          files :'test'
+        }
+      }
+      component.projectToUpload ={
+        screenShots: ['test']
+      }
+
+      component.onFileSelected(event);
+
+      expect(component.validScreenshots).toBeTruthy();
+    })
 });
