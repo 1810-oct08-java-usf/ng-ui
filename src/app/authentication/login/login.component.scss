@@ -6,7 +6,7 @@ $dark-grey: mat-color($mat-grey, 700);
 $light-grey: mat-color($mat-grey, 200);
 $black: mat-color($mat-grey,900);
 
-$font: 'Courier New', sans-serif;
+$font: "Arial Black","Arial Bold",Gadget,sans-serif;
 
 #rpm-logo {
     max-width: auto;
@@ -19,11 +19,10 @@ $font: 'Courier New', sans-serif;
     margin-top: 30px;
     font-size: 42px;
     color: #ffa226;
-    font-family: 'Montserrat';
+    font-family: "Arial Narrow",Arial,sans-serif;
 }
 
 #login-container {
-    background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +40,7 @@ $font: 'Courier New', sans-serif;
             mat-card-title {
                 color: $black;
                 font-family: $font;
-                font-size: 300%;
+                font-size: 250%;
             }
         }
 
@@ -51,28 +50,28 @@ $font: 'Courier New', sans-serif;
             input {
                 color: $dark-grey;
                 font-family: $font;
-                font-size: 120%;
+                font-size: 100%;
             }
 
             button {
                 width: 100%;
                 color: $light-grey;
                 font-family: $font;
-                font-size: 120%;
+                font-size: 100%;
                 margin-top: 23%;
             }
 
             a {
                 margin-top: 2%;
                 width: 100%;
-                background-color: #091abd;
+                background-color: #ffa226;
                 color: $light-grey;
                 font-family: $font;
-                font-size: 120%;
+                font-size: 100%;
             }
 
             a:hover {
-                background-color: #091abd;
+                background-color: #ffa226;
                 text-decoration: none;
             }
         }
@@ -85,15 +84,52 @@ $font: 'Courier New', sans-serif;
 }
 
 #registerSpinner {
-    font-family: "Courier New", sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 9px;
 }
 
 #o {
-    font-family: "Courier New", sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
 
 }
 
 #logUnsuccessful {
     color: red;
+    font-size: 9px;
 
 }
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -900;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
