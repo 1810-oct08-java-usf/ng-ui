@@ -104,7 +104,7 @@ export class UserService {
    * */
   updateUserToAdmin(user: User): Observable<User> {
     user.role = 'ROLE_ADMIN' + ' special';
-    return this.http.put<User>(environment.url + '/auth/users/', user, httpOptions)
+    return this.http.put<User>(environment.url + '/auth/users/id/', user, httpOptions)
       .pipe(catchError(this.handleError));
   }
 
