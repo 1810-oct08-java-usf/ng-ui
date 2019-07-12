@@ -28,7 +28,7 @@ export class ProjectSubmissionPageComponent implements OnInit {
   user: User;
 
   /**
-   * groupMemberString and zipLinkString are both bound to the user's input of the group member field and the zip links field
+   * GroupMemberString and zipLinkString are both bound to the user's input of the group member field and the zip links field
    * When a new group member or zip link is added, then that information is concatenated to the string.
    * Because of two-way binding, the result is placed in either the group member field or the zip links field
    * @author Shawn Bickel (1810-Oct08-Java-USF)
@@ -52,19 +52,6 @@ export class ProjectSubmissionPageComponent implements OnInit {
     private formBuilder: FormBuilder
   ) { }
 
-  /**
-   * When the file input is triggered, the event is passed to this method,
-   * which uses the properties of the event to retrieve the files chosen and
-   * places them in the array corresponding to the screenShots/dataModel array of the project to be submitted
-   *
-   * This method will now check for:
-   * Upload limits: If the screenshots and data models uploaded exceed a certain amount,
-   *    opens a snackbar message and not add the file to the project.
-   * File size: If the file is too large, opens a snackbar message, and does not the file to the project.
-   *
-   * @param e the event corresponding to the user choosing a file to uplodad
-   * @author Justin Kerr, Rodel Flores (190422-Java-USF)
-   */
   imagePath;
 
   ngOnInit() {
@@ -86,14 +73,14 @@ export class ProjectSubmissionPageComponent implements OnInit {
     this.projectToUpload.dataModel = [];
   }
 
-  /**
+/**
  * This method opens the dialog defined in the edit-dialog component, which is decided by
- * the field id of which you access this method from using an if/else If statement.
- * After the dialog is closed, the user's updated data is placed in the groupMembers array.
-   *
+ * the field id of which the user accesses this method from, using If/Else statements.
+ * After the dialog is closed, the user's updated data is populated in the groupMembers array.
+ *
  * @param e: the event of clicking either the group member or zip links fields, which both trigger the dialog to open
  * @author Sean Doyle (1810-Oct22-Java-USF)
- * @author Justin Kerr, Rodel Flores
+ * @author Justin Kerr, Rodel Flores (190422-Java-USF)
  */
   openEditableDialog(e) {
 
@@ -133,6 +120,21 @@ export class ProjectSubmissionPageComponent implements OnInit {
         }
       });
   }
+
+  /**
+   * When the file input is triggered, the event is passed to this method,
+   * which uses the properties of the event to retrieve the files chosen and
+   * places them in the array corresponding to the screenShots/dataModel array of the project to be submitted.
+   *
+   * This method will validate:
+   * Upload limits - If the screenshots and data models uploaded exceed a certain amount,
+   *    this method opens a snackbar message to notify the user and will not add the file to the project.
+   * File size - If the file is too large, this mothod opens a snackbar message to notify the user
+   *    and will not the file to the project.
+   * 
+   * @param e the event corresponding to the user choosing a file to uplodad
+   * @author Justin Kerr, Rodel Flores (190422-Java-USF)
+   */
   imgURL: any;
   screenshotCap: number = 4;
   dataModelCap: number = 6;
@@ -175,16 +177,17 @@ export class ProjectSubmissionPageComponent implements OnInit {
   }
 
   /**
-   * Finds the index of the file within projectToUpload that was previously
+   * This method finds the index of the file within projectToUpload that was previously
    * uploaded to the form and removes it using a basic splice method.
-   * Also removes the picture from the screenshot picture list.
+   * It also removes the picture from the screenshots array.
+   * It will similarly remove data model files from its own array.
    *
-   * Currently, if you remove a file and sequentially try to add the same one back, it won't be added back.
-   * If you try to add another file and then retry adding the previously-deleted file, it WILL be added back.
-   * Also, if you attempt to upload the same file, it won't be added, and the system doesn't throw an error.
+   * Currently, if the user removes a file and sequentially try to add the same one back, it will not upload.
+   * However, if the user tries to add another file and then retry adding the previously-deleted file, it will upload.
+   * In general, if the user attempts to upload the same file sequentially, it will no upload, and the system doesn't throw an error.
    *
    * @param file: the file that was uploaded to the form
-   * @author Justin Kerr (190422-Java-USF)
+   * @author Justin Kerr, Rodel Flores (190422-Java-USF)
    */
   removeData(file: File, inputfield) {
     let list;
@@ -207,8 +210,8 @@ export class ProjectSubmissionPageComponent implements OnInit {
 
   /**
    * This method is bound to the submission of the form
-   * All the data of the form is placed as key/value pairs into a FormData object
-   * This FormData object is then sent to the project service for communication with the server
+   * All the data from the form is placed as key-value pairs into a FormData object.
+   * This FormData object is then sent to the project service for communication with the server.
    * @author Shawn Bickel (1810-Oct08-Java-USF)
    * @author Justin Kerr, Rodel Flores (190422-Java-USF)
    */

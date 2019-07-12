@@ -88,11 +88,14 @@ export class EditDialogComponent implements OnInit {
   }
 
   /**
-   * Method stores the user inputted value in the list of items if it is not falsey.
-   * Note: this method is only called when the user hits enter or clicks the plus.
+   * This method stores the user input values in the list of items if they do not contain falsey values. 
+   * This method is only called whenever the user presses Enter or clicks the (+) button in the user interface. 
+   * Also, this method includes a regular expression that validates Github URL input, which should contain the domain, 
+   * user name, and repository name.
    *
    * @param e The event tied with the plus button for the input field
    * @author Sean Doyle (1810-Oct22-Java-USF)
+   * @author Rodel Flores (190422-Java-USF)
    */
   addItem(e) {
     // The if statement treats undefined, null, and empty values as 'falsey' and there for the if-statement will decline the value
