@@ -1,0 +1,58 @@
+<div class="body">
+
+<mat-form-field class="search">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<button mat-button (click)="test()">Click me!</button>
+
+<div class="mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <!-- UserId Column -->
+    <ng-container matColumnDef="ID#">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID# </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.firstName + ' ' + user.lastName}} </mat-cell>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="Role">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Role </mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <mat-form-field>
+          <mat-select [(ngModel)]="user.role" [placeholder]="user.role" (ngModelChange)="userChanged(user)">
+              <mat-option *ngFor="let role of roles" [value]="role" >
+                {{role}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </mat-cell>
+         <!-- <input matInput type="text" class="" [(ngModel)]="user.role" (ngModelChange)="userChanged(user)"  placeholder="{{user.role}}"> </mat-cell> -->
+    </ng-container>
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="Username">
+      <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.username}} </mat-cell>
+    </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="Email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+      </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+</div>
+</div>
