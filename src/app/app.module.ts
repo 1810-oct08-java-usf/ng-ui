@@ -31,6 +31,7 @@ import { CodebasePageComponent } from './components/pages/codebase-page/codebase
 import { AllUsersPageComponent } from './components/pages/user-management/all-users-page/all-users-page.component';
 import { EllipsisPipe } from './ellipsis.pipe';
 import { ChangeRolesComponent } from './components/pages/user-management/change-roles/change-roles.component';
+import { EditRequestsComponent } from './components/pages/project/edit-requests/edit-requests.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ChangeRolesComponent } from './components/pages/user-management/change-
     CodebasePageComponent,
     AllUsersPageComponent,
     EllipsisPipe,
-    ChangeRolesComponent
+    ChangeRolesComponent,
+    EditRequestsComponent
   ],
   imports: [
     BrowserModule,
