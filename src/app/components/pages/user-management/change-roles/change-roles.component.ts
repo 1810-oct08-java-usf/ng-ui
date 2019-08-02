@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { User } from '../../../../models/User';
-import { NoopInterceptor } from '@angular/common/http/src/interceptor';
+import { Router } from '@angular/router';
 
 // export interface PeriodicElement {
 //   name: string;
@@ -15,8 +15,10 @@ import { NoopInterceptor } from '@angular/common/http/src/interceptor';
 const ELEMENT_DATA: User[] = [
   //{position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   { id: 5, firstName: 'Zak', lastName: 'Noori', email: 'asdlkhl', username: 'user', role: 'aaaaaa'},
+  { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
+  { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
+  { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
   { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'}
-
 ];
 
 let updatedRoles: User[] = [
@@ -41,10 +43,11 @@ export class ChangeRolesComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
 
   ngOnInit() {
+    this.router.navigate(['/changeroles']);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
 

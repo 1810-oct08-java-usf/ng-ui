@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-content>
+        <div id="view-projects-grid">
+            <div id="project-title">
+              <h1 *ngIf="project">{{ project.name }}</h1>
+              <h1 *ngIf="!project">Project Viewer</h1>
+                <div>
+                    <!-- <button mat-flat-button *ngIf="yourProject" (click)="updateProject()">Update Project</button>
+                    <button mat-flat-button>Codebase</button> -->
+                    <button mat-fab matTooltip="Approve Project" matTooltipPosition="above" (click)="updateProject()"><mat-icon>edit</mat-icon></button>
+                    <button mat-fab matTooltip="Deny Project" matTooltipPosition="above"><mat-icon>code</mat-icon></button>
+                </div>
+            </div>
+            <!-- <nav id="projects-tabs" class="flex-container">
+                <input matInput id="search-projects" type="search" placeholder="Search projects">
+                <app-project-list></app-project-list>
+            </nav> -->
+            <div id="project-info">
+                <app-project-info></app-project-info>
+            </div>
+            <div id="carousel-window">
+                <app-ngx-carousel></app-ngx-carousel>
+            </div>
+            <div id="project-description">
+                <app-project-description></app-project-description>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

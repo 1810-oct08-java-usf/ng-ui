@@ -1,17 +1,15 @@
 <div class="body">
 
 <mat-form-field class="search">
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    <input matInput id="search-users" type="search" placeholder="Search users">
 </mat-form-field>
-
-<button mat-button (click)="test()">Click me!</button>
 
 <div class="mat-elevation-z8">
 
   <mat-table [dataSource]="dataSource" matSort>
     <!-- UserId Column -->
     <ng-container matColumnDef="ID#">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> ID# </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header > ID# </mat-header-cell>
       <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
     </ng-container>
 
@@ -55,4 +53,7 @@
 
 
 </div>
+<button  mat-flat-button color="accent" (click)="test()">Submit Changes</button>
+
 </div>
+

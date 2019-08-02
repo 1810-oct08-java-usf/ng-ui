@@ -1,13 +1,28 @@
 .mat-elevation-z8{
-    width: 50%;
+    width: 90%;
+    max-height: 100vh;
+    text-align: center;
 }
-input {
-    border: solid;
-    width: 100%;
-}
+// input {
+//     flex-basis: 150px;
+//     flex-grow: 1;
+//     max-height: 45px;
+// }
 .search {
-    width: 30%;
+    width: 70%;
+    margin-left: 25px;
 }
 .body {
-    align-content: center;
+    top:50%;
+    left:50%;
+    margin-left: 75px;
+    text-align: center;
+}
+button {
+    margin-top: 20px;
+    flex-flow: row-reverse;
+}
+mat-header-cell {
+    background-color: rgba(71, 76, 85, 0.87);
+    color: white;
 }

@@ -4,7 +4,7 @@
     </div>
     <div *ngIf="loggedIn" id="logged-in-links" class="nav-menu-links">
         <a mat-button>All Users</a>
-
+        <a (click)="goToEditUsers()" mat-button>Edit Users</a>
         <!-- The "View Projects" submenu -->
         <mat-expansion-panel id="view-projects">
             <mat-expansion-panel-header>

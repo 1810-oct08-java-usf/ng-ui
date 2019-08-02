@@ -32,6 +32,7 @@ import { AllUsersPageComponent } from './components/pages/user-management/all-us
 import { EllipsisPipe } from './ellipsis.pipe';
 import { ChangeRolesComponent } from './components/pages/user-management/change-roles/change-roles.component';
 import { EditRequestsComponent } from './components/pages/project/edit-requests/edit-requests.component';
+import { ProjectApprovalComponent } from './components/pages/project-submission/project-approval/project-approval.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { EditRequestsComponent } from './components/pages/project/edit-requests/
     AllUsersPageComponent,
     EllipsisPipe,
     ChangeRolesComponent,
-    EditRequestsComponent
+    EditRequestsComponent,
+    ProjectApprovalComponent
   ],
   imports: [
     BrowserModule,

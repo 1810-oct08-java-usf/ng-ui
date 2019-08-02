@@ -77,4 +77,8 @@ export class NavMenuComponent implements OnInit {
   goToProfile() {
     this.router.navigate(['profile']);
   }
+
+  goToEditUsers() {
+    this.router.navigate(['changeroles']);
+  }
 }
