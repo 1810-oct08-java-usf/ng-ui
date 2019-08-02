@@ -85,9 +85,10 @@ export class ProjectEditComponent implements OnInit {
    * @author Shawn Bickel (1810-Oct08-Java-USF)
    */
   submitForm() {
-    if (JSON.parse(localStorage.getItem('rpmUser')).role === 'ROLE_USER') {
-      this.projectToUpdate.status = 'PendingEdit';
-    }
+    // if (JSON.parse(localStorage.getItem('rpmUser')).role === 'ROLE_USER') {
+    //   this.projectToUpdate.status = 'PendingEdit';
+    // }
+    this.projectToUpdate.status = 'PendingEdit';
     console.log(this.projectToUpdate);
     console.log(this.originalProject);
     this.projectToUpdate.oldProject = null;
