@@ -26,6 +26,7 @@ export class ProjectEditComponent implements OnInit {
   // projectToUpdate will hold project information for a specific project returned by id and
   // is bound to the information that users enter in the form
   projectToUpdate: Project;
+  originalProject: Project;
 
   /**
    * title, questionType, and result are all passed to a dialog when the user chooses either the group member or the links input field
@@ -52,7 +53,9 @@ export class ProjectEditComponent implements OnInit {
     else {
       this.projectService.CurrentProject$.asObservable().subscribe(
         project => {
-          this.projectToUpdate = project;
+          this.projectToUpdate = JSON.parse(JSON.stringify(project));
+          this.originalProject = project;
+          console.log("Original and update the same: " + this.projectToUpdate===this.originalProject);
         }
       );
       this.ngmeta.setHead({title: 'Edit Project | RPM'});
@@ -83,24 +86,34 @@ export class ProjectEditComponent implements OnInit {
    */
   submitForm() {
     if (JSON.parse(localStorage.getItem('rpmUser')).role === 'ROLE_USER') {
-      this.projectToUpdate.status = 'Pending';
+      this.projectToUpdate.status = 'PendingEdit';
     }
-    this.projectService.updateProject(this.projectToUpdate, this.projectToUpdate.id).subscribe();
+    console.log(this.projectToUpdate);
+    console.log(this.originalProject);
+    this.projectToUpdate.oldProject = null;
+    this.projectToUpdate.oldProject = this.originalProject;  //Setting the original project inside the updated project
+    this.projectToUpdate.oldProject.oldProject = null;
+    this.projectService.submitEditRequest(this.projectToUpdate).subscribe();
 
-    for (let i = 0; i < this.projectService.AllProjects$.value.length; i++) {
-      if (this.projectService.AllProjects$.value[i].id == this.projectToUpdate.id) {
-        this.projectService.AllProjects$.value[i] = this.projectToUpdate;
-      }
-    }
+    // for (let i = 0; i < this.projectService.AllProjects$.value.length; i++) {
+    //   if (this.projectService.AllProjects$.value[i].id == this.projectToUpdate.id) {
+    //     this.projectService.AllProjects$.value[i] = this.projectToUpdate;
+    //   }
+    // }
 
-    this.projectService.getAllProjects().subscribe(
-      allprojects => {
-        this.projectService.AllProjects$.next(allprojects);
-      }
-    );
-    this.router.navigate(['projects/1']);
+    // this.projectService.getAllProjects().subscribe(
+    //   allprojects => {
+    //     this.projectService.AllProjects$.next(allprojects);
+    //   }
+    // );
+    this.router.navigate(['projects/1']); //routing to YOUR projects which will need to be changed
   }
 
+  /**
+   * This method is currently not being implemented because a user should not delete the
+   * project from the site immediately without approve. We are dealing with editing project 
+   * information here and not deleting. 
+   */
   deleteProject() {
     this.projectService.deleteProjectById(this.projectToUpdate.id).subscribe(hello => {
       this.router.navigate(['projects/1']);

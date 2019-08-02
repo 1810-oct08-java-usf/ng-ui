@@ -1,3 +1,6 @@
+<p>Project to Update: {{projectToUpdate}} Members: {{projectToUpdate.groupMembers}}</p>
+<br>
+<p>Project Original: {{originalProject}} Members: {{originalProject.groupMembers}}</p>
 <mat-card>
   <div id="edit-project-page">
     <button id="back-icon" mat-fab (click)="back()">
@@ -45,9 +48,11 @@
         <div id="add-members-inner">
         <h3>Add a Group Member</h3>
         <mat-form-field>
-          <input matInput placeholder="Add Group Member" [(ngModel)]="groupMember" name="hello"
-            (keydown.enter)="addGroupMember()">
+          <input matInput placeholder="Add Group Member" [(ngModel)]="groupMember" name="hello">
         </mat-form-field>
+        <div>
+        <button (click)="addGroupMember()" mat-raised-button color="accent">Add</button>
+        </div>
         </div>
         <div class="parent-div" id="group-members">
           <h3>Select a Group Member to Remove</h3>
@@ -59,8 +64,7 @@
       <div class="parent-div" id="control-buttons">
         <button (click)="submitForm()" [disabled]="(!name.valid) || (!batch.valid) || (!trainerName.valid) ||
             (!description.valid) || (!techStack.valid)" type="submit" id="submit-update" mat-flat-button
-          color="accent">Update Project</button>
-        <button (click)="deleteProject()" color="accent" id="submit" mat-flat-button>Delete Project</button>
+          color="accent">Submit Request</button>
         <button (click)="cancelEdit()" color="warn" mat-flat-button>Cancel</button>
       </div>
 

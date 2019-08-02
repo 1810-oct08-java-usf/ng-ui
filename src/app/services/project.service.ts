@@ -49,6 +49,15 @@ export class ProjectService {
     return this.httpClient.put(environment.url + `/project/${id}`, project, HTTP_OPTIONS);
   }
 
+    /**
+   * The submitEditRequest method is used to submit a changed version of a project that 
+   * a user would like to update.
+   * @param project
+   */
+  submitEditRequest(project: Project): Observable<Project> {
+    return this.httpClient.post(environment.url + `/project/edit`, project, HTTP_OPTIONS);
+  }
+
   createProject(project: FormData): Observable<Project> {
     return this.httpClient.post(environment.url + '/project/', project);
   }
