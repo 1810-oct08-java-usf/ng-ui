@@ -6,6 +6,7 @@ import {ProjectGridPageComponent} from './components/pages/project/project-grid-
 import { ProjectSubmissionPageComponent } from './components/pages/project-submission/project-submission-page/project-submission-page.component';
 import { ProjectEditComponent } from './components/pages/project-edit/project-edit.component';
 import { ProfileComponent } from './components/pages/user-management/profile/profile.component';
+import { CodebaseComponent } from './components/pages/codebase/codebase.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'auth/login', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'projects/1', component: ProjectGridPageComponent},
   {path: 'submitform', component: ProjectSubmissionPageComponent},
   {path: 'updateform', component: ProjectEditComponent},
+  {path: 'codebase', component: CodebaseComponent},
   {path: 'profile', component: ProfileComponent},
 
   // Do not put any routes below this one!

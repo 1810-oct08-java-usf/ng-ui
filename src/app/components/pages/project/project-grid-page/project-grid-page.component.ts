@@ -24,6 +24,14 @@ export class ProjectGridPageComponent implements OnInit {
   }
 
   updateProject() {
-    if (this.project) this.router.navigate(['/updateform']);
+    if (this.project) {
+      this.router.navigate(['/updateform']);
+    }
+  }
+
+  viewCodeBase() {
+    if (this.project) {
+      this.router.navigate(['/codebase']);
+    }
   }
 }

@@ -14,11 +14,11 @@
   "dependencies": {
     "@angular-material-extensions/jumbotron": "^1.0.1",
     "@angular/animations": "^7.1.1",
-    "@angular/cdk": "^7.1.1",
+    "@angular/cdk": "^7.3.7",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/core": "~7.0.0",
-    "@angular/flex-layout": "^7.0.0-beta.19",
+    "@angular/flex-layout": "^7.0.0-beta.24",
     "@angular/forms": "~7.0.0",
     "@angular/http": "~7.0.0",
     "@angular/material": "^7.1.1",
@@ -35,6 +35,7 @@
     "ngmeta": "^7.0.0",
     "ngx-hm-carousel": "^1.7.2",
     "rxjs": "~6.3.3",
+    "uuid": "^3.3.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

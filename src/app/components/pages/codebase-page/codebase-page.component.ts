@@ -8,7 +8,7 @@ import { ProjectService } from 'src/app/services/project.service';
 
 
 @Component({
-  selector: 'codebase-page-component',
+  selector: 'app-codebase-page-component',
   templateUrl: './codebase-page.component.html',
   styleUrls: ['./codebase-page.component.scss']
 })
@@ -77,8 +77,7 @@ export class CodebasePageComponent implements OnInit {
   errorFile(message: string): RenderFile {
     const testfile = new  RenderFile();
     testfile.fileName = 'HELP';
-    testfile.fileContent =
-    `ERROR:${message}`;
+    testfile.fileContent = `ERROR:${message}`;
     return testfile;
   }
   /**
@@ -218,10 +217,10 @@ Currently can open and navigate to the src directory of Angular and Java Reposit
         return string;
       });
       helpme.then(string => {
-        const file = new RenderFile();
-        file.fileName = fileName;
-        file.fileContent = string; // "file here is a string text readable format stored for rendering logic"
-        this.RenderFile.push(file);
+        const files = new RenderFile();
+        files.fileName = fileName;
+        files.fileContent = string; // "file here is a string text readable format stored for rendering logic"
+        this.RenderFile.push(files);
       });
     } else {
       file.fileName = 'Error';
