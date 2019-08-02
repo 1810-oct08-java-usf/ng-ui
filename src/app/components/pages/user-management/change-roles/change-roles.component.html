@@ -1,8 +1,11 @@
 <div class="body">
 
-<mat-form-field class="search">
-    <input matInput id="search-users" type="search" placeholder="Search users">
+  <div class="controls">
+<mat-form-field id="search">
+    <input matInput id="search-users"  class="search" type="search" placeholder="Search users">
 </mat-form-field>
+<button  mat-flat-button color="accent" (click)="test()">Submit Changes</button>
+</div>
 
 <div class="mat-elevation-z8">
 
@@ -53,7 +56,5 @@
 
 
 </div>
-<button  mat-flat-button color="accent" (click)="test()">Submit Changes</button>
-
 </div>
 
