@@ -30,6 +30,7 @@ import { ProfileComponent } from './components/pages/user-management/profile/pro
 import { CodebasePageComponent } from './components/pages/codebase-page/codebase-page.component';
 import { AllUsersPageComponent } from './components/pages/user-management/all-users-page/all-users-page.component';
 import { EllipsisPipe } from './ellipsis.pipe';
+import { ProjectWelcomePageComponent } from './components/pages/project/project-welcome-page/project-welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { EllipsisPipe } from './ellipsis.pipe';
     ProfileComponent,
     CodebasePageComponent,
     AllUsersPageComponent,
-    EllipsisPipe
+    EllipsisPipe,
+    ProjectWelcomePageComponent
   ],
   imports: [
     BrowserModule,

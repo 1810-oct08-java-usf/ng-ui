@@ -41,6 +41,10 @@ export class ProjectService {
     return this.httpClient.get<Project[]>(environment.url + '/project/', HTTP_OPTIONS);
   }
 
+  getAllApprovedProjects(): Observable<Project[]> {
+    return this.httpClient.get<Project[]>(environment.url + '/project/status/Approved', HTTP_OPTIONS);
+  }
+
   getProjectById(id): Observable<Project> {
     return this.httpClient.get<Project>(environment.url + `/project/id/${id}`, HTTP_OPTIONS);
   }
