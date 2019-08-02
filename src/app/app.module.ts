@@ -33,6 +33,7 @@ import { EllipsisPipe } from './ellipsis.pipe';
 import { ChangeRolesComponent } from './components/pages/user-management/change-roles/change-roles.component';
 import { EditRequestsComponent } from './components/pages/project/edit-requests/edit-requests.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

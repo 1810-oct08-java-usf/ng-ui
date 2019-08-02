@@ -1,3 +1,54 @@
-<p>
-  edit-requests works!
-</p>
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile class="tile"> 
+
+      <mat-card class="example-card">
+          <mat-card-title align='center'>{{OLD.name}}</mat-card-title>
+          <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile><p >Trainer: {{OLD.trainer}}</p></mat-grid-tile>
+        <mat-grid-tile><p >Batch: {{OLD.batch}}</p></mat-grid-tile>
+       </mat-grid-list>
+       <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg(96 kB)
+       https://material.angular.io/assets/img/examples/shiba2.jpg
+       " alt="Photo of a Shiba Inu">
+       -->
+        <mat-card-content>
+          <p >Tech Stack:{{OLD.techStack}}</p>
+          <p >Group Members: {{OLD.groupMembers}}</p>
+          <p>
+            Description: {{OLD.description}}
+          </p>
+        </mat-card-content>
+       </mat-card>
+
+  </mat-grid-tile>
+  <mat-grid-tile class="tile">
+      <mat-card class="example-card">
+          <mat-card-title align='center'>{{NEW.name}}</mat-card-title>
+          <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile><p >Trainer: {{NEW.trainer}}</p></mat-grid-tile>
+        <mat-grid-tile><p >Batch: {{NEW.batch}}</p></mat-grid-tile>
+       </mat-grid-list>
+       <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg(96 kB)
+       https://material.angular.io/assets/img/examples/shiba2.jpg
+       " alt="Photo of a Shiba Inu">
+       -->
+        <mat-card-content>
+          <p >Tech Stack: {{NEW.techStack}}</p>
+          <p >Group Members: {{NEW.groupMembers}}</p>
+          <p>
+            Description: {{NEW.description}}
+          </p>
+        </mat-card-content>
+
+        <mat-card-footer aLign='end'>
+
+          <button mat-raised-button>Accept Changes</button>
+          <button mat-raised-button>Deny Changes</button>
+
+        </mat-card-footer>
+       </mat-card>
+
+  </mat-grid-tile>
+   </mat-grid-list>
+
+

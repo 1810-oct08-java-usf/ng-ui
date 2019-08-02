@@ -19,7 +19,9 @@ import {
   MatStepperModule,
   MatTooltipModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatListModule,
+  MatGridListModule,
 } from '@angular/material';
 
 const materials = [
@@ -41,7 +43,9 @@ const materials = [
   MatStepperModule,
   MatTooltipModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatListModule,
+  MatGridListModule
 ];
 
 @NgModule({
