@@ -2,9 +2,9 @@
 
   <div class="controls">
 <mat-form-field id="search">
-    <input matInput id="search-users"  class="search" type="search" placeholder="Search users">
+    <input matInput (keyup)="applyFilter($event.target.value)" id="search-users"  class="search" type="search" placeholder="Search users">
 </mat-form-field>
-<button  mat-flat-button color="accent" (click)="test()">Submit Changes</button>
+<button  mat-flat-button color="accent" (click)="userChanged(user)">Submit Changes</button>
 </div>
 
 <div class="mat-elevation-z8">

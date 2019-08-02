@@ -7,9 +7,13 @@
                 <div>
                     <!-- <button mat-flat-button *ngIf="yourProject" (click)="updateProject()">Update Project</button>
                     <button mat-flat-button>Codebase</button> -->
-                    <button mat-fab matTooltip="Approve Project" matTooltipPosition="above" (click)="updateProject()"><mat-icon>edit</mat-icon></button>
-                    <button mat-fab matTooltip="Deny Project" matTooltipPosition="above"><mat-icon>code</mat-icon></button>
-                </div>
+                    <!-- <button mat-fab matTooltip="Approve Project" matTooltipPosition="above" (click)="updateProject()"><mat-icon>edit</mat-icon></button>
+                    <button mat-fab matTooltip="Deny Project" matTooltipPosition="above"><mat-icon>code</mat-icon></button> -->
+                    <button  mat-flat-button color="accent" (click)="approveProject()">Approve Project</button>
+                    <button  mat-flat-button color="accent" (click)="denyProject()">Deny Project</button>
+
+                
+                  </div>
             </div>
             <!-- <nav id="projects-tabs" class="flex-container">
                 <input matInput id="search-projects" type="search" placeholder="Search projects">

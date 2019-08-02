@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProjectService} from '../../../../services/project.service';
 import {Project} from '../../../../models/Project';
 import {Router} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-project-approval',
@@ -12,7 +13,11 @@ export class ProjectApprovalComponent implements OnInit {
 
   project: Project;
 
-  constructor(private projectService: ProjectService, private router: Router) { }
+  constructor(
+    private projectService: ProjectService,
+    private router: Router,
+    private httpClient: HttpClient
+    ) { }
 
   ngOnInit() {
     this.projectService.CurrentProject$.asObservable().subscribe(
@@ -23,7 +28,22 @@ export class ProjectApprovalComponent implements OnInit {
       });
   }
 
+  approveProject() {
+   this.project.status = 'approved';
+   this.updateProject();
+  }
+  denyProject() {
+    this.project.status = 'denied';
+    this.updateProject();
+  }
+
   updateProject() {
-    if (this.project) this.router.navigate(['/updateform']);
+    this.httpClient.post('', this.project).subscribe (response => {
+      if (response === true) {
+      //  dosomething
+      } else {
+      //  dosomething
+      }
+     });
   }
 }
