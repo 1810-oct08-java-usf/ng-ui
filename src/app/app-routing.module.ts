@@ -7,6 +7,7 @@ import { ProjectSubmissionPageComponent } from './components/pages/project-submi
 import { ProjectEditComponent } from './components/pages/project-edit/project-edit.component';
 import { ProfileComponent } from './components/pages/user-management/profile/profile.component';
 import { ChangeRolesComponent } from './components/pages/user-management/change-roles/change-roles.component';
+import { ProjectEditSubmissionsComponent } from './components/pages/project-edit-submissions/project-edit-submissions.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'projects', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'updateform', component: ProjectEditComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'changeroles', component: ChangeRolesComponent},
+  {path: 'editrequest', component: ProjectEditSubmissionsComponent},
 
   // Do not put any routes below this one!
   {path: '**', component: PageNotFoundComponent}

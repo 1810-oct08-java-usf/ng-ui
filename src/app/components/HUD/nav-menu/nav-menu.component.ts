@@ -72,6 +72,15 @@ export class NavMenuComponent implements OnInit {
 
   /**
    * Function that:
+   * Navigates to the project-edit-submissions component
+   */
+
+    goToEditRequest() {
+      this.router.navigate(['editrequest']);
+    }
+
+  /**
+   * Function that:
    * Navigates to the profile component.
    */
   goToProfile() {

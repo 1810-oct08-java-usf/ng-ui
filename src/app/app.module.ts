@@ -35,6 +35,7 @@ import { EditRequestsComponent } from './components/pages/project/edit-requests/
 import { ProjectApprovalComponent } from './components/pages/project-submission/project-approval/project-approval.component';
 
 import { ProjectWelcomePageComponent } from './components/pages/project/project-welcome-page/project-welcome-page.component';
+import { ProjectEditSubmissionsComponent } from './components/pages/project-edit-submissions/project-edit-submissions.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ProjectWelcomePageComponent } from './components/pages/project/project-
     ChangeRolesComponent,
     EditRequestsComponent,
     ProjectApprovalComponent,
-    ProjectWelcomePageComponent
+    ProjectWelcomePageComponent,
+    ProjectEditSubmissionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<div class="mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="Editor">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Editor's Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.editorName}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Project">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Project's Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.projectName}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Time of Request">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Time of Request </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.timeOfRequest}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
