@@ -1,0 +1,30 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<div class="mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="Trainer">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Trainer's Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainer}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Project">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Project's Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Status of Request">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Status of Request </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row (click)="swapProject(row)"*matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+ <app-project-approval *ngIf= "selected"></app-project-approval>
+</div>

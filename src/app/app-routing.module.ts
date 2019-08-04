@@ -8,6 +8,7 @@ import { ProjectEditComponent } from './components/pages/project-edit/project-ed
 import { ProfileComponent } from './components/pages/user-management/profile/profile.component';
 import { ChangeRolesComponent } from './components/pages/user-management/change-roles/change-roles.component';
 import { ProjectEditSubmissionsComponent } from './components/pages/project-edit-submissions/project-edit-submissions.component';
+import { PendingProjectSubmissionsViewComponent } from './components/pages/pending-project-submissions-view/pending-project-submissions-view.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'projects', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'changeroles', component: ChangeRolesComponent},
   {path: 'editrequest', component: ProjectEditSubmissionsComponent},
+  {path: 'pendingprojects', component: PendingProjectSubmissionsViewComponent},
 
   // Do not put any routes below this one!
   {path: '**', component: PageNotFoundComponent}

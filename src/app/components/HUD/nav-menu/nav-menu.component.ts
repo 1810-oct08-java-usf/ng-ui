@@ -79,6 +79,10 @@ export class NavMenuComponent implements OnInit {
       this.router.navigate(['editrequest']);
     }
 
+    goToPendingProject() {
+      this.router.navigate(['pendingprojects']);
+    }
+
   /**
    * Function that:
    * Navigates to the profile component.

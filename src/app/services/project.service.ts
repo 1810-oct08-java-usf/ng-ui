@@ -60,4 +60,8 @@ export class ProjectService {
   deleteProjectById(id): Observable<any> {
     return this.httpClient.delete<any>(environment.url + `/project/id/${id}`);
   }
+
+  getProjectsByStatus(): Observable<Project[]>  {
+    return this.httpClient.get<Project[]>(environment.url + '/project/pendingprojects', HTTP_OPTIONS);
+  }
 }
