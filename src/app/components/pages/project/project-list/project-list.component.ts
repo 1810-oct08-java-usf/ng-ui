@@ -42,10 +42,6 @@ export class ProjectListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    if (!localStorage.getItem('jwt')) {
-      this.router.navigate(['/auth/login']);
-    }
-
     this.userService.user.asObservable().subscribe(
       user => {
         if (user) {
@@ -55,7 +51,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.subscription = this.projectService.getAllProjects()
+    this.subscription = this.projectService.getAllApprovedProjects()
       .subscribe(
         (projectResponse) => {
           this.retrievingProjects = false;
@@ -63,7 +59,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
           this.updateProjects();
         });
   }
-  
+
   /**
    * This updates the currently shown projects on the left of the Project Page (src/app/components/pages/project).
    * If you provide a string of user you get that users specific project.

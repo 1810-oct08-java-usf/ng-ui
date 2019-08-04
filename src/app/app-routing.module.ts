@@ -9,7 +9,7 @@ import { ProfileComponent } from './components/pages/user-management/profile/pro
 import { ChangeRolesComponent } from './components/pages/user-management/change-roles/change-roles.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'auth/login', pathMatch: 'full'},
+  {path: '', redirectTo: 'projects', pathMatch: 'full'},
   {path: 'auth/login', component: LoginRegisterPageComponent},
   {path: 'projects', component: ProjectGridPageComponent},
   {path: 'projects/1', component: ProjectGridPageComponent},

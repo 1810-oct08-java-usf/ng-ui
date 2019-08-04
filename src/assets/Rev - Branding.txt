@@ -1,0 +1,88 @@
+﻿Rev - Branding                                                      Reference: Revature.com
+
+
+Logos:
+* Regular Logo
+https://revature.com/wp-content/uploads/2017/12/revature-logo-600x219.png
+* White Text, Orange BG
+https://revature.com/wp-content/uploads/2017/08/rev-logo-2.png
+
+
+Colors:
+   * Revature Orange
+#f26925
+	   * Used as an accent color (navbar, buttons, links)
+   * Revature Orange chevrons background image 
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/css/../imgs/optimize/Contact-Us-Bottom-Stretch.png
+   * Revature Orange sunrays background image 
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/imgs/cd-img-1.jpg
+
+
+      * Revature Gray
+#474c55
+	      * Used for section bg color, <h#> tags, and body text
+      * Revature Gray chevrons background image
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/css/../imgs/optimize/Testimonials.png
+
+
+         * White
+#ffffff
+	         * Used for primary bg color, text color on gray or orange bg 
+         * Revature White chevrons background image #1
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/css/../imgs/GetStartedTodayWithForm_CallOut.png
+         * Revature White chevrons background image #2
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/css/../imgs/optimize/blog-intro.png
+         * Revature White sunrays background image
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/css/../imgs/corp-pipeline.png
+
+
+            * Revature Light Gray
+#9b9c9f
+	            * Used sparingly to de-emphasize text/links on gray bg
+
+
+            * Revature Blue
+#74a3bf
+	            * Used very rarely as an accent color
+            * Revature Blue chevrons background image
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/uploads/2016/10/rev-pro-center.jpg
+
+
+               * Revature Yellow
+               * Almost never used; exclusively used for section backgrounds
+               * Revature Yellow sunrays background image
+https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/yellow-rays-1.png
+
+
+Font:
+                  * Body Text
+                  * font-family: "futura-pt", arial;
+                  * letter-spacing: initial;
+                  * font-weight: 400;
+                  * Section Headers
+                  * font-size: 26px;
+                  * text-transform: capitalize;
+                  * Bold Headers
+                  * font-weight: 600;
+                  * text-transform: uppercase;
+                  *                   * Logo text
+                  * UNKNOWN
+                  * Look-alike font:
+                  * Termina (Adobe Fonts) (Fort Foundry)
+  
+
+                  * This is the font that was ultimately determined to be closest to the official Revature logo text. The most noticeable difference is that some of the Revature logo corners are rounded whereas others are square. In this font, all corners are square. 
+                  * Important features of the font which make it most similar: 
+                  * Light line weight
+                  * Monospaced font (all letters are the same width)
+                  * All letters are approximately as wide as they are tall (if not slightly moreso)
+                  * The cross-bar of the R and E are (almost) at the same height, whereas the cross-bar for the A is slightly lower
+
+
+Other:
+                     * Use of chevrons in backgrounds 
+                     * White Chevrons
+https://media.licdn.com/dms/image/C4D09AQHXPE78tqB9Nw/company-featured_1128_635/0?e=2159024400&v=beta&t=nkUqn5LShEYjWCSGU-p6r4HNHm6whrPmIdJcxyYC3r4
+                     * Gray Chevrons
+https://scontent.ftpa1-2.fna.fbcdn.net/v/t31.0-8/21741064_521004848238731_4963210844337032614_o.jpg?_nc_cat=106&_nc_oc=AQlqYcXJwZq3Wwm52DjsMLEaG7Zl5uIrYUT8EhjX0Jvze1JDfRBh8UQfXPh2k0JJpGU&_nc_ht=scontent.ftpa1-2.fna&oh=9eb8598c43893fcf314ee98602e21fb0&oe=5D8759CF
+                     * Orange Chevrons

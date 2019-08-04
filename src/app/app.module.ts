@@ -34,6 +34,7 @@ import { ChangeRolesComponent } from './components/pages/user-management/change-
 import { EditRequestsComponent } from './components/pages/project/edit-requests/edit-requests.component';
 import { ProjectApprovalComponent } from './components/pages/project-submission/project-approval/project-approval.component';
 
+import { ProjectWelcomePageComponent } from './components/pages/project/project-welcome-page/project-welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ProjectApprovalComponent } from './components/pages/project-submission/
     EllipsisPipe,
     ChangeRolesComponent,
     EditRequestsComponent,
-    ProjectApprovalComponent
+    ProjectApprovalComponent,
+    ProjectWelcomePageComponent
   ],
   imports: [
     BrowserModule,
