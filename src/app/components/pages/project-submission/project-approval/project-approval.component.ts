@@ -30,11 +30,16 @@ export class ProjectApprovalComponent implements OnInit {
 
   approveProject() {
    this.project.status = 'approved';
-   this.updateProject();
+   this.projectService.updateProject(this.project, this.project.id).subscribe(response =>{
+     console.log(response);
+   });
   }
+
   denyProject() {
     this.project.status = 'denied';
-    this.updateProject();
+    this.projectService.updateProject(this.project, this.project.id).subscribe(response =>{
+      console.log(response);
+    });
   }
 
   updateProject() {

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { User } from '../../../../models/User';
 import { Router } from '@angular/router';
+import { UserService } from '../../../../services/user.service';
 
 // export interface PeriodicElement {
 //   name: string;
@@ -12,17 +13,16 @@ import { Router } from '@angular/router';
 
 
 
-const ELEMENT_DATA: User[] = [
+let ELEMENT_DATA: User[] = [
   //{position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  { id: 5, firstName: 'Zak', lastName: 'Noori', email: 'asdlkhl', username: 'user', role: 'aaaaaa'},
-  { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
-  { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
-  { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
-  { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'}
+  // { id: 5, firstName: 'Zak', lastName: 'Noori', email: 'asdlkhl', username: 'user', role: 'aaaaaa'},
+  // { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
+  // { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
+  // { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'},
+  // { id: 7, firstName: 'Zasdasda', lastName: 'Noasda', email: 'ahl', username: 'user2', role: 'zzzzz'}
 ];
 
 let updatedRoles: User[] = [
-
 ];
 
 
@@ -43,13 +43,17 @@ export class ChangeRolesComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userServ: UserService) { }
 
 
   ngOnInit() {
-    this.router.navigate(['/changeroles']);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    console.log("yo");
+    this.userServ.getAllUsers().subscribe(users => {
+      ELEMENT_DATA = users;
+      console.log("hi");
+    });
 
   }
 
@@ -64,6 +68,15 @@ export class ChangeRolesComponent implements OnInit {
    // console.log(updatedRoles);
     }
   }
+
+  postChanges() {
+    console.log("beginning of postchanges");
+    updatedRoles.forEach(user => {
+      this.userServ.updateProfile(user).subscribe(response => {console.log (response)});
+      console.log("end of changes");
+    });
+  }
+
   test() {
     console.log(updatedRoles);
   }

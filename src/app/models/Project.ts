@@ -13,4 +13,5 @@ export interface Project {
     projectApproved?: boolean;
     projectDeclined?: boolean;
     dataModel?: any[];
+    oldProject?: Project;
  }

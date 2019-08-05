@@ -6,3 +6,42 @@
 button {
     margin-top: 55px;
 }
+#title {
+    grid-area: title;
+ }
+ #title-name {
+    grid-area: title-name;
+ }
+ #trainer {
+    grid-area: trainer;
+ }
+ #tname {
+    grid-area: tname;
+ }
+ #batch {
+    grid-area: batch;
+ }
+ #bname {
+    grid-area: bname;
+ }
+ #developers {
+    grid-area: developers;
+ }
+ #dnames {
+    grid-area: dnames;
+ }
+ #project-list {
+    display: grid;
+  grid-template:
+        'title title-name'
+        'trainer tname'
+        'batch bname'
+        'developers dnames';
+    grid-template-columns: 33% 66%;
+    grid-gap: 0;
+    margin: auto;
+    width: 100%;
+ }
+//  #project-description {
+//     padding: $section-padding;
+//  }

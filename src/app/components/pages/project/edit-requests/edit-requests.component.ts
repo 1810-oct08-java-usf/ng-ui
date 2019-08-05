@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../../../models/Project';
+import { ProjectService } from 'src/app/services/project.service';
 
 // const OLD: Project;
 // const NEW: Project;
@@ -15,7 +16,7 @@ export class EditRequestsComponent implements OnInit {
   NEW: Project;
 
 
-  constructor() { }
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
     this.OLD = {
@@ -49,5 +50,8 @@ export class EditRequestsComponent implements OnInit {
       // status?: string;
       description: 'this is a new and improved desciption being used to update project. this is a new and improved desciption being used to update project.this is a new and improved desciption being used to update project.'
       }
+
+      // this.projectService.CurrentProject$.next(this.NEW);
+
     }
 }
