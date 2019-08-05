@@ -25,12 +25,14 @@ export class ProjectService {
   //(You're able to make changes in one place and see those changes immediately in multiple other places)
   AllProjects$: BehaviorSubject<Project[]>;
   CurrentProject$: BehaviorSubject<Project>;
+  AllUserProjects$: BehaviorSubject<Project[]>;
 
   CurrentProject: Project; //this is an outdated variable
 
   constructor(private httpClient: HttpClient) {
     this.CurrentProject$ = new BehaviorSubject<Project>(null);
     this.AllProjects$ = new BehaviorSubject<Project[]>(null);
+    this.AllUserProjects$ = new BehaviorSubject<Project[]>(null);
   }
 
   /**
@@ -39,6 +41,10 @@ export class ProjectService {
    */
   getAllProjects(): Observable<Project[]> {
     return this.httpClient.get<Project[]>(environment.url + '/project/', HTTP_OPTIONS);
+  }
+
+  getAllUserProjects(trainer: string): Observable<Project[]> {
+    return this.httpClient.get<Project[]>(environment.url + '/project/' + trainer , HTTP_OPTIONS);
   }
 
   getAllApprovedProjects(): Observable<Project[]> {

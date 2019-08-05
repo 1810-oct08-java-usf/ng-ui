@@ -58,8 +58,7 @@ export class NavMenuComponent implements OnInit {
   getProjects(type) {
         localStorage.removeItem('viewprojects');
         localStorage.setItem('viewprojects', type);
-        if (type == 'user') this.router.navigate(['projects/1']);
-        else this.router.navigate(['projects'])
+      this.router.navigate(['projects']);
   }
 
   /**

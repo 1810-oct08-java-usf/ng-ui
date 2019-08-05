@@ -17,13 +17,9 @@ export class ProjectGridPageComponent implements OnInit {
   ngOnInit() {
     this.projectService.CurrentProject$.asObservable().subscribe(
       proj => {
-        if (proj) {
+        if (proj.status === 'Approved') {
           this.project = proj;
         }
       });
-  }
-
-  updateProject() {
-    if (this.project) this.router.navigate(['/updateform']);
   }
 }
