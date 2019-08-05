@@ -27,7 +27,6 @@ import {ProjectSubmissionPageComponent} from './components/pages/project-submiss
 import {EditDialogComponent} from './components/pages/project-submission/edit-dialog/edit-dialog.component';
 import {TokenInterceptor} from './services/jwtInterceptor.interceptor';
 import { ProfileComponent } from './components/pages/user-management/profile/profile.component';
-import { CodebasePageComponent } from './components/pages/codebase-page/codebase-page.component';
 import { AllUsersPageComponent } from './components/pages/user-management/all-users-page/all-users-page.component';
 import { EllipsisPipe } from './ellipsis.pipe';
 import { CodebaseComponent } from '../app/components/pages/codebase/codebase.component';
@@ -50,7 +49,6 @@ import { CodebaseComponent } from '../app/components/pages/codebase/codebase.com
     EditDialogComponent,
     RegisterComponent,
     ProfileComponent,
-    CodebasePageComponent,
     AllUsersPageComponent,
     EllipsisPipe,
     CodebaseComponent,
