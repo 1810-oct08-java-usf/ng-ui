@@ -185,19 +185,22 @@ export class CodebasePageComponent implements OnInit {
       if (!zipDir) {
         return; // If no such folder, return.
       }
+      let fileArray = zipDir.file(/^.*/); // get the array of all files in this subdirectory
 
-      // Uses Regex to determine if Java, Angular, or neither and moves to correct directory
-      zipDir = this.setRootByLanguage(zipDir, dataname);
+      fileArray = this.filterFiles(fileArray);
 
-      console.log(zipDir);
+      // // Uses Regex to determine if Java, Angular, or neither and moves to correct directory
+      // zipDir = this.setRootByLanguage(zipDir, dataname);
 
-      if (!this.filepath) {
-        return; // If neither Java nor Angular, return.
-      }
+      // if (!this.filepath) {
+      //   return; // If neither Java nor Angular, return.
+      // }
 
-      const fileArray = zipDir.file(/^.*/); // get the array of all files in this subdirectory
+      // fileArray = zipDir.file(/^.*/); // get the array of all files in this subdirectory
+      // console.log(fileArray);
 
-      this.dirSchema = [];
+      // this.dirSchema = [];
+      // console.log(zipDir.files);
 
       // List out all files on screen
       for (let i = 0; i < fileArray.length; i++) {
@@ -207,6 +210,31 @@ export class CodebasePageComponent implements OnInit {
       }
       console.log(this.dirSchema);
     });
+  }
+
+  filterFiles(filesArray: any[]) {
+
+    const retArray: any[] = [];
+
+    const goodTypes: string[] = ['.prefs',  '.xml',   '.java',  '.properties',
+                                  '.css',   '.scss',  '.sass',  '.cs',
+                                 '.html',   '.htm',   '.js',    '.ts',
+                                 '.py',     '.log'];
+
+    for (let i = 0; i < filesArray.length; i++) {
+     {
+       if (filesArray[i].name !== undefined){
+         const fileType = filesArray[i].name.substring(filesArray[i].name.lastIndexOf('.'));
+
+         if (goodTypes.includes(fileType)) {
+           console.log(fileType);
+           retArray.push(filesArray[i]);
+         }
+       }
+      }
+    }
+
+    return retArray;
   }
   
   /**
