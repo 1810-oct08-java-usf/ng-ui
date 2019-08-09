@@ -189,6 +189,8 @@ export class CodebasePageComponent implements OnInit {
       // Uses Regex to determine if Java, Angular, or neither and moves to correct directory
       zipDir = this.setRootByLanguage(zipDir, dataname);
 
+      console.log(zipDir);
+
       if (!this.filepath) {
         return; // If neither Java nor Angular, return.
       }

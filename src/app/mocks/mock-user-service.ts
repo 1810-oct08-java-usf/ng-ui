@@ -26,9 +26,7 @@ export class MockUserService {
             this.user.next(this.u);
             this.test = true;
             this.url = 'http://www.google.com/NotAUsefulAnswer';
-    };
-
-
+    }
 
     getCurrentUser(): User {
         return this.u;
