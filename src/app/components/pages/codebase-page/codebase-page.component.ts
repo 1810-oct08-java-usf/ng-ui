@@ -38,6 +38,11 @@ export class CodebasePageComponent implements OnInit {
   availableUrls: string [] = [];
   title = '';
 
+  goodTypes: string[] = ['.prefs',  '.xml',   '.java',  '.properties',
+                              '.css',   '.scss',  '.sass',  '.cs',
+                              '.html',   '.htm',   '.js',    '.ts',
+                              '.py',     '.log'];
+
   dirSchema: DirectoryObject[];
 
   /**
@@ -65,11 +70,17 @@ export class CodebasePageComponent implements OnInit {
         isTextDecoderSupported  = !!new TextDecoder('utf-8');
       } catch (e) {
       }
-      
+
+      this.goodTypes = ['.prefs',  '.xml',   '.java',  '.properties',
+                        '.css',   '.scss',  '.sass',  '.cs',
+                        '.html',   '.htm',   '.js',    '.ts',
+                        '.py',     '.log'];
+
       this.browserSupported = isTextDecoderSupported;
-      if (this.projectService.CurrentProject) {
-        this.availableUrls = this.projectService.CurrentProject.zipLinks;
-      }  
+      this.sendRequest('https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip');
+      // if (this.projectService.CurrentProject) {
+      //   this.availableUrls.push('https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip'); //this.projectService.CurrentProject.zipLinks;
+      // }
     }
 
     this.dirSchema = [];
@@ -139,6 +150,7 @@ export class CodebasePageComponent implements OnInit {
     // reponse type is arraybuffer so the get request knows this is a oclet-array-stream request
     this.http.get(url, { observe: 'response', responseType: 'blob'})
     .subscribe(blob => {
+      console.log(153);
       // after the array is retrieve. open the data with JSZip
       if (blob.headers.get('content-disposition')) {
         const datafilename = this.getFileNameFromHttpResponse(blob.headers.get('content-disposition'));
@@ -216,18 +228,12 @@ export class CodebasePageComponent implements OnInit {
 
     const retArray: any[] = [];
 
-    const goodTypes: string[] = ['.prefs',  '.xml',   '.java',  '.properties',
-                                  '.css',   '.scss',  '.sass',  '.cs',
-                                 '.html',   '.htm',   '.js',    '.ts',
-                                 '.py',     '.log'];
-
     for (let i = 0; i < filesArray.length; i++) {
      {
        if (filesArray[i].name !== undefined){
          const fileType = filesArray[i].name.substring(filesArray[i].name.lastIndexOf('.'));
 
-         if (goodTypes.includes(fileType)) {
-           console.log(fileType);
+         if (this.goodTypes.includes(fileType)) {
            retArray.push(filesArray[i]);
          }
        }

@@ -2,16 +2,16 @@
   <div class="header">Code Base Viewer</div>
     <div class="btn-container">
 
-      <button *ngFor="let link of availableUrls" class="btn-open btn-side"(click)='sendRequest(link)'>
+      <!-- <button *ngFor="let link of availableUrls" class="btn-open btn-side" (click)='sendRequest(link)'>
         <div class="btn-img">🗁</div>
         <!-- The button text for these buttons require further guidance from higher. -->
-        <div class="btn-txt">{{title}}</div>
-      </button>
-      <label class="fileContainer">
+        <!-- <div class="btn-txt">{{title}}</div>
+      </button>  -->
+      <!-- <label class="fileContainer">
         <div class="btn-img">🗁</div>
         <div class="btn-txt">Local</div>
         <input #fileOpener type="file" (change)='openData(fileOpener.files[0])'>
-      </label>
+      </label> -->
       <button class="btn-home btn-side"(click)='goBack()'>
         <div class="btn-img">⌂</div>
         <div class="btn-txt">Home</div>
