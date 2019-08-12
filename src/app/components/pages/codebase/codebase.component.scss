@@ -9,6 +9,8 @@
 
 mat-card {
     width: 90vw;
+    height: 85vh;
+    min-height: 85vh;
     margin: 1% auto;
 }
 
@@ -52,21 +54,26 @@ mat-card {
     justify-content: left;
     flex-direction: column;
     padding: $section-padding;
+    max-height: 68vh;
     padding-right: 0;
+    #buttonContainer {
+        max-height: 63vh;
+        overflow-y: scroll;
+    }     
 }
 
 #codebase-breadcrumbs {
     grid-area: breadcrumbs;
     a {
-        color: blue;
+        color: $rev-blue-dark;
     }
 }
 
 #codebase-codeWindow {
     grid-area: codeWindow;
-    max-height: 75vh;
+    max-height: 68vh;
         code {
-            max-height: 70vh;
+            height: 63vh;
         }
 }
 
@@ -75,6 +82,26 @@ mat-card {
         background-color: rgba($rev-gray-main, 0.5);
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 @media screen and (min-width: $all-projects-breakpoint) {
     #codebase-page {
@@ -85,9 +112,3 @@ mat-card {
         grid-template-columns: 20% 80%;
     }
 }
-
-// button {
-//  height: fit-content;
-//  width: fit-content;
-//   margin: 5px;
-// }

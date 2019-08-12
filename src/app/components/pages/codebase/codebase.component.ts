@@ -51,8 +51,7 @@ export class CodebaseComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    // if (localStorage.getItem('user') === null) { // TODO - Undo this.  Just a hack for working.
-    if (false) {
+    if (localStorage.getItem('user') === null) {
       this.router.navigate(['/auth/login']);
     } else {
       this.ngmeta.setHead({ title: 'Code | RPM' });

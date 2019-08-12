@@ -9,14 +9,16 @@
       </div>
       <div id="codebase-files">
         <h2>Files:</h2><br/>
+        <div id="buttonContainer">
           <div *ngFor="let dir of currLevelDirs">
-            <button mat-button style="width: 100%!important;" color="primary" (click)="displayDirectory(dir)">{{dir.name |  ellipsis:20 }}</button>
+            <button mat-button style="width: 100%!important;" color="primary" (click)="displayDirectory(dir)">{{dir.name |  ellipsis:15 }}</button>
             <br/>
           </div>
           <div *ngFor="let file of currLevelFiles">
-            <button mat-button style="width: 100%!important;" (click)="openFileInCodeWindow(file.contents)">{{file.name |  ellipsis:20 }}</button>
+            <button mat-button style="width: 100%!important;" (click)="openFileInCodeWindow(file.contents)">{{file.name |  ellipsis:15 }}</button>
             <br/>
           </div>
+        </div>
       </div>
       <div id="codebase-codeWindow">
           <pre>
