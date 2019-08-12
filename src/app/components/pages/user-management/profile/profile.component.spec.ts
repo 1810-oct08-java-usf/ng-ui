@@ -9,7 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
 import { Router } from '@angular/router';
 
-describe('ProfileComponent', () => {
+fdescribe('ProfileComponent', () => {
   let component: ProfileComponent;
   let fixture: ComponentFixture<ProfileComponent>;
   let router: Router;
@@ -154,10 +154,10 @@ describe('ProfileComponent', () => {
   it ('#trying to make form valid', () => {
     // Arrange
     component.fillFormGroup('aaaaaaaa', 'aaaaaaaa', 'aaaaaaaa@revature.com', 'aaaaaaaa', 'aaaaaaaa');
-    
+
     let button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
-    
+
     component.form.controls['firstName'].setValue('Michael');
     component.form.controls['lastName'].setValue('James');
     // component.form.controls['email'].setValue('admin@revature.com');
@@ -172,5 +172,16 @@ describe('ProfileComponent', () => {
     console.log(component.form);
     console.log(component.form.valid);
 
+  });
+  it ('#ValidEmail works with complying email', () => {
+    // Arrange
+    component.fillFormGroup('aaaaaaaa', 'aaaaaaaa', 'aaaaaaaa@revature.com', 'aaaaaaaa', 'aaaaaaaa');
+    component.form.controls['email'].setValue('anEmail@any.com');
+
+     // Act
+     let retVal = ProfileComponent.ValidEmail(component.form);
+
+     // Assert
+     expect(retVal).toBeNull();
   });
 });

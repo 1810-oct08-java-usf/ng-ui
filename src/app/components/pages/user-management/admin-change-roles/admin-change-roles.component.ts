@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { MatSort, MatPaginator } from '@angular/material';
 import { User } from '../../../../models/User';
 import { Router } from '@angular/router';
 import { UserService } from '../../../../services/user.service';
-
-let users: User[] = [
-];
 
 let updatedRoles: User[] = [
 ];
@@ -22,7 +19,7 @@ export class AdminChangeRolesComponent implements OnInit {
   ];
   displayedColumns: string[] = ['ID#', 'Name', 'Role', 'Username', 'Email'];
   displayedColumnsData: string[] = ['id', 'firstName', 'lastName', 'email', 'username', 'role'];
-  dataSource = new MatTableDataSource(users);
+  dataSource: User[];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -34,14 +31,12 @@ export class AdminChangeRolesComponent implements OnInit {
     }
     this.userService.getAllUsers().subscribe(
       response => {
-        users = response;
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
+        this.dataSource = response;
       });
   }
 
   /**
-   * This function keeps track of all the changes made on the table. 
+   * This function keeps track of all the changes made on the table.
    * @author Zak Noori (1905-Java-USF)
    * @author Glory Umeasalugo (1905-Java-USF)
    * @author Aisha Hodge (1905-Java-USF)
@@ -54,7 +49,7 @@ export class AdminChangeRolesComponent implements OnInit {
   }
 
   /**
-   * This function saves all changes made on the table and updates a role. 
+   * This function saves all changes made on the table and updates a role.
    * @author Zak Noori (1905-Java-USF)
    * @author Glory Umeasalugo (1905-Java-USF)
    * @author Aisha Hodge (1905-Java-USF)
@@ -69,9 +64,4 @@ export class AdminChangeRolesComponent implements OnInit {
       );
     });
   }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
 }

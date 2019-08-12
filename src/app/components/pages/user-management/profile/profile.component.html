@@ -40,7 +40,7 @@
 ​
     <div class="container">
         <mat-form-field>
-          <input matInput readonly=true id="inputEmail" placeholder="Email" formControlName="email"
+          <input matInput readonly={{setReadOnly}} id="inputEmail" placeholder="Email" formControlName="email"
             (blur)=formFilled() (mouseleave)=formFilled() [pattern]="emailPattern">
         </mat-form-field>
     
