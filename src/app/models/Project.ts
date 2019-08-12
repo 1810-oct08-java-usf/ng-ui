@@ -14,5 +14,4 @@ export interface Project {
   projectDeclined?: boolean;
   dataModel?: any[];
   userId?: any; // Track userId (owner of the project)
-  zipURL?: string; // S3 bucket URL for the project zip
 }

@@ -9,6 +9,7 @@ import { EllipsisPipe } from 'src/app/ellipsis.pipe';
 import { Project } from 'src/app/models/Project';
 import { DirectoryObject } from './directory_object';
 import { RenderFile } from './render_file';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-codebase',
@@ -48,10 +49,11 @@ export class CodebaseComponent implements OnInit {
               private location: Location,
               private ngmeta: NgMetaService,
               private projectService: ProjectService,
+              private userService: UserService,
               private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('user') === null) {
+    if (!this.userService.getCurrentUser) {
       this.router.navigate(['/auth/login']);
     } else {
       this.ngmeta.setHead({ title: 'Code | RPM' });
@@ -67,13 +69,13 @@ export class CodebaseComponent implements OnInit {
           }
         });
 
-        // TODO - Undo this.  Just a hack for working.
-        this.project = {zipURL: 'words'};
-        this.project.zipURL = 'https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip';
-        if (this.project.zipURL) {
+        // Currently only displays the first of a collection of zip files.
+        // TODO - Need to figure out how to download multiple files
+        this.project = {zipLinks: ['https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip']};
+        if (this.project.zipLinks[0]) {
           this.SelectedFile = new RenderFile('Setup', this.getSelectMessage());
           this.browserSupported = isTextDecoderSupported;
-          this.sendRequest(this.project.zipURL);
+          this.sendRequest(this.project.zipLinks[0]);
         }
     }
     this.dirStructure = [];
@@ -82,7 +84,7 @@ export class CodebaseComponent implements OnInit {
   getSelectMessage() {
     if (!this.downloadComplete) {
       return `Thank you for your patience while the .zip file downloads from the project repository.`;
-    } else if (!this.project.zipURL) {
+    } else if (!this.project.zipLinks[0]) {
       return `We're sorry, this project doesn't have a .zip file attached to it.`;
     } else {
       return `Please select a file to the left to continue.`;
