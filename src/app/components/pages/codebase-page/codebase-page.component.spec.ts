@@ -69,7 +69,7 @@ fdescribe('CodebasePageComponent', () => {
     const filePath = 'filename.java';
     const expectedResult: DirectoryObject[] = [new DirectoryObject(filePath, filePath)];
 
-    component.addToDirSchema(filePath);
+    component.addToDirStructure(filePath);
     const retVal = component.dirSchema;
 
     expect(retVal).toEqual(expectedResult);
@@ -77,7 +77,7 @@ fdescribe('CodebasePageComponent', () => {
 
   it('should build DirectoryObject as expected', () => {
     const filePath = 'first/second/file.object';
-    component.addToDirSchema(filePath);
+    component.addToDirStructure(filePath);
     const retVal: DirectoryObject[] = component.dirSchema;
 
     expect(retVal[0].name).toEqual('first');
@@ -89,8 +89,8 @@ fdescribe('CodebasePageComponent', () => {
   it('should build DirectoryObject as expected with two filePaths', () => {
     const filePathOne = 'first/second/file.object';
     const filePathTwo = 'first/third/file.object';
-    component.addToDirSchema(filePathOne);
-    component.addToDirSchema(filePathTwo);
+    component.addToDirStructure(filePathOne);
+    component.addToDirStructure(filePathTwo);
     const retVal: DirectoryObject[] = component.dirSchema;
 
     expect(retVal[0].name).toEqual('first');
@@ -100,6 +100,18 @@ fdescribe('CodebasePageComponent', () => {
     expect(((retVal[0].contents[1] as DirectoryObject).contents[0] as DirectoryObject).name).toEqual('file.object');
     expect(((retVal[0].contents[0] as DirectoryObject).contents[0] as DirectoryObject).contents).toEqual(filePathOne);
     expect(((retVal[0].contents[1] as DirectoryObject).contents[0] as DirectoryObject).contents).toEqual(filePathTwo);
+  });
+
+  fit('should sort an array of DirectoryObjects by name w/o regard to case', () => {
+    const first: DirectoryObject = new DirectoryObject('abc');
+    const second: DirectoryObject = new DirectoryObject('nMl');
+    const third: DirectoryObject = new DirectoryObject('XYZ');
+
+    const testArray: DirectoryObject[] = [second, third, first];
+
+    testArray.sort(component['caseInsensitiveSort_DirectoryObject']);
+
+    expect(testArray).toEqual([first, second, third]);
   });
 
 });

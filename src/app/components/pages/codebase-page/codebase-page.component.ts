@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 import * as JSZip from 'jszip';
 import { NgMetaService } from 'ngmeta';
 import { ProjectService } from 'src/app/services/project.service';
-
-
+import { EllipsisPipe } from 'src/app/ellipsis.pipe';
+import { Project } from 'src/app/models/Project';
 
 @Component({
   selector: 'codebase-page-component',
   templateUrl: './codebase-page.component.html',
-  styleUrls: ['./codebase-page.component.scss']
+  styleUrls: ['./codebase-page.component.scss', ]
 })
 /**
  * ZipComponent is Reponsible for Unzipping and Rendering a file.zip
@@ -32,11 +32,17 @@ import { ProjectService } from 'src/app/services/project.service';
 export class CodebasePageComponent implements OnInit {
   RenderFile: RenderFile[] = [];
   SelectedFile: RenderFile;
+  blobBody: Blob;
+  project: Project;
   OpenFile: RenderFile[] = [];
   filepath = '';
   browserSupported = true;
   availableUrls: string [] = [];
   title = '';
+
+  currLevel: DirectoryObject[]; // The current directory
+  currLevelDirs: DirectoryObject[]; // Current level directories
+  currLevelFiles: DirectoryObject[]; // Current level files
 
   goodTypes: string[] = ['.prefs',  '.xml',   '.java',  '.properties',
                               '.css',   '.scss',  '.sass',  '.cs',
@@ -60,66 +66,82 @@ export class CodebasePageComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('user') === null) {
+    // if (localStorage.getItem('user') === null) { // TODO - Undo this.  Just a hack for working.
+    if (false) {
       this.router.navigate(['/auth/login']);
     } else {
       this.ngmeta.setHead({ title: 'Code | RPM' });
-      this.SelectedFile = this.defaultFile();
+      this.SelectedFile = this.downloadWaitFile();
       let isTextDecoderSupported = false;
       try {
         isTextDecoderSupported  = !!new TextDecoder('utf-8');
       } catch (e) {
       }
-
-      this.goodTypes = ['.prefs',  '.xml',   '.java',  '.properties',
-                        '.css',   '.scss',  '.sass',  '.cs',
-                        '.html',   '.htm',   '.js',    '.ts',
-                        '.py',     '.log'];
-
-      this.browserSupported = isTextDecoderSupported;
-      this.sendRequest('https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip');
-      // if (this.projectService.CurrentProject) {
-      //   this.availableUrls.push('https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip'); //this.projectService.CurrentProject.zipLinks;
-      // }
+      this.projectService.CurrentProject$.asObservable().subscribe(
+        proj => {
+          if (proj) {
+            this.project = proj;
+          }
+        });
+        
+        // TODO - Undo this.  Just a hack for working.
+        this.project = {zipURL: 'words'};
+        if (this.project) {
+          // TODO - Undo this.  Just a hack for working.
+        this.project.zipURL = 'https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip';
+        if (this.project.zipURL) {
+          this.SelectedFile = this.downloadWaitFile();
+          this.browserSupported = isTextDecoderSupported;
+          this.sendRequest(this.project.zipURL);
+        }
+      } else {
+        this.SelectedFile = this.noZipApologyFile();
+      }
     }
-
     this.dirSchema = [];
   }
-
+  
   /**
-   * Zip.errorFile()
+   * errorFile()
    * sets the defualt display for error messages
    * @param message: Error message
    * @author Andrew Mitchem (1810-Oct08-Java-USF)
    */
   errorFile(message: string): RenderFile {
     const testfile = new  RenderFile();
-    testfile.fileName = 'HELP';
-    testfile.fileContent = `ERROR:${message}`;
-    return testfile;
-  }
-
-  /**
-   * Zip.defualtFile()
-   * sets the defualt display message as a helpme file
-   * @author Andrew Mitchem (1810-Oct08-Java-USF)
-   */
-  defaultFile(): RenderFile {
-    const testfile = new  RenderFile();
-    testfile.fileName = 'HELP';
-    testfile.fileContent = `HELPME: use the first 🗁 (blue) to import the remote saved codebase zip.
-                            use the second 🗁 (green) to open a local repo zip.
-                            ⌂ to return to the websites
-                            Currently can open and navigate to the src directory of Angular and Java Repositories
-    `;
+    testfile.name = 'HELP';
+    testfile.content = `ERROR:${message}`;
     return testfile;
   }
   
-  safeTitle(link: string) {
-    this.title = link.substring(link.lastIndexOf('/') + 1);
-    return this.title;
-  }
+  /**
+   * downloadWaitFile()
+   * sets the defualt display message while the .zip file downloads
+   * @author Andrew Mitchem (1810-Oct08-Java-USF) | Mike James (1906-Java)
+   */
+  downloadWaitFile(): RenderFile {
+    const waitingFile = new  RenderFile();
+    waitingFile.name = 'Setup';
+    waitingFile.content = `Thank you for your patience while the .zip file downloads from the project repository.\n
+      Please select a file to the left to continue.`;
 
+    return waitingFile;
+  }
+  
+  /**
+   * noZipApologyFile()
+   * Displays when there is no .zip file attached to the project
+   * @author Mike James (1906-Java) 
+   */
+  noZipApologyFile(): RenderFile {
+    const apologyFile = new  RenderFile();
+    
+    apologyFile.name = 'Apology';
+    apologyFile.content = `We're sorry, this project doesn't have a .zip file attached to it.`;
+    
+    return apologyFile;
+  }
+  
   /**
    * Zip.goBack()
    * Redirects back to the last page
@@ -128,42 +150,31 @@ export class CodebasePageComponent implements OnInit {
   goBack() {
     this.location.back();
   }
-  openRenderFile(renderFile: RenderFile) {
-    this.SelectedFile = renderFile;
-    if (!this.OpenFile.includes(renderFile)) {
-      this.OpenFile.push(renderFile);
-    }
-  }
-  closeRenderFile(renderFile: RenderFile) {
-    this.OpenFile.splice(this.OpenFile.indexOf(renderFile), 1);
-    if (this.OpenFile.length) {
-      this.SelectedFile = this.defaultFile();
-    }
-  }
-
+  
   /**
    * Zip.sendRequest()
    * Fire off an http request to retrieve the zip file
-   * @author Andrew Mitchem (1810-Oct08-Java-USF)
+   * @author Andrew Mitchem (1810-Oct08-Java-USF) | Mike James (1906-Java)
    */
   sendRequest(url: string) {
     // reponse type is arraybuffer so the get request knows this is a oclet-array-stream request
     this.http.get(url, { observe: 'response', responseType: 'blob'})
     .subscribe(blob => {
-      console.log(153);
       // after the array is retrieve. open the data with JSZip
       if (blob.headers.get('content-disposition')) {
         const datafilename = this.getFileNameFromHttpResponse(blob.headers.get('content-disposition'));
-        this.openData(blob.body, datafilename);
+        this.blobBody = blob.body;
+        this.openData(datafilename);
       } else {
         const datafilename = url.substring(url.lastIndexOf('/') + 1);
-        this.openData(blob.body, datafilename);
+        this.blobBody = blob.body;
+        this.openData(datafilename);
       }
     }, error => {
-      this.SelectedFile = this.errorFile('Yeah we couldn\'t find this file: we\'re Sorry');
+      this.SelectedFile = this.errorFile(`The file you have requested cannot be located.`); // This was the sum of my contribution -- Mike
     });
   }
-
+  
   /**
    * Zip.getFileNameFromHttpResponse()
    * splits content-dispotion header ; attachmenent file=filename.ext into file name
@@ -175,56 +186,68 @@ export class CodebasePageComponent implements OnInit {
     return result.replace(/"/g, '');
   }
 
- /**
+  /**
    * Zip.openData()
    * unpacks a zip blob(ui8array) and opens with JSZip (zip is the reference variable)
    * @param ui8array blob object that "is" a valid zip file.
    * @param datafilename, optional. passed in file name.
-   * @author Andrew Mitchem (1810-Oct08-Java-USF)
+   * @author Andrew Mitchem (1810-Oct08-Java-USF) | Mike James (1906-Java-USF)
    */
-  openData(data: Blob, datafilename?: string) {
-    // new instance of JSZip.
-    // Should only exist through the end of this function
+  openData(datafilename?: string): void {
     let zipDir: JSZip = new JSZip();
 
-    this.openDataPrep();
-    const dataname: string = this.extractDataname(data, datafilename);
+    const dataname: string = this.extractDataname(this.blobBody, datafilename);
 
-    zipDir.loadAsync(data).then( contents => {
+    zipDir.loadAsync(this.blobBody).then( contents => {
       // Checks if the zip contains a directory matching dataname, changes to that directory
       zipDir = this.setRootFolder(dataname, zipDir);
 
       if (!zipDir) {
         return; // If no such folder, return.
       }
+
       let fileArray = zipDir.file(/^.*/); // get the array of all files in this subdirectory
 
       fileArray = this.filterFiles(fileArray);
 
-      // // Uses Regex to determine if Java, Angular, or neither and moves to correct directory
-      // zipDir = this.setRootByLanguage(zipDir, dataname);
-
-      // if (!this.filepath) {
-      //   return; // If neither Java nor Angular, return.
-      // }
-
-      // fileArray = zipDir.file(/^.*/); // get the array of all files in this subdirectory
-      // console.log(fileArray);
-
-      // this.dirSchema = [];
-      // console.log(zipDir.files);
-
-      // List out all files on screen
+      // Build Directory Structure
       for (let i = 0; i < fileArray.length; i++) {
-        const file = fileArray[i];
-        this.parseFiles(file);
-        this.addToDirSchema(file.name);
+        this.addToDirStructure(fileArray[i].name);
       }
-      console.log(this.dirSchema);
+
+      // We assume that the root directory is a directory...
+      this.displayDirectory(this.dirSchema[0].contents as DirectoryObject[]); 
     });
   }
 
-  filterFiles(filesArray: any[]) {
+  /**
+   * Pushes the selected file to the code window.
+   * @param fileName - The path of the selected file.
+   * @author Andrew Mitchem (1810-Oct08-Java-USF) | Mike James (1906-Java)
+   */
+  openFileInCodeWindow(fileName: string): void {
+    const zipDir: JSZip = new JSZip();
+
+    zipDir.loadAsync(this.blobBody).then( contents => {
+      // Checks if the zip contains a directory matching dataname, changes to that directory
+      const file = zipDir.file(fileName);
+
+      const fileData = file.async('uint8array').then(function (data) { // converts the ZipObject
+        let fileContent = 'Placeholder Text \n we are sorry your browser may not be supported';
+        fileContent = new TextDecoder('utf-8').decode(data);
+        return fileContent;
+      });
+
+      fileData.then(fileContent => {
+        const renderFile = new RenderFile();
+        renderFile.name = file.name;
+        renderFile.content = fileContent;
+        this.SelectedFile = renderFile;
+      });
+    });
+  }
+
+  private filterFiles(filesArray: any[]) {
 
     const retArray: any[] = [];
 
@@ -242,7 +265,40 @@ export class CodebasePageComponent implements OnInit {
 
     return retArray;
   }
-  
+
+  displayDirectory(directory: DirectoryObject[]): void {
+
+    this.currLevel = directory;
+    this.currLevelDirs = [];
+    this.currLevelFiles = [];
+
+    for (let i = 0; i < directory.length; i++) {
+      const currValue: DirectoryObject = directory[i];
+      const currContents: string | DirectoryObject[] = currValue.contents;
+      const currName: string = currValue.name;
+
+      if (typeof(currContents) === 'string') {
+        this.currLevelFiles.push(currValue);
+      } else {
+        this.currLevelDirs.push(currValue);
+      }
+    }
+
+      this.currLevelDirs.sort(this.caseInsensitiveSort_DirectoryObject);
+      this.currLevelFiles.sort(this.caseInsensitiveSort_DirectoryObject);
+  }
+
+  /**
+   * Helper Method: 
+   * Sorts DirectoryObjects by name in a case-insensative manner.
+   * Source: https://stackoverflow.com/questions/8996963/how-to-perform-case-insensitive-sorting-in-javascript
+   * @param a A DirectoryObject
+   * @param b Another DirectoryObject
+   */
+  private caseInsensitiveSort_DirectoryObject(a: DirectoryObject, b: DirectoryObject) {
+    return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+  }
+
   /**
    * Helper Method:
    * Get the correct value for the dataname variable.
@@ -265,7 +321,7 @@ export class CodebasePageComponent implements OnInit {
 
   /**
    * Helper Method:
-   * Searches for directories matching dataname string as RegExp. 
+   * Searches for directories matching dataname string as RegExp
    * @param dataname name of root folder determined from incoming parameters
    * @param zipDir JsZip object
    */
@@ -309,24 +365,21 @@ export class CodebasePageComponent implements OnInit {
    * Prepares the fields used in the openData function for use
    */
   private openDataPrep() {
-    this.RenderFile = [];
-    this.SelectedFile = this.defaultFile();
-    this.OpenFile = [];
+    //this.RenderFile = [];
+    this.SelectedFile = this.downloadWaitFile();
+    //this.OpenFile = [];
   }
 
-  addToDirSchema(filePath: string): DirectoryObject[] {
-    let filePathArray: string[] = filePath.split('/');
-    let baseFolder: DirectoryObject[] = [];
+  addToDirStructure(filePath: string): DirectoryObject[] {
+    const filePathArray: string[] = filePath.split('/');
 
-    
     return this.addToDirSchemaRecur(filePath, filePathArray, this.dirSchema);
   }
-  
-  private addToDirSchemaRecur(filePath: string, filePathArray: string[], baseFolder: DirectoryObject[]):
-     DirectoryObject[] {
-    
+
+  private addToDirSchemaRecur(filePath: string, filePathArray: string[], baseFolder: DirectoryObject[]): DirectoryObject[] {
+
     let item: DirectoryObject;
-    
+
     if (filePathArray.length !== 1) { // recurring case
       let nextDirectory: DirectoryObject = null;
 
@@ -356,102 +409,7 @@ export class CodebasePageComponent implements OnInit {
       return baseFolder;
     }
   }
-
-  /**
-   * Zip.parseFiles(file)
-   * opens and individual zip file. This method ignores files that are directories (ie. not files with contnet)
-   * @param file. ZipObject (class of JSzip) to be unpacked into a normal blob object
-   * @author Andrew Mitchem (1810-Oct08-Java-USF)
-   */
-  parseFiles(file) {
-    // check if file is a directory
-    if (!file.dir) {
-      let fileName = file.name;
-
-      // save ZipObject file name as once unzip into a  standard file  we loose acess to this data
-      fileName = fileName.replace(this.filepath, '');
-
-      // remove leading path in name
-      fileName = fileName.substring(fileName.lastIndexOf('/') + 1);
-
-      const helpme = file.async('uint8array').then(function (data) { // converts the ZipObject
-        let string = 'Placeholder Text \n we are sorry your browser may not be supported';
-        string = new TextDecoder('utf-8').decode(data);
-        return string;
-      });
-
-      helpme.then(string => {
-        const file = new RenderFile();
-        file.fileName = fileName;
-        file.fileContent = string; // "file here is a string text readable format stored for rendering logic"
-        this.RenderFile.push(file);
-      });
-    } else {
-      file.fileName = 'Error';
-            file.fileContent = `Sorry @Browser not currently supported
-            ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈████≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈█████≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈███████
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈████████
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈█████████
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈███▒▒████
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈████▒▒▒███
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈███▒▒▒▒▒██
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈███▒▒▒▒▒▒██
-≈≈≈≈≈≈████████≈≈≈≈≈≈≈≈≈≈≈≈██▒▒▒▒▒▒▒██
-≈≈≈≈███████████≈≈≈≈≈≈≈≈≈≈≈██▒▒▒▒▒▒▒██
-≈≈██████████████≈≈≈≈≈≈≈≈≈≈█▒▒▒▒▒▒▒▒██
-███████████▒▒▒▒██≈≈≈≈≈≈≈≈≈█▒▒▒▒▒▒▒▒██
-████████▒▒▒▒▒▒▒▒██≈≈≈≈≈≈≈≈█▒▒▒▒▒▒▒▒██
-██████▒▒▒▒▒▒▒▒▒▒▒█≈≈████≈≈██▒▒▒▒▒▒▒██
-███████▒▒▒▒▒▒▒▒▒▒███████████▒▒▒▒▒▒▒██
-███████▒▒▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▒██▒▒▒▒▒▒▒██
-≈█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██≈
-≈≈█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██≈≈
-≈≈≈█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██≈≈≈
-≈≈≈≈██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██≈≈≈≈
-≈≈≈≈≈██████▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒██▒██≈≈≈≈
-≈≈≈≈≈≈████████▒▒█▌▐█▒▒▒▒▒▒▒█▌▐█▒█≈≈≈≈
-≈≈≈≈≈≈≈≈█████▒▒▒█▌▐█▒▒▒▒▒▒▒█▌▐█▒█≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈█▒▒▒████▒▒▒▒▒▒▒████▒██≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈█▒▒▒████▒▒▒▒█▒▒████▒██≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈██▒▒▒███▒▒▒▒▒▒▒▒▒███▒▒█≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈██▒▒▒▒▒▒▒▒██████▒▒▒▒▒▒█≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈██▒███▒▒▒▒██████▒▒▒████≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈████▒██▒▒▒██████▒▒█▒▒██≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈██▒▒▒█▒▒▒██████▒▒█▒▒██≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈██▒▒▒█▒▒▒██████▒▒█▒▒█≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈██▒▒▒█▒▒▒██████▒▒█▒▒█≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈██▒██▒▒▒▒████▒▒▒█▒█≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈████▒▒▒▒▒▒▒▒▒▒▒▒▒▒██≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈██████▒▒▒▒▒▒▒▒▒▒▒▒▒██≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈██▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒█████≈≈≈≈
-≈≈≈≈≈≈≈≈≈███▒▒▒▒▒██▒▒▒▒▒▒▒██▒▒▒███≈≈≈
-≈≈≈≈≈≈≈≈≈≈█▒▒▒▒▒▒██████████▒▒▒▒▒██≈≈≈
-≈≈≈≈≈≈≈≈≈≈██▒▒▒▒▒▒█████████▒▒▒▒▒██≈≈≈
-≈≈≈≈≈≈≈≈≈████▒▒▒▒▒█████████▒▒▒▒██≈≈≈≈
-≈≈≈≈≈≈≈≈███████▒▒▒███▒████▒▒▒▒██≈≈≈≈≈
-≈≈≈≈≈≈███████████▒▒██▒▒▒█▒▒▒███≈≈≈≈≈≈
-≈≈≈≈≈██████████▒▒▒▒█▒▒▒▒█▒███≈≈≈≈≈≈≈≈
-≈≈≈≈███████████▒▒▒▒▒▒▒▒▒▒▒██≈≈≈≈≈≈≈≈≈
-≈≈≈≈████████≈≈██▒▒▒▒▒▒▒▒▒▒█≈≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈██████≈≈███▒▒▒▒▒▒▒▒▒▒█≈≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈████≈≈██▒▒█▒▒▒▒▒▒▒▒▒█≈≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈███≈≈██▒▒▒▒█▒▒▒▒▒▒▒██≈≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈██▒▒▒▒████▒▒▒█▒█≈≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈█▒▒▒▒▒█≈≈████▒▒██≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈█▒█▒█▒█≈≈≈≈█▒▒▒▒█≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈█████≈≈≈≈≈█▒▒▒▒█≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈█▒▒▒▒█≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈█▒▒▒▒█≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈█▒█▒█≈≈≈≈≈≈≈≈≈
-≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈███≈≈≈≈≈≈≈≈≈≈
-            `;
-        this.RenderFile.push(file);
-      }
-    }
-  };
+}
 
   /**
    * Subclass for storing either a directory or a path string
@@ -470,22 +428,11 @@ export class CodebasePageComponent implements OnInit {
   }
 
   /**
-  * Tree
-  * SubClass for storing render related structure
-  * @author Andrew Mitchem (1810-Oct08-Java-USF)
-  */
-  class Tree {
-    name: string;
-    files: File[] = [];
-    tree: Tree[] = [];
-  }
-
-  /**
   * RenderFile
   * SubClass for storing render related structure
   * @author Andrew Mitchem (1810-Oct08-Java-USF)
   */
   class RenderFile {
-    fileName: String;
-    fileContent: String;
+    name: String;
+    content: String;
   }
