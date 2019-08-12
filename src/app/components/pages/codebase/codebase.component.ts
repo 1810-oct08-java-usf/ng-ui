@@ -69,11 +69,11 @@ export class CodebaseComponent implements OnInit {
           }
         });
 
+        this.SelectedFile = new RenderFile('Setup', this.getSelectMessage());
+        
         // Currently only displays the first of a collection of zip files.
         // TODO - Need to figure out how to download multiple files
-        this.project = {zipLinks: ['https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip']};
         if (this.project.zipLinks[0]) {
-          this.SelectedFile = new RenderFile('Setup', this.getSelectMessage());
           this.browserSupported = isTextDecoderSupported;
           this.sendRequest(this.project.zipLinks[0]);
         }

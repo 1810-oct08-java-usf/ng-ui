@@ -85,14 +85,14 @@ export class CodebasePageComponent implements OnInit {
         });
         
         // TODO - Undo this.  Just a hack for working.
-        this.project = {zipURL: 'words'};
+        this.project = {zipLinks: ['words']};
         if (this.project) {
           // TODO - Undo this.  Just a hack for working.
-        this.project.zipURL = 'https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip';
-        if (this.project.zipURL) {
+        this.project.zipLinks[0] = 'https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip';
+        if (this.project.zipLinks[0]) {
           this.SelectedFile = this.downloadWaitFile();
           this.browserSupported = isTextDecoderSupported;
-          this.sendRequest(this.project.zipURL);
+          this.sendRequest(this.project.zipLinks[0]);
         }
       } else {
         this.SelectedFile = this.noZipApologyFile();
