@@ -49,7 +49,7 @@ mat-card {
 #codebase-files {
     grid-area: files;
     display: block;
-    justify-content: start;
+    justify-content: left;
     flex-direction: column;
     padding: $section-padding;
     padding-right: 0;
@@ -61,6 +61,10 @@ mat-card {
 
 #codebase-codeWindow {
     grid-area: codeWindow;
+    max-height: 75vh;
+        code {
+            max-height: 70vh;
+        }
 }
 
 ::ng-deep .mat-form-field {

@@ -3,15 +3,25 @@
     <div id="codebase-page">
       <div id="codebase-title">
         <h1>Code Base</h1>
-        <button id="back-icon" mat-fab (click)="back()">
+        <button id="back-icon" mat-fab (click)="goBack()">
           <mat-icon>arrow_back</mat-icon>
         </button>
       </div>
       <div id="codebase-files">
-        <h2>Files:</h2>
+        <h2>Files:</h2><br/>
+          <div *ngFor="let dir of currLevelDirs">
+            <button mat-button style="width: 100%!important;" color="primary" (click)="displayDirectory(dir.contents)">{{dir.name |  ellipsis:20 }}</button>
+            <br/>
+          </div>
+          <div *ngFor="let file of currLevelFiles">
+            <button mat-button style="width: 100%!important;" (click)="openFileInCodeWindow(file.contents)">{{file.name |  ellipsis:20 }}</button>
+            <br/>
+          </div>
       </div>
       <div id="codebase-codeWindow">
-        This is a placeholder for the code window.
+          <pre>
+            <code class="editor" [highlight]="SelectedFile.content"></code>
+          </pre>
       </div>
       <div id="codebase-breadcrumbs">
         This/is/a/placeholder/for/breadcru.mbs

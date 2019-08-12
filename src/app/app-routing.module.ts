@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'submitform', component: ProjectSubmissionPageComponent},
   {path: 'updateform', component: ProjectEditComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'codebase', component: CodebasePageComponent},
+  {path: 'codebase', component: CodebaseComponent},
   {path: 'adminchangeroles', component: AdminChangeRolesComponent},
   {path: 'projects/pending', component: ProjectsPendingApprovalPageComponent},
 
