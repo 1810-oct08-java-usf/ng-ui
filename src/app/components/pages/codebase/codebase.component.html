@@ -10,7 +10,7 @@
       <div id="codebase-files">
         <h2>Files:</h2><br/>
           <div *ngFor="let dir of currLevelDirs">
-            <button mat-button style="width: 100%!important;" color="primary" (click)="displayDirectory(dir.contents)">{{dir.name |  ellipsis:20 }}</button>
+            <button mat-button style="width: 100%!important;" color="primary" (click)="displayDirectory(dir)">{{dir.name |  ellipsis:20 }}</button>
             <br/>
           </div>
           <div *ngFor="let file of currLevelFiles">
@@ -24,7 +24,7 @@
           </pre>
       </div>
       <div id="codebase-breadcrumbs">
-        This/is/a/placeholder/for/breadcru.mbs
+        <span *ngFor="let dir of directoryChain">/<a (click)="breadcrumbJump(dir)">{{dir.name}}</a></span>
       </div>
     </div>
   </mat-card-content>

@@ -22,10 +22,12 @@ export class CodebaseComponent implements OnInit {
   project: Project;
   filepath = '';
   browserSupported = true;
+  directoryChain: DirectoryObject[] = [];
 
   currLevel: DirectoryObject[]; // The current directory
   currLevelDirs: DirectoryObject[]; // Current level directories
   currLevelFiles: DirectoryObject[]; // Current level files
+  downloadComplete: boolean;
 
   goodTypes: string[] = ['.prefs',  '.xml',   '.java',  '.properties',
                               '.css',   '.scss',  '.sass',  '.cs',
@@ -68,22 +70,24 @@ export class CodebaseComponent implements OnInit {
 
         // TODO - Undo this.  Just a hack for working.
         this.project = {zipURL: 'words'};
-        if (this.project) {
-          // TODO - Undo this.  Just a hack for working.
         this.project.zipURL = 'https://ms84103newbucket.s3.amazonaws.com/msTRMS.zip';
         if (this.project.zipURL) {
-          this.SelectedFile = new RenderFile('Setup',
-            `Thank you for your patience while the .zip file downloads from the project repository.\n
-            Please select a file to the left to continue.`);
+          this.SelectedFile = new RenderFile('Setup', this.getSelectMessage());
           this.browserSupported = isTextDecoderSupported;
           this.sendRequest(this.project.zipURL);
         }
-      } else {
-        this.SelectedFile = new RenderFile('Apology', 
-          `We're sorry, this project doesn't have a .zip file attached to it.`);
-      }
     }
     this.dirStructure = [];
+  }
+
+  getSelectMessage() {
+    if (!this.downloadComplete) {
+      return `Thank you for your patience while the .zip file downloads from the project repository.`;
+    } else if (!this.project.zipURL) {
+      return `We're sorry, this project doesn't have a .zip file attached to it.`;
+    } else {
+      return `Please select a file to the left to continue.`;
+  }
 }
 
 /**
@@ -133,7 +137,7 @@ export class CodebaseComponent implements OnInit {
   }
   
   /**
-   * Zip.getFileNameFromHttpResponse()
+   * getFileNameFromHttpResponse()
    * splits content-dispotion header ; attachmenent file=filename.ext into file name
    * from stack overflow
    * @author Andrew Mitchem (1810-Oct08-Java-USF)
@@ -144,7 +148,7 @@ export class CodebaseComponent implements OnInit {
   }
 
   /**
-   * Zip.openData()
+   * openData()
    * unpacks a zip blob(ui8array) and opens with JSZip (zip is the reference variable)
    * @param ui8array blob object that "is" a valid zip file.
    * @param datafilename, optional. passed in file name.
@@ -163,6 +167,10 @@ export class CodebaseComponent implements OnInit {
         return; // If no such folder, return.
       }
 
+      // If we get here, we record that we've received data
+      this.downloadComplete = true;
+      this.SelectedFile.content = this.getSelectMessage();
+
       let fileArray = zipDir.file(/^.*/); // get the array of all files in this subdirectory
 
       fileArray = this.filterFiles(fileArray);
@@ -173,11 +181,12 @@ export class CodebaseComponent implements OnInit {
       }
 
       // We assume that the root directory is a directory...
-      this.displayDirectory(this.dirStructure[0].contents as DirectoryObject[]); 
+      this.displayDirectory(this.dirStructure[0] as DirectoryObject); 
     });
   }
 
   /**
+   * openFileInCodeWindow()
    * Pushes the selected file to the code window.
    * @param fileName - The path of the selected file.
    * @author Andrew Mitchem (1810-Oct08-Java-USF) | Mike James (1906-Java)
@@ -234,13 +243,15 @@ export class CodebaseComponent implements OnInit {
    * @param directory - The directory to be displayed
    * @author Mike James (1906-Java)
    */
-  displayDirectory(directory: DirectoryObject[]): void {
-    this.currLevel = directory;
+  displayDirectory(directory: DirectoryObject): void {
     this.currLevelDirs = [];
     this.currLevelFiles = [];
+    this.directoryChain.push(directory);
 
-    for (let i = 0; i < directory.length; i++) {
-      const currValue: DirectoryObject = directory[i];
+    let dirContents: DirectoryObject[] = directory.contents as DirectoryObject[];
+
+    for (let i = 0; i < dirContents.length; i++) {
+      const currValue: DirectoryObject = dirContents[i];
       const currContents: string | DirectoryObject[] = currValue.contents;
 
       if (typeof(currContents) === 'string') {
@@ -254,8 +265,19 @@ export class CodebaseComponent implements OnInit {
       this.currLevelFiles.sort(this.caseInsensitiveSort_DirectoryObject);
   }
 
+  breadcrumbJump(dir: DirectoryObject) {
+    while (this.directoryChain[this.directoryChain.length - 1] !== dir) {
+      this.directoryChain.pop();
+    }
+
+    this.directoryChain.pop();  // displayDirectory will re-add the directory
+    this.SelectedFile.content = this.getSelectMessage();
+
+    this.displayDirectory(dir);
+  }
+
   /**
-   * Helper Method: 
+   * Helper Method:
    * Sorts DirectoryObjects by name in a case-insensative manner.
    * Source: https://stackoverflow.com/questions/8996963/how-to-perform-case-insensitive-sorting-in-javascript
    * @param a A DirectoryObject

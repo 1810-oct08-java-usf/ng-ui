@@ -57,6 +57,9 @@ mat-card {
 
 #codebase-breadcrumbs {
     grid-area: breadcrumbs;
+    a {
+        color: blue;
+    }
 }
 
 #codebase-codeWindow {
