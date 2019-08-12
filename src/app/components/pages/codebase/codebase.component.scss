@@ -58,7 +58,7 @@ mat-card {
     padding-right: 0;
     #buttonContainer {
         max-height: 63vh;
-        overflow-y: scroll;
+        overflow-y: auto;
     }     
 }
 
