@@ -7,10 +7,15 @@
                     <app-project-welcome-page></app-project-welcome-page>
                 </div>
                 <div *ngIf="project">
-                    <button id="editbtn" mat-fab matTooltip="Update project"
-                    *ngIf="user.id === project.userId || user.role == 'ROLE_ADMIN'" matTooltipPosition="above" (click)="updateProject()">
-                        <mat-icon>edit</mat-icon>
+                    <span *ngIf="user.id === project.userId || user.role === 'ROLE_ADMIN'">
+                    <button 
+                        id="editbtn" 
+                        mat-fab matTooltip="Update project" 
+                        matTooltipPosition="above" 
+                        (click)="updateProject()" >
+                            <mat-icon>edit</mat-icon>
                     </button>
+                    </span>
                     <button mat-fab matTooltip="Codebase Viewer" matTooltipPosition="above" id="codeBaseButton" (click)="viewCodeBase()">
                         <mat-icon>code</mat-icon>
                     </button>
