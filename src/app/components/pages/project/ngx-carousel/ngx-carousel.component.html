@@ -14,18 +14,18 @@
   <section ngx-hm-carousel-container class="content">
     <article class="item cursor-pointer visible_important"
       ngx-hm-carousel-item
-      *ngFor="let avatar of avatars; let i = index">
+      *ngFor="let avatar of screenShots;">
       <div class="img"
-        [style.backgroundImage]="'url('+avatar.url+')'">
+        [style.backgroundImage]="'url('+avatar+')'">
       </div>
     </article>
     <ng-template #infiniteContainer></ng-template>
   </section>
 
-  <ng-template #carouselContent let-avatar let-i="index">
+  <ng-template #carouselContent let-avatar>
     <article class="item cursor-pointer visible_important">
       <div class="img"
-        [style.backgroundImage]="'url('+avatar.url+')'">
+        [style.backgroundImage]="'url(avatar)'">
       </div>
     </article>
   </ng-template>

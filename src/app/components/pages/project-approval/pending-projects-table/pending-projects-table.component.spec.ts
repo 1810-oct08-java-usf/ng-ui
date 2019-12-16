@@ -35,14 +35,14 @@ describe('PendingProjectsTableComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should test the pending projects table headers', () => {
+  it('should test the pending projects table headers', () => {
     fixture.detectChanges();
     const matHeaderCell = fixture.nativeElement.querySelectorAll('mat-header-cell');
-    expect(matHeaderCell.length).toBe(3);
+    expect(matHeaderCell.length).toBe(5);
 
-    expect(matHeaderCell[0].innerHTML).toBe(' Trainer\'s Name ');
-    expect(matHeaderCell[1].innerHTML).toBe(' Project\'s Name ');
-    expect(matHeaderCell[2].innerHTML).toBe(' Status of Request ');
+    expect(matHeaderCell[0].innerHTML).toBe(' Project ');
+    expect(matHeaderCell[1].innerHTML).toBe(' Trainer\'s Name ');
+    expect(matHeaderCell[2].innerHTML).toBe(' Tech Stack ');
   });
 
 });

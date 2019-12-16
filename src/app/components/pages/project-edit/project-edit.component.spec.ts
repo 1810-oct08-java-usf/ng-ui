@@ -32,6 +32,7 @@ describe('ProjectEditComponent', () => {
  let router: Router;
  let routerSpy;
  let projectService: ProjectService;
+ let snackbarService: SnackbarService;
 
  beforeEach(async(() => {
    TestBed.configureTestingModule({

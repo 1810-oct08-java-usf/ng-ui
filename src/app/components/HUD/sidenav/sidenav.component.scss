@@ -9,6 +9,8 @@
     20-minute SCSS tutorial:     https://youtu.be/Zz6eOVaaelI
     Scaling apps in Angular:     https://youtu.be/Bhd2ayEE9mg
 */
+
+
 /*
     @import src/variables.scss relative to this file
     in order to use the global SCSS variables within
@@ -20,40 +22,38 @@
     can use and make SCSS variables and make everyone's
     lives easier.
 */
+
 @import '../../../../variables';
-
 mat-sidenav-container {
-	height: 100%;
-
-	mat-sidenav {
+    height: 100%;
+    mat-sidenav {
         max-width: 70%;
         width: 18rem;
         min-width: 10rem;
         height: 100%;
-		// background: $rev-gray-light;
+        // background: $rev-gray-light;
     }
-    
     mat-sidenav-content {
         mat-toolbar {
             align-content: center;
             padding: 0 1rem;
-
             .spacer {
                 flex: 1 1 auto;
             }
-
             a {
                 margin-right: 1.5rem;
                 font-size: 1.1rem;
             }
-
             a:hover {
                 cursor: pointer;
                 border-bottom: 2px solid #fff;
             }
+            .mat-badge-accent .mat-badge-content {
+                background-color: $rev-gray-light;
+                color: white;
+            }
         }
     }
-
 }
 
 .user-avatar {
@@ -65,9 +65,7 @@ mat-sidenav-container {
     cursor: pointer;
 }
 
-
 // Please don't mess with the hamburger icon style (it's finely-tuned)
-
 #hamburger {
     font-size: 2rem;
     height: 2rem;
@@ -83,3 +81,107 @@ mat-sidenav-container {
         visibility: hidden;
     }
 }
+
+::ng-deep .mat-menu-panel {
+    width: 499px !important;
+    max-width: none !important;
+    max-height: 500px;
+}
+
+::ng-deep #dropdown-item-holder {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+//.matmenu is the parent for all the below items, but nesting is not applying properties
+.matmenu {
+    padding-bottom:0;
+}
+.mat-menu-item {
+    line-height: 20px;
+    height: auto;
+    padding-top: 10px;
+    .date-span {
+        font-size: 12px;
+        float: right;
+        margin-top:-5px;
+        font-style: oblique;
+    }
+}
+.mat-menu-item:hover:not([disabled]),
+.mat-menu-item.cdk-program-focused:not([disabled]),
+.mat-menu-item.cdk-keyboard-focused:not([disabled]),
+.mat-menu-item-highlighted:not([disabled]) {
+    background: rgba(242, 105, 37, 0.4);
+}
+
+.unread:hover:not([disabled]) {
+    background: rgba(243, 118, 56, 0.4);
+}
+
+.unread {
+    background: rgba(243, 118, 56, 0.2);
+    
+}
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid $rev-blue-light
+}
+
+
+.see-all-div {
+    width: auto;
+    text-align: center;
+    padding-top: 10px;
+    .see-all-a {
+        cursor:pointer; 
+        color: #6a95ae; 
+        width: 100%
+    }
+}
+
+.description-div {
+    display: flex;
+    align-items: center;
+    .short-description-pre {
+        display: inline-block;
+        max-width: 450px;
+    }
+    pre {
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        vertical-align: middle;
+        width: 95%;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        margin: 0;
+    }
+    .read-button {
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+    }
+    .unread-button {
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
+    }
+
+}
+.mark-as-read-div {
+    width: auto;
+    text-align: right;
+    padding: 0 10px 10px 0;
+    #notificationSpan {
+        float: left;
+        padding-left: 10px;
+    }
+    .mark-all-a {
+        cursor:pointer; 
+        color:#f37638; width:100%
+    }
+}
+
+
+

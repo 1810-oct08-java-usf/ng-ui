@@ -1,39 +1,86 @@
 <mat-sidenav-container>
+    <mat-sidenav opened=false mode="push" #sidenav class="flex-container">
+        <app-nav-menu (menuOptionClicked)="sidenav.toggle()"></app-nav-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon id="hamburger">menu</mat-icon>
+                </button>
+                <div class="spacer"></div>
+                <div class="toolbar-options">
+                    <div class="inline-block-div" *ngIf="homepage">
+                        <a (click)="goToElement('about')">About RPM</a>
+                        <a (click)="goToElement('projects')">Projects</a>
+                    </div>
+                    <div class="inline-block-div" *ngIf="loggedIn">
+                        <a>
+                            <mat-icon>settings</mat-icon>
+                        </a>
+                        <!--Notification bell: shows if there are unread notifications-->
+                        <button mat-button [matMenuTriggerFor]="menu">
+                            <a class="bell">
+                                <mat-icon *ngIf="!activeNotifications">notifications</mat-icon>
+                                <mat-icon matBadgeColor="accent" matBadge="{{parseCount}}"
+                                    matBadgePosition="above after" *ngIf="activeNotifications">notifications_active
+                                </mat-icon>
+                            </a>
+                        </button>
+                        <!--Drop-down Menu-->
+                        <mat-menu #menu="matMenu" xPosition="before" class="matmenu">
+                            <!--Function to mark all notifications as read-->
+                            <div class="mark-as-read-div">
+                                <span id="notificationSpan">Notifications <em><small>({{ count }})</small></em></span>
+                                <a class="mark-all-a" (click)="readAll()">Mark all as read</a>
+                            </div>
+                            <hr>
+                            <!--Iterator of the notifications-->
+                            <div id="dropdown-item-holder">
+                                <ng-container *ngFor="let notification of notifications"
+                                    (click)="routeToProject(notification)">
+                                    <a mat-menu-item class="unread"
+                                        *ngIf="!notification.read; else notificationIsRead"
+                                        (click)="routeToProject(notification)">
+                                        <span style="font-size: 18px;"><strong>{{ notification.title }} </strong></span>
+                                        <span class="date-span">{{ notification.dateCreated | timeAgo }}</span>
 
-	<mat-sidenav opened=false mode="push" #sidenav class="flex-container">
-		<app-nav-menu (menuOptionClicked)="sidenav.toggle()"></app-nav-menu>
-	</mat-sidenav>
-
-   <mat-sidenav-content>
-
-		<mat-toolbar color="primary">
-			<mat-toolbar-row>
-				<button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()">
-					<mat-icon id="hamburger">menu</mat-icon>
-				</button>
-				<div class="spacer"></div>
-				<div class="toolbar-options">
-				
-					<div class="inline-block-div" *ngIf="homepage">
-						<a (click)="goToElement('about')">About RPM</a>		
-						<a (click)="goToElement('projects')">Projects</a>
-					</div>
-					
-					<div class="inline-block-div" *ngIf="loggedIn">
-						<a><mat-icon>settings</mat-icon></a>
-				
-						<a><mat-icon>notifications</mat-icon></a>
-						
-						<img class="user-avatar" src="assets/images/chinchilla2.jpg" (click)="routeToProfile();">
-					</div>
-	
-				</div>
-			</mat-toolbar-row>
-
-		</mat-toolbar>
-
-		<router-outlet></router-outlet>
-
-	</mat-sidenav-content>
-
+                                        <div class="description-div">
+                                            <pre class="short-description-pre">{{ notification.shortDescription | ellipsis:137 }}</pre>
+                                            <button class="read-button" mat-icon-button (click)="toggleRead(notification)"
+                                            matTooltip="Mark as read" matTooltipPosition='above'
+                                            matTooltipShowDelay="'500'"><mat-icon>mail</mat-icon></button>
+                                        </div>
+                                    </a>
+                                    <ng-template #notificationIsRead>
+                                        <a mat-menu-item *ngIf="notification.read"
+                                            (click)="routeToProject(notification)">
+                                            <span style="font-size: 18px;"><strong>{{ notification.title }} </strong></span>
+                                            <span class="date-span">{{ notification.dateCreated | timeAgo }}</span>
+                                            <div class="description-div">
+                                                <pre class="short-description-pre">{{ notification.shortDescription | ellipsis:137 }}</pre>
+                                                <button class="unread-button" mat-icon-button
+                                                (click)="toggleRead(notification)" matTooltip="Mark as unread"
+                                                matTooltipPosition='above' matTooltipShowDelay="'500'">
+                                                <mat-icon>drafts</mat-icon></button>
+                                            </div>
+                                        </a>
+                                    </ng-template>
+                                    <hr>
+                                </ng-container>
+                            </div>
+                            <!--Link to page for all notifications-->
+                            <div class="see-all-div">
+                                <a class="see-all-a" (click)="routeToNotifications();">
+                                    See all
+                                </a>
+                            </div>
+                        </mat-menu>
+                        <img class="user-avatar" src="assets/images/chinchilla2.jpg" alt="User Avatar" (click)="routeToProfile();">
+                    </div>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

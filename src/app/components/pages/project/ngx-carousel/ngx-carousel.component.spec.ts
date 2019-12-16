@@ -28,6 +28,9 @@ describe('NgxCarouselComponent', () => {
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
+	afterEach(() =>{
+        fixture.destroy();
+    });
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
@@ -44,22 +47,15 @@ describe('NgxCarouselComponent', () => {
 	});
 
 	it('should add picture after pushing', () => {
-		let frame = {
-			url: 'https://picsum.photos/600/400/1',
-			title: '1'
-		};
+		let frame = 'https://picsum.photos/600/400/1';
 		component.ngOnInit();
 		expect(component.avatars.length).toBe(5);
 		component.push(frame);
 		expect(component.avatars.length).toBe(6);
-		expect(component.avatars[5]).toBe(frame);
 	});
 
 	it('should change on indexChange', () => {
-		let frame = {
-			url: 'https://picsum.photos/600/400/1',
-			title: '1'
-		};
+		let frame = 'https://picsum.photos/600/400/1';
 		component.indexChanged(1)
 		expect(component.testValue).toBe(1);
 	});

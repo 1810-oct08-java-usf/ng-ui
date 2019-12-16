@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 
-import { MatDividerModule } from '@angular/material/divider';
+import { MatDividerModule } from "@angular/material/divider";
 
 import {
   MatBadgeModule,
@@ -27,7 +27,7 @@ import {
   MatDialogModule,
   MatInputModule,
   MatSnackBarModule
-} from '@angular/material';
+} from "@angular/material";
 
 const materials = [
   MatSidenavModule,
@@ -61,4 +61,4 @@ const materials = [
   imports: [materials],
   exports: [materials]
 })
-export class MaterialModule { }
+export class MaterialModule {}

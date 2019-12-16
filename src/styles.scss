@@ -1,88 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import '../src/theme.scss';
 @import 'variables';
 @import 'assets/fonts/fonts';
 @import '~highlight.js/styles/github.css';
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: 'futura pt', 'arial', sans-serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
+// * {
+//   margin: 0;
+//   padding: 0;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   font-family: 'futura pt', 'arial', sans-serif;
+//   font-size: 20px;
+//   letter-spacing: 1px;
+// }
 body {
-  width: 100vw;
-  height: 100vh;
-  font-family: 'Raleway', sans-serif;
-  color: $default-font-color;
-  background-color: $bg-color;
-  background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    color: $default-font-color;
+    background-color: $bg-color;
+    background-attachment: fixed;
+    margin: 0;
 }
 
 a {
-  text-decoration: none;
-  color: $rev-white;
+    text-decoration: none;
+    color: $rev-white;
 }
 
 a:visited {
-  color: inherit;
+    color: inherit;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  text-transform: uppercase;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 h1 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 3px solid $rev-orange-main;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid $rev-orange-main;
 }
 
 .inline-block-div {
-  display: inline-block;
+    display: inline-block;
 }
 
 .flex-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
 }
 
 .transition {
-  transition: all $transition_time ease-in-out;
+    transition: all $transition_time ease-in-out;
 }
 
 .main-blocks {
-  width: $main-blocks-width;
-  margin: $main-blocks-margin;
-  margin-bottom: 2rem;
+    width: $main-blocks-width;
+    margin: $main-blocks-margin;
+    margin-bottom: 2rem;
 }
 
-@media screen and (min-width: 600px) {
-
-
-}
+@media screen and (min-width: 600px) {}

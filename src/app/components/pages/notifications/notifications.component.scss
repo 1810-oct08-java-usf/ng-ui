@@ -1,0 +1,116 @@
+/*
+    Please don't use Bootstrap! Angular Material
+    and Flexbox are so much better! Once you try
+    it, you won't go back.
+
+    Angular Material documentation:     https://material.angular.io/
+    Excellent, quick Material tutorials:     https://youtu.be/bV8emCBmFHk
+    Flexbox tutorial:     https://www.w3schools.com/css/css3_flexbox.asp
+    20-minute SCSS tutorial:     https://youtu.be/Zz6eOVaaelI
+    Scaling apps in Angular:     https://youtu.be/Bhd2ayEE9mg
+*/
+
+
+/*
+    @import src/variables.scss relative to this file
+    in order to use the global SCSS variables within
+    this file. (Don't include the underscore in
+    _variables.scss when importing. If you want to
+    know why: http://alistapart.com/article/getting-started-with-sass/)
+
+    Open the _variables.scss file in a new tab so you
+    can use and make SCSS variables and make everyone's
+    lives easier.
+*/
+
+@import '../../../../variables';
+.section {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.filter-block {
+    font-size: 0.7rem;
+    mat-form-field {
+        display: inline-block;
+        margin: 0.5rem 1rem;
+    }
+    mat-select {
+        display: inline-block;
+        width: 10rem;
+    }
+}
+
+.flex-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 65%;
+    color: $rev-gray-light;
+    #load-more {
+        color: white;
+    }
+}
+
+::ng-deep .mat-list-base {
+    width: 100%;
+}
+
+::ng-deep .mat-list-base .mat-list-item .mat-line {
+    white-space: inherit;
+    display: inline;
+    vertical-align: middle;
+}
+
+::ng-deep .mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+    padding: 10px 0;
+}
+
+::ng-deep .mat-list-base .mat-list-item.mat-2-line,
+.mat-list-base .mat-list-option.mat-2-line {
+    height: auto;
+}
+
+.unread:hover:not([disabled]) {
+    cursor:pointer;
+    background: rgba(243, 118, 56, 0.4);
+}
+
+.unread {
+    background: rgba(243, 118, 56, 0.2);
+}
+
+.read:hover {
+    cursor:pointer; 
+    background: rgba(243, 118, 56, 0.4);
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid $rev-blue-light
+}
+
+.description-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .short-description-span {
+        display: inline-block;
+        width: 90%
+    }
+}
+.title-div{
+    display: flex;
+    justify-content: space-between;
+}
+.date-span {
+    font-size: 12px;
+    font-style: oblique;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

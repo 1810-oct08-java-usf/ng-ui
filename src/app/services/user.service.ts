@@ -24,6 +24,8 @@ export class UserService {
     else this.user = new BehaviorSubject<User>( null );
   }
 
+
+
   getCurrentUser(): User {
     return this.user.value;
   }

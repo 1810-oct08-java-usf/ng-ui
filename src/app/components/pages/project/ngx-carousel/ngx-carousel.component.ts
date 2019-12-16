@@ -23,7 +23,11 @@ export class NgxCarouselComponent implements OnInit {
 	directionToggle = true;
 	autoplay = true;
 	testValue = 0;
-	
+	screenShots: string[];
+	id: number;
+	avatars: string[];
+
+	/*
 	avatars = '12345'.split('').map((x, i) => {
 		const num = i;
 		// const num = Math.floor(Math.random() * 1000);
@@ -32,6 +36,7 @@ export class NgxCarouselComponent implements OnInit {
 			title: `${num}`
 		};
 	});
+	*/
 
 	constructor(private projectService: ProjectService) {}
 
@@ -44,6 +49,7 @@ export class NgxCarouselComponent implements OnInit {
 					this.project = proj;
 					this.avatars = this.project.screenShots;
 				}
+				this.getUrls(this.project.id);
 			}
 		);
 	}
@@ -58,7 +64,12 @@ export class NgxCarouselComponent implements OnInit {
 
 	indexChanged(index) {
 		this.testValue=index;
-		console.log(index);
+	}
+
+	getUrls(id){
+		this.projectService.generateUrls(id).subscribe(data =>{
+			this.screenShots = data;
+		});
 	}
 
 	//never actualy called -nico

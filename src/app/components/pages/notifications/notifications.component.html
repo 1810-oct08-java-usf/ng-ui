@@ -1,0 +1,40 @@
+<div class="main-blocks">
+    <h2 id="notifications">{{ title }}</h2>
+    <div *ngIf="notificationList" class="section flex-section">
+        <mat-list>
+            <ng-container *ngFor="let notification of notificationList">
+                <hr>
+                <mat-list-item class="unread" *ngIf="!notification.read; else notificationIsRead" (click)="routeToProject(notification)">
+                    <div mat-line style="display: flex;justify-content: space-between;">
+                        <h4><strong>{{ notification.title }}</strong></h4>
+                        <span class="date-span">{{ notification.dateCreated | date:'medium' }}</span>
+                    </div>
+                    <div class="description-div" mat-line>
+                        <span class="short-description-span">{{ notification.fullDescription }}</span>
+                        <button class="read-button" mat-icon-button (click)="toggleRead(notification)" matTooltip="Mark as read" matTooltipPosition='above' matTooltipShowDelay="'500'">
+                        <mat-icon>mail</mat-icon>
+                    </button>
+                    </div>
+                </mat-list-item>
+                <ng-template #notificationIsRead>
+                    <mat-list-item class="read" (click)="routeToProject(notification)">
+                        <div mat-line style="display: flex;justify-content: space-between;">
+                            <h4><strong>{{ notification.title }}</strong></h4>
+                            <span class="date-span">{{ notification.dateCreated | date:'medium' }}</span>
+                        </div>
+                        <div class="description-div" mat-line>
+                            <span class="short-description-span">{{ notification.fullDescription }}</span>
+                            <button class="unread-button" mat-icon-button (click)="toggleRead(notification)" matTooltip="Mark as unread" matTooltipPosition='above' matTooltipShowDelay="'500'">
+                            <mat-icon>drafts</mat-icon>
+                        </button>
+                        </div>
+                    </mat-list-item>
+                </ng-template>
+            </ng-container>
+        </mat-list>
+        <button mat-button color="accent" (click)="getNextPage()">Show More</button>
+        <div id="load-more">End of Notifications
+            <!--Empty div that loads the next page when onscreen -->
+        </div>
+    </div>
+</div>

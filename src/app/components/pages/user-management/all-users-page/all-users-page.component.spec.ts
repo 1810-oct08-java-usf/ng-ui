@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatSnackBarModule, MatSidenavModule, MatIconModule,
-  MatMenuModule, MatToolbarModule, MatExpansionModule, MatListModule, MatTableDataSource }
+  MatMenuModule, MatToolbarModule, MatExpansionModule, MatListModule, MatTableDataSource, MatBadgeModule }
   from '@angular/material';
 
 import { SidenavComponent } from 'src/app/components/HUD/sidenav/sidenav.component';
@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 import {User} from 'src/app/models/User';
 import {of, BehaviorSubject, Observable, throwError} from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PipeModule } from 'src/pipes/pipe.module';
+
 
 
 describe('AllUsersPageComponent', () => {
@@ -31,8 +33,8 @@ describe('AllUsersPageComponent', () => {
       declarations: [ AllUsersPageComponent, SidenavComponent, NavMenuComponent ],
       imports: [ MatSnackBarModule, MatSidenavModule, MatIconModule,
         MatMenuModule, MatToolbarModule, 
-        MatExpansionModule, RouterTestingModule, MatListModule,
-        HttpClientTestingModule, BrowserAnimationsModule ],
+        MatExpansionModule, RouterTestingModule, MatListModule, MatBadgeModule,
+        HttpClientTestingModule, BrowserAnimationsModule, PipeModule ],
         providers: [{ provide: UserService, useClass: MockUserService },
           { provide: ProjectService, useClass: MockProjectService }
         ]

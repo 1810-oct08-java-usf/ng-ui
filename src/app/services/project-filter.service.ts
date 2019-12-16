@@ -19,5 +19,4 @@ export class ProjectFilterService {
       return item.status == status;
     });
   }
-
 }

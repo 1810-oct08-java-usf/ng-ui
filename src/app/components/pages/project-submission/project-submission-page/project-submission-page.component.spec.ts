@@ -96,7 +96,6 @@ describe('ProjectSubmissionPageComponent', () => {
 	it('screenShots starts empty', () => { expect(component.projectToUpload.screenShots.length).toBe(0); });
 	it('status falsy when empty', () => { expect(component.projectToUpload.status).toBeFalsy(); });
 	it('techStack falsy when empty', () => { expect(component.projectToUpload.techStack).toBeFalsy(); });
-	it('trainer starts with value from user', () => { expect(component.projectToUpload.trainer).toBe("Bob White"); });
 	it('userId starts with value from user', () => { expect(component.projectToUpload.userId).toBe(1234); });
 
 	//testing form when filled with mockProject

@@ -40,7 +40,7 @@ export class ProjectViewComponent implements OnInit {
       proj => {
         if (proj) {
           this.project = proj;
-          
+          console.log(this.project.id);
           // Enabling project edition if the user owns the project
           this.currentUser = JSON.parse(localStorage.getItem('user'));
           if(this.currentUser && this.currentUser.id == this.project.userId) this.enableEditFunctionality = true;
@@ -52,7 +52,7 @@ export class ProjectViewComponent implements OnInit {
         }
       }
     );
-
+      
   }
 
 

@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { ProjectFilterService } from './project-filter.service';
+import { ProjectFilterService } from "./project-filter.service";
 
-describe('ProjectFilterService', () => {
+describe("ProjectFilterService", () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
+  it("should be created", () => {
     const service: ProjectFilterService = TestBed.get(ProjectFilterService);
     expect(service).toBeTruthy();
   });

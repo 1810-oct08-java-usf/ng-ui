@@ -18,12 +18,14 @@ import { CodebaseComponent } from './components/pages/codebase/codebase.componen
 import { ProjectViewComponent } from './components/pages/project-view/project-view.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { ProjectListComponent } from './components/pages/project/project-list/project-list.component';
+import { NotificationsComponent } from './components/pages/notifications/notifications.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginRegisterPageComponent},
   {path: 'home', component: HomePageComponent},
+  {path: 'notifications', component: NotificationsComponent },
   {path: 'projects', component: ProjectListComponent},
   {path: 'projects-user', component: ProjectListComponent, canActivate: [AuthGuard] },
   {path: 'projects-pending', component: ProjectsPendingApprovalPageComponent, canActivate: [AdminGuard]},

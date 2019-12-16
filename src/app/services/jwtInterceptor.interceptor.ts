@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import {UserService} from './user.service';
-import {environment} from 'src/environments/environment';
-import {Router} from '@angular/router';
-import {LocationStrategy} from '@angular/common';
+import { UserService } from './user.service';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+import { LocationStrategy } from '@angular/common';
 
 /**
  * TokenInterceptor
@@ -31,14 +31,14 @@ export class TokenInterceptor implements HttpInterceptor {
     const currentTime = Math.round((new Date()).getTime() / 1000);
 
     if (localStorage.getItem('rpmRefresh') && currentTime < JSON.parse(localStorage.getItem('rpmRefresh')) && request.url.indexOf(environment.url) >= 0) {
-        request = request.clone({
-          setHeaders: {
-            Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
-          }
-        });
-        const newRefreshTime = currentTime + 21600000;
-        localStorage.setItem('rpmRefresh', newRefreshTime + '');
-        if(!localStorage.getItem('viewprojects')) localStorage.setItem('viewprojects', 'all');
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${window.localStorage.getItem('jwt')}`
+        }
+      });
+      const newRefreshTime = currentTime + 21600000;
+      localStorage.setItem('rpmRefresh', newRefreshTime + '');
+      if (!localStorage.getItem('viewprojects')) localStorage.setItem('viewprojects', 'all');
 
     } else {
       localStorage.removeItem('jwt');

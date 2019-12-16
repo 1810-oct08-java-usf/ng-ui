@@ -20,6 +20,7 @@ const HTTP_OPTIONS = {
 * @author unknown
 */
 export class ProjectService {
+	
  
  //BehaviorSubjects are able to be casted as observables in different components and subscribed to.
  //(You're able to make changes in one place and see those changes immediately in multiple other places)
@@ -40,9 +41,14 @@ export class ProjectService {
     if(value) queryUrl += value;
     return this.httpClient.get<Project[]>(environment.url + queryUrl, HTTP_OPTIONS);
   }
+  getProjectByID(id:string) {
+    let queryUrl = '/project/id/' + id;
+    return this.httpClient.get<Project[]>(environment.url + queryUrl, HTTP_OPTIONS);
+  }
  
   updateProject(project: Project, id): Observable<Project> {
-    return this.httpClient.put(environment.url + `/project/${id}`, project, HTTP_OPTIONS);
+    console.log(project, id);
+    return this.httpClient.put(environment.url + `/project`, project, HTTP_OPTIONS);
   }
   
   createProject(project: FormData): Observable<Project> {
@@ -68,5 +74,9 @@ export class ProjectService {
   approveOrDenyProject(project: Project): Observable<Project> {
     return this.httpClient.put(environment.url + `/project`, project, HTTP_OPTIONS);
   }
+
+  generateUrls(id): Observable<string[]> {
+		return this.httpClient.get<string[]>(environment.url + `/project/${id}/screenshots`, HTTP_OPTIONS);
+	}
 
 }
